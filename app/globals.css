@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Merriweather:ital,wght@0,700;0,900;1,400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #f7f9fb; color: #0f1923; font-family: 'Nunito', sans-serif; }
+h1,h2,h3,h4,h5 { font-family: 'Merriweather', serif; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; }
+img { display: block; }
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-thumb { background: #1a6fa840; border-radius: 3px; }
