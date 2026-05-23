@@ -1,0 +1,15 @@
+name: Haber Çek
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Her saat başı
+  workflow_dispatch:  # Manuel tetikleme butonu
+
+jobs:
+  fetch-news:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Haberleri çek
+        run: |
+          curl -s https://samsunkent.com/api/cron
+          echo "Haberler çekildi"
