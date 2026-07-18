@@ -3,6 +3,27 @@ import { adminDb } from "../../../lib/db";
 
 export const dynamic = "force-dynamic";
 
+/** Yeni mesajı Telegram'a bildir (env ayarlıysa). Hata olsa da akışı bozmaz. */
+async function notifyTelegram(phone: string, message: string, source: string) {
+  const token = process.env.TELEGRAM_BOT_TOKEN;
+  const chat = process.env.TELEGRAM_CHAT_ID;
+  if (!token || !chat) return;
+  const text =
+    `🔔 Yeni mesaj — samsunkent\n\n` +
+    `📞 ${phone}\n` +
+    `📝 ${message || "—"}\n` +
+    `📌 ${source || "—"}`;
+  try {
+    await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ chat_id: chat, text }),
+    });
+  } catch {
+    /* bildirim başarısız olsa da mesaj kaydedildi, sorun değil */
+  }
+}
+
 export async function POST(req: Request) {
   try {
     const body = await req.json().catch(() => ({}));
@@ -25,6 +46,8 @@ export async function POST(req: Request) {
       source: source || null,
     });
     if (error) throw error;
+
+    await notifyTelegram(phone.slice(0, 30), message.slice(0, 2000), source);
 
     return NextResponse.json({ ok: true });
   } catch {
