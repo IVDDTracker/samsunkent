@@ -128,6 +128,7 @@ form.mini button:focus-visible{ outline:3px solid #ffd27a; outline-offset:2px; }
 .social svg{ width:18px; height:18px; }
 .social:hover{ transform:translateY(-2px); box-shadow:0 10px 22px rgba(0,0,0,.3); }
 .social.youtube svg{ color:#FF0000; }
+.social.instagram svg{ color:#E1306C; }
 .social:focus-visible{ outline:3px solid #ffd27a; outline-offset:2px; }
 .foot-note{ color:rgba(255,255,255,.8); font-size:12px; font-weight:600;
   text-shadow:0 1px 3px rgba(0,0,0,.35); width:100%; text-align:center; margin-top:6px; }
