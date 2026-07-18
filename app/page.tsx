@@ -53,14 +53,13 @@ export default async function HomePage() {
           <span className="pin" />
           <span className="eyebrow">Manifesto</span>
           <h1>
-            Burayı
+            Herkes
             <br />
-            <span className="red">ben</span> bilirim.
+            <span className="red">buraya</span> bakıyor.
           </h1>
           <p className="lede">
-            Hangi sokakta ne döner, hangi mekân değer, neyin altında ne var — hepsini bilirim.
-            Süssüz, filtresiz, torpilsiz. Bir şey mi oldu? En önce buradan duyarsın. Çünkü ben
-            buralıyım.
+            Samsun konuşuyorsa, buradan konuşuyor. Mekânı, sokağı, gündemi — nabız burada atar.
+            Süssüz, filtresiz, torpilsiz. Sen de içeride ol.
           </p>
           <p className="lede" style={{ marginTop: 14 }}>
             Haberi, fırsatı, olan biteni herkesten önce duyanlar bir yerde toplandı — sen hâlâ
