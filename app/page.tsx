@@ -53,16 +53,18 @@ export default async function HomePage() {
           <span className="pin" />
           <span className="eyebrow">Manifesto</span>
           <h1>
-            Buralıyım.
+            Burayı
             <br />
-            <span className="red">Buraları</span> biliyorum.
+            <span className="red">ben</span> bilirim.
           </h1>
           <p className="lede">
-            Mekânı, sokağı, gündemi — ne çıkarsa. Samsun&apos;u süssüz, filtresiz, olduğu gibi
-            anlatırım. Reklam değil; gerçek. Bir şey mi döndü — kim bilecek? Ben bileceğim.
+            Hangi sokakta ne döner, hangi mekân değer, neyin altında ne var — hepsini bilirim.
+            Süssüz, filtresiz, torpilsiz. Bir şey mi oldu? En önce buradan duyarsın. Çünkü ben
+            buralıyım.
           </p>
           <p className="lede" style={{ marginTop: 14 }}>
-            Sokaktan gelen ilk haber, ilk fırsat kanalda düşer. Sen de gel.
+            Haberi, fırsatı, olan biteni herkesten önce duyanlar bir yerde toplandı — sen hâlâ
+            dışarıdasın. Geç kalanlar hep sonra öğrenir.
           </p>
           <a
             className="channel"
@@ -70,7 +72,7 @@ export default async function HomePage() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            📣 Kanala katıl →
+            İçeri gir, aramıza katıl →
           </a>
           <div className="sign">— samsunkent</div>
         </article>
