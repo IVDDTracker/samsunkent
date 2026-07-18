@@ -111,11 +111,24 @@ form.mini button:focus-visible{ outline:3px solid #ffd27a; outline-offset:2px; }
 
 /* Manifesto — kanala katıl butonu */
 .channel{ display:inline-flex; align-items:center; gap:8px; margin-top:18px;
-  background:var(--navy); color:#fff; padding:11px 18px; border-radius:8px;
-  font-weight:800; font-size:14px; transition:background .15s, transform .12s; }
-.channel:hover{ background:#0f2a44; transform:translateY(-1px); }
+  background:var(--red); color:#fff; padding:11px 18px; border-radius:8px;
+  font-weight:800; font-size:14px; transition:background .15s, transform .12s;
+  box-shadow:0 6px 16px rgba(203,58,43,.35); }
+.channel:hover{ background:#a52a1d; transform:translateY(-1px); }
 .channel:active{ transform:translateY(1px); }
 .channel:focus-visible{ outline:3px solid #ffd27a; outline-offset:2px; }
+
+/* DailyDermo "ağımızdan" notu */
+.note.promo{ background:linear-gradient(165deg,#F3F8F1,#E7F1E2); }
+.note.promo .eyebrow{ color:#2e7d55; background:rgba(46,125,85,.1); }
+.pin.green{ background:radial-gradient(circle at 34% 30%, #8fd6a8 0 18%, #2e8b57 42%, #16603a 100%); }
+.brandlink{ display:inline-flex; align-items:center; gap:8px; margin-top:2px;
+  background:#2e7d55; color:#fff; padding:10px 18px; border-radius:8px;
+  font-weight:800; font-size:14px; transition:background .15s, transform .12s;
+  box-shadow:0 6px 16px rgba(46,125,85,.28); }
+.brandlink:hover{ background:#255f43; transform:translateY(-1px); }
+.brandlink:active{ transform:translateY(1px); }
+.brandlink:focus-visible{ outline:3px solid #ffd27a; outline-offset:2px; }
 
 /* Footer — sosyal butonlar */
 .foot{ position:relative; z-index:1; max-width:1120px; margin:0 auto;

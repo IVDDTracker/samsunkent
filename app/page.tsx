@@ -95,6 +95,26 @@ export default async function HomePage() {
             <span className="meta">Genelde birkaç saat içinde dönerim.</span>
           </article>
 
+          {/* Ağımızdan — DailyDermo */}
+          <article className="note promo" style={{ "--rot": "-2deg" } as React.CSSProperties}>
+            <span className="pin green" />
+            <span className="eyebrow">Ağımızdan</span>
+            <h3>DailyDermo 🌿</h3>
+            <p>
+              Bizim başka bir işimiz: dermokozmetik cilt &amp; saç bakımı. Temizle, nemlendir, koru
+              — her cilde uygun, Türkiye&apos;de üretim.
+            </p>
+            <a
+              className="brandlink"
+              href="https://dailydermo.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Keşfet →
+            </a>
+            <span className="meta">dailydermo.com</span>
+          </article>
+
           {/* Admin duyuru notları */}
           {anns.map((a, i) => {
             const tone = TONES[i % TONES.length];
