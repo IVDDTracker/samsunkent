@@ -2,6 +2,7 @@ import { supabase } from "../lib/supabase";
 import type { Announcement } from "../lib/db";
 import CorkBackground from "../components/CorkBackground";
 import ContactForm from "../components/ContactForm";
+import Footer from "../components/Footer";
 
 export const dynamic = "force-dynamic";
 
@@ -60,6 +61,17 @@ export default async function HomePage() {
             Mekânı, sokağı, gündemi — ne çıkarsa. Samsun&apos;u süssüz, filtresiz, olduğu gibi
             anlatırım. Reklam değil; gerçek. Bir şey mi döndü — kim bilecek? Ben bileceğim.
           </p>
+          <p className="lede" style={{ marginTop: 14 }}>
+            Sokaktan gelen ilk haber, ilk fırsat kanalda düşer. Sen de gel.
+          </p>
+          <a
+            className="channel"
+            href="https://www.instagram.com/channel/Abbvtcz5xxeoD7Cd/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            📣 Kanala katıl →
+          </a>
           <div className="sign">— samsunkent</div>
         </article>
 
@@ -103,6 +115,7 @@ export default async function HomePage() {
           })}
         </div>
       </div>
+      <Footer />
     </>
   );
 }

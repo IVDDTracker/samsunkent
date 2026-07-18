@@ -109,6 +109,29 @@ form.mini button:focus-visible{ outline:3px solid #ffd27a; outline-offset:2px; }
 @media (max-width:560px){ .board{ column-count:1; } .manifesto{ padding:26px 22px; } }
 @media (prefers-reduced-motion:reduce){ .note,.note:hover{ transition:none; } }
 
+/* Manifesto — kanala katıl butonu */
+.channel{ display:inline-flex; align-items:center; gap:8px; margin-top:18px;
+  background:var(--navy); color:#fff; padding:11px 18px; border-radius:8px;
+  font-weight:800; font-size:14px; transition:background .15s, transform .12s; }
+.channel:hover{ background:#0f2a44; transform:translateY(-1px); }
+.channel:active{ transform:translateY(1px); }
+.channel:focus-visible{ outline:3px solid #ffd27a; outline-offset:2px; }
+
+/* Footer — sosyal butonlar */
+.foot{ position:relative; z-index:1; max-width:1120px; margin:0 auto;
+  padding:6px 20px 46px; display:flex; align-items:center; justify-content:center;
+  gap:12px; flex-wrap:wrap; }
+.social{ display:inline-flex; align-items:center; gap:9px;
+  background:rgba(250,246,236,.95); color:var(--ink); padding:10px 18px;
+  border-radius:999px; font-weight:800; font-size:13px;
+  box-shadow:0 6px 16px rgba(0,0,0,.22); transition:transform .15s, box-shadow .15s; }
+.social svg{ width:18px; height:18px; }
+.social:hover{ transform:translateY(-2px); box-shadow:0 10px 22px rgba(0,0,0,.3); }
+.social.youtube svg{ color:#FF0000; }
+.social:focus-visible{ outline:3px solid #ffd27a; outline-offset:2px; }
+.foot-note{ color:rgba(255,255,255,.8); font-size:12px; font-weight:600;
+  text-shadow:0 1px 3px rgba(0,0,0,.35); width:100%; text-align:center; margin-top:6px; }
+
 /* ---- Admin ---- */
 .admin{ position:relative; z-index:1; max-width:900px; margin:0 auto; padding:26px 20px 80px; }
 .card{ background:var(--paper); border-radius:8px; padding:20px;
