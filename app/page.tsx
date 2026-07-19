@@ -94,14 +94,14 @@ export default async function HomePage() {
             <span className="meta">Genelde birkaç saat içinde dönerim.</span>
           </article>
 
-          {/* Ağımızdan — DailyDermo */}
+          {/* Memleketten — merak + hemşeri */}
           <article className="note promo" style={{ "--rot": "-2deg" } as React.CSSProperties}>
             <span className="pin green" />
-            <span className="eyebrow">Ağımızdan</span>
-            <h3>DailyDermo 🌿</h3>
+            <span className="eyebrow">Memleketten</span>
+            <h3>Samsun&apos;dan çıktı. Sessizce büyüyor.</h3>
             <p>
-              Bizim başka bir işimiz: dermokozmetik cilt &amp; saç bakımı. Temizle, nemlendir, koru
-              — her cilde uygun, Türkiye&apos;de üretim.
+              Adını yakında her yerde duyacaksın. Bir hemşerinin emeği, bir hemşerinin işi —
+              herkesten önce keşfet, sahip çık.
             </p>
             <a
               className="brandlink"
@@ -109,9 +109,9 @@ export default async function HomePage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Keşfet →
+              Kim bu? →
             </a>
-            <span className="meta">dailydermo.com</span>
+            <span className="meta">Hemşeri, sahip çık 🤝</span>
           </article>
 
           {/* Admin duyuru notları */}
