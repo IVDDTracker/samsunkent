@@ -97,11 +97,10 @@ export default async function HomePage() {
           {/* Memleketten — merak + hemşeri */}
           <article className="note promo" style={{ "--rot": "-2deg" } as React.CSSProperties}>
             <span className="pin green" />
-            <span className="eyebrow">Memleketten</span>
-            <h3>Samsun&apos;dan çıkan markayı gördün mü?</h3>
+            <span className="eyebrow">Aramızda kalsın 🤫</span>
+            <h3>Bu marka nereden çıktı?</h3>
             <p>
-              Henüz herkes bilmiyor. Sitesine bir bak, Instagram&apos;dan takip et — erken
-              görenlerden ol.
+              İpucu: memleketten. Gerisini sitesinde gör, Instagram&apos;dan takip et.
             </p>
             <div className="btnrow">
               <a
@@ -121,7 +120,7 @@ export default async function HomePage() {
                 Instagram
               </a>
             </div>
-            <span className="meta">Hemşeri, göz kulak ol 🤝</span>
+            <span className="meta">Bir hemşeri işi 🤝</span>
           </article>
 
           {/* Admin duyuru notları */}
