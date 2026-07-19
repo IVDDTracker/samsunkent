@@ -1,3 +1,4 @@
+import { unstable_noStore as noStore } from "next/cache";
 import { supabase } from "../lib/supabase";
 import type { Announcement } from "../lib/db";
 import CorkBackground from "../components/CorkBackground";
@@ -5,11 +6,13 @@ import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 
 export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 const ROTS = ["1.6deg", "-2.2deg", "1.1deg", "-1.4deg", "2deg", "-1.1deg"];
 const TONES = ["kraft", "sticky", "", "kraft", ""];
 
 async function getAnnouncements(): Promise<Announcement[]> {
+  noStore();
   try {
     const { data } = await supabase
       .from("announcements")
