@@ -98,20 +98,30 @@ export default async function HomePage() {
           <article className="note promo" style={{ "--rot": "-2deg" } as React.CSSProperties}>
             <span className="pin green" />
             <span className="eyebrow">Memleketten</span>
-            <h3>Samsun&apos;dan çıktı. Sessizce büyüyor.</h3>
+            <h3>Samsun&apos;dan çıkan markayı gördün mü?</h3>
             <p>
-              Adını yakında her yerde duyacaksın. Bir hemşerinin emeği, bir hemşerinin işi —
-              herkesten önce keşfet, sahip çık.
+              Henüz herkes bilmiyor. Sitesine bir bak, Instagram&apos;dan takip et — erken
+              görenlerden ol.
             </p>
-            <a
-              className="brandlink"
-              href="https://dailydermo.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Kim bu? →
-            </a>
-            <span className="meta">Hemşeri, sahip çık 🤝</span>
+            <div className="btnrow">
+              <a
+                className="brandlink"
+                href="https://dailydermo.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Web sitesi →
+              </a>
+              <a
+                className="brandlink ig"
+                href="https://instagram.com/dailydermo"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Instagram
+              </a>
+            </div>
+            <span className="meta">Hemşeri, göz kulak ol 🤝</span>
           </article>
 
           {/* Admin duyuru notları */}

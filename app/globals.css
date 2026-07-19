@@ -129,6 +129,9 @@ form.mini button:focus-visible{ outline:3px solid #ffd27a; outline-offset:2px; }
 .brandlink:hover{ background:#255f43; transform:translateY(-1px); }
 .brandlink:active{ transform:translateY(1px); }
 .brandlink:focus-visible{ outline:3px solid #ffd27a; outline-offset:2px; }
+.btnrow{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+.brandlink.ig{ background:#B4318F; box-shadow:0 6px 16px rgba(180,49,143,.28); }
+.brandlink.ig:hover{ background:#8f2571; }
 
 /* Footer — sosyal butonlar */
 .foot{ position:relative; z-index:1; max-width:1120px; margin:0 auto;
