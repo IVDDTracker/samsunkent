@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { adminDb, checkPassword } from "../../../lib/db";
+import { URUNLER, urunById } from "../../../lib/urunler";
 
 export const dynamic = "force-dynamic";
 
@@ -7,19 +8,27 @@ function authed(req: Request) {
   return checkPassword(req.headers.get("x-admin-key"));
 }
 
-function num(v: unknown) {
+function posInt(v: unknown) {
+  const n = Math.round(Number(v));
+  return Number.isFinite(n) && n > 0 ? n : 0;
+}
+function posNum(v: unknown) {
   const n = Number(v);
-  return Number.isFinite(n) ? n : 0;
+  return Number.isFinite(n) && n > 0 ? n : 0;
+}
+function tarih(v: unknown) {
+  return v ? { tarih: String(v).slice(0, 10) } : {};
 }
 
 export async function GET(req: Request) {
   if (!authed(req)) return NextResponse.json({ error: "Yetkisiz" }, { status: 401 });
   const db = adminDb();
-  const [{ data: stok }, { data: hesap }] = await Promise.all([
-    db.from("stok").select("*").order("sort", { ascending: true }).order("created_at", { ascending: false }),
-    db.from("hesap").select("*").order("durum", { ascending: true }).order("tarih", { ascending: false }),
-  ]);
-  return NextResponse.json({ stok: stok || [], hesap: hesap || [] });
+  const { data: hareket } = await db
+    .from("hareket")
+    .select("*")
+    .order("tarih", { ascending: false })
+    .order("created_at", { ascending: false });
+  return NextResponse.json({ urunler: URUNLER, hareket: hareket || [] });
 }
 
 export async function POST(req: Request) {
@@ -28,79 +37,56 @@ export async function POST(req: Request) {
   const db = adminDb();
   try {
     switch (b.action) {
-      // ---- STOK ----
-      case "stok_create": {
-        const { error } = await db.from("stok").insert({
-          ad: String(b.ad || "").slice(0, 200),
-          maliyet: num(b.maliyet),
-          satis_fiyati: num(b.satis_fiyati),
-          adet: Math.round(num(b.adet)),
-          platform: b.platform ? String(b.platform).slice(0, 100) : null,
-          not_alani: b.not_alani ? String(b.not_alani).slice(0, 500) : null,
-          sort: Math.round(num(b.sort)),
+      // ---- ALIM: "şu üründen X aldım" → borç ekle (adet × alış) ----
+      case "alim": {
+        const u = urunById(String(b.urun_id));
+        const adet = posInt(b.adet);
+        if (!u || !adet) return NextResponse.json({ error: "Ürün / adet geçersiz" }, { status: 400 });
+        const { error } = await db.from("hareket").insert({
+          tur: "alim",
+          urun_id: u.id,
+          urun_ad: u.ad,
+          adet,
+          tutar: +(u.alis * adet).toFixed(2),
+          not_alani: b.not_alani ? String(b.not_alani).slice(0, 300) : null,
+          ...tarih(b.tarih),
         });
         if (error) throw error;
         break;
       }
-      case "stok_update": {
-        const { error } = await db
-          .from("stok")
-          .update({
-            ad: String(b.ad || "").slice(0, 200),
-            maliyet: num(b.maliyet),
-            satis_fiyati: num(b.satis_fiyati),
-            adet: Math.round(num(b.adet)),
-            platform: b.platform ? String(b.platform).slice(0, 100) : null,
-            not_alani: b.not_alani ? String(b.not_alani).slice(0, 500) : null,
-            sort: Math.round(num(b.sort)),
-          })
-          .eq("id", b.id);
-        if (error) throw error;
-        break;
-      }
-      case "stok_delete": {
-        const { error } = await db.from("stok").delete().eq("id", b.id);
-        if (error) throw error;
-        break;
-      }
-      // ---- HESAP (borç / alacak) ----
-      case "hesap_create": {
-        const { error } = await db.from("hesap").insert({
-          tur: b.tur === "alacak" ? "alacak" : "borc",
-          kisi: b.kisi ? String(b.kisi).slice(0, 120) : null,
-          tutar: num(b.tutar),
-          aciklama: b.aciklama ? String(b.aciklama).slice(0, 500) : null,
-          durum: b.durum === "odendi" ? "odendi" : "bekliyor",
-          ...(b.tarih ? { tarih: String(b.tarih).slice(0, 10) } : {}),
+      // ---- SATIŞ: "X sattım" → net kâr (adet × kâr) ----
+      case "satis": {
+        const u = urunById(String(b.urun_id));
+        const adet = posInt(b.adet);
+        if (!u || !adet) return NextResponse.json({ error: "Ürün / adet geçersiz" }, { status: 400 });
+        const { error } = await db.from("hareket").insert({
+          tur: "satis",
+          urun_id: u.id,
+          urun_ad: u.ad,
+          adet,
+          tutar: +(u.kar * adet).toFixed(2),
+          not_alani: b.not_alani ? String(b.not_alani).slice(0, 300) : null,
+          ...tarih(b.tarih),
         });
         if (error) throw error;
         break;
       }
-      case "hesap_update": {
-        const { error } = await db
-          .from("hesap")
-          .update({
-            tur: b.tur === "alacak" ? "alacak" : "borc",
-            kisi: b.kisi ? String(b.kisi).slice(0, 120) : null,
-            tutar: num(b.tutar),
-            aciklama: b.aciklama ? String(b.aciklama).slice(0, 500) : null,
-            durum: b.durum === "odendi" ? "odendi" : "bekliyor",
-            ...(b.tarih ? { tarih: String(b.tarih).slice(0, 10) } : {}),
-          })
-          .eq("id", b.id);
+      // ---- ÖDEME: "Hakan'a X ödedim" → borçtan düş ----
+      case "odeme": {
+        const tutar = posNum(b.tutar);
+        if (!tutar) return NextResponse.json({ error: "Tutar geçersiz" }, { status: 400 });
+        const { error } = await db.from("hareket").insert({
+          tur: "odeme",
+          tutar,
+          kisi: b.kisi ? String(b.kisi).slice(0, 120) : "Hakan",
+          not_alani: b.not_alani ? String(b.not_alani).slice(0, 300) : null,
+          ...tarih(b.tarih),
+        });
         if (error) throw error;
         break;
       }
-      case "hesap_toggle": {
-        const { error } = await db
-          .from("hesap")
-          .update({ durum: b.durum === "odendi" ? "odendi" : "bekliyor" })
-          .eq("id", b.id);
-        if (error) throw error;
-        break;
-      }
-      case "hesap_delete": {
-        const { error } = await db.from("hesap").delete().eq("id", b.id);
+      case "delete": {
+        const { error } = await db.from("hareket").delete().eq("id", b.id);
         if (error) throw error;
         break;
       }
