@@ -122,6 +122,9 @@ export default function AdminPage() {
           </span>
         </div>
         <div className="row">
+          <a className="btn" href="/sk-yonetim-2025/panel">
+            📊 Patron Paneli
+          </a>
           <a className="btn ghost" href="/">
             Siteyi gör →
           </a>

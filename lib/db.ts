@@ -17,6 +17,29 @@ export interface Message {
   created_at: string;
 }
 
+export interface Stok {
+  id: string;
+  ad: string;
+  maliyet: number;
+  satis_fiyati: number;
+  adet: number;
+  platform: string | null;
+  not_alani: string | null;
+  sort: number;
+  created_at: string;
+}
+
+export interface Hesap {
+  id: string;
+  tur: "borc" | "alacak";
+  kisi: string | null;
+  tutar: number;
+  aciklama: string | null;
+  durum: "bekliyor" | "odendi";
+  tarih: string;
+  created_at: string;
+}
+
 /**
  * Sunucu tarafı Supabase istemcisi (service role). RLS'i baypas eder;
  * yalnızca API route'larında kullanılır, anahtar tarayıcıya sızmaz.
