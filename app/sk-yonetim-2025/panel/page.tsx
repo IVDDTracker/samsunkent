@@ -107,10 +107,10 @@ export default function PanelPage() {
 
       {/* ÖZET KARTLARI */}
       <div className="kpis">
-        <div className={`kpi ${net > 0 ? "red" : "green"}`}>
-          <span className="k-lbl">{net > 0 ? "🔴 Kalan borç" : "🟢 Alacak / kârda"}</span>
-          <span className="k-val">{TL(Math.abs(net))}</span>
-          <span className="k-sub">borç {TL(toplamBorc)} − satış {TL(toplamGelir)}</span>
+        <div className="kpi red">
+          <span className="k-lbl">🔴 Toplam borç (alım)</span>
+          <span className="k-val">{TL(toplamBorc)}</span>
+          <span className="k-sub">{alimlar.reduce((t, h) => t + h.adet, 0)} adet alındı · sabit</span>
         </div>
         <div className="kpi green">
           <span className="k-lbl">💵 Toplam satış geliri</span>
