@@ -1,37 +1,22 @@
 -- ============================================================
--- PATRON PANELİ — stok + borç/alacak defteri
+-- PATRON PANELİ — hareket defteri (alım / satış)
 -- Supabase SQL Editor'de bir kere çalıştır.
--- Bu tablolar DIŞARI KAPALI: RLS açık, hiçbir public policy yok.
--- Yalnızca service_role (sunucu API'si) okur/yazar. Finansal veri güvende.
+-- DIŞARI KAPALI: RLS açık, public policy yok. Sadece service_role okur/yazar.
 -- ============================================================
 
--- ---- STOK ----
-create table if not exists public.stok (
-  id           uuid primary key default gen_random_uuid(),
-  ad           text not null,
-  maliyet      numeric(12,2) not null default 0,   -- birim maliyet (senin alışın)
-  satis_fiyati numeric(12,2) not null default 0,   -- birim satış fiyatı
-  adet         integer not null default 0,          -- eldeki stok adedi
-  platform     text,                                -- Hepsiburada / ikas / vb. (opsiyonel)
-  not_alani    text,                                -- serbest not
-  sort         integer not null default 0,
-  created_at   timestamptz not null default now()
+create table if not exists public.hareket (
+  id          uuid primary key default gen_random_uuid(),
+  tur         text not null,                    -- 'alim' | 'satis'
+  urun_id     text,
+  urun_ad     text,
+  adet        integer not null default 0,
+  birim_fiyat numeric(12,2) not null default 0, -- alım: KDV dahil alış · satış: girilen KDV dahil satış fiyatı
+  tutar       numeric(12,2) not null default 0, -- birim_fiyat × adet
+  tarih       date not null default current_date,
+  created_at  timestamptz not null default now()
 );
 
--- ---- BORÇ / ALACAK DEFTERİ ----
--- tur: 'borc'  = benim borcum (ör. Hakan'a)
---      'alacak' = benim alacağım (ör. Hepsiburada'dan)
-create table if not exists public.hesap (
-  id         uuid primary key default gen_random_uuid(),
-  tur        text not null default 'borc',          -- 'borc' | 'alacak'
-  kisi       text,                                   -- Hakan, Hepsiburada, ...
-  tutar      numeric(12,2) not null default 0,
-  aciklama   text,
-  durum      text not null default 'bekliyor',       -- 'bekliyor' | 'odendi'
-  tarih      date not null default current_date,
-  created_at timestamptz not null default now()
-);
+alter table public.hareket enable row level security;
 
--- RLS aç, POLICY EKLEME (anon erişemez; service_role zaten baypas eder)
-alter table public.stok  enable row level security;
-alter table public.hesap enable row level security;
+-- Önceki denemelerden stok/hesap tabloların kaldıysa zararsız, boş dururlar.
+-- İstersen: drop table if exists public.stok; drop table if exists public.hesap;
