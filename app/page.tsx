@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { unstable_noStore as noStore } from "next/cache";
 import { supabase } from "../lib/supabase";
 import type { Announcement } from "../lib/db";
@@ -7,6 +8,32 @@ import Footer from "../components/Footer";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
+
+// Organization + WebSite yapısal verisi (sameAs: sosyal hesaplar).
+// Yalnızca gerçek, doğru bilgi — uydurma alan yok.
+const JSON_LD = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "samsunkent",
+    url: "https://samsunkent.com",
+    sameAs: [
+      "https://www.instagram.com/samsunkentcom",
+      "https://www.tiktok.com/@samsunkentcom",
+      "https://www.youtube.com/@samsunkentcom",
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "samsunkent",
+    url: "https://samsunkent.com",
+  },
+];
 
 const ROTS = ["1.6deg", "-2.2deg", "1.1deg", "-1.4deg", "2deg", "-1.1deg"];
 const TONES = ["kraft", "sticky", "", "kraft", ""];
@@ -39,6 +66,10 @@ export default async function HomePage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
+      />
       <CorkBackground />
       <div className="wrap">
         <header className="top">
