@@ -174,10 +174,10 @@ values (
   'evden-eve-nakliyat',
   'Evden Eve Nakliyat',
   'Nakliyat',
-  'Samsun''da güvenilir nakliyatçıları senin için topladık. İlçene göre süz, doğrudan ara ya da WhatsApp''tan yaz.',
+  'Samsun''daki evden eve nakliyat firmalarını bir araya getirdik. İlçene göre süz, karşılaştır, doğrudan ara ya da WhatsApp''tan yaz.',
   'Samsun Evden Eve Nakliyat Firmaları',
-  'Samsun Evden Eve Nakliyat Firmaları | Güvenilir & Yakın',
-  'Samsun''da evden eve nakliyat firmaları: ilçene göre süz, doğrula, telefon veya WhatsApp ile hemen iletişime geç. Samsunkent yerel rehberi.',
+  'Samsun Evden Eve Nakliyat Firmaları | Yerel Rehber',
+  'Samsun''da evden eve nakliyat firmaları tek listede: ilçene göre süz, karşılaştır, telefon veya WhatsApp ile doğrudan iletişime geç. Samsunkent yerel rehberi.',
   true,
   '[
     {"q":"Evden eve nakliyat fiyatları neye göre değişir?","a":"Eşya miktarı, kat/asansör durumu, mesafe ve paketleme hizmeti fiyatı belirler. Samsunkent fiyat uydurmaz — teklifi doğrudan firmadan al."},

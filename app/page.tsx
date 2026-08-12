@@ -117,8 +117,8 @@ export default async function HomePage() {
             <span className="eyebrow">Hizmet Rehberi</span>
             <h3>Samsun&apos;da bir usta mı lazım?</h3>
             <p>
-              Nakliyat, klima-kombi servisi, temizlik, su tesisatçısı… Güvenilir yerel firmaları
-              senin için topladık. İlçene göre bul, doğrudan ara.
+              Nakliyat, klima-kombi servisi, temizlik, su tesisatçısı… Samsun&apos;un yerel
+              firmalarını bir araya getirdik. İlçene göre bul, karşılaştır, doğrudan ara.
             </p>
             <a className="channel" href="/hizmetler">
               Hizmet rehberine gir →

@@ -151,6 +151,10 @@ export default async function FirmaPage({ params }: { params: { slug: string } }
         </div>
 
         <div className="hz-foot">
+          <p className="hz-role">
+            Samsunkent bu firmayı listeler ve mümkün olduğunda kimlik/faaliyet teyidi yapar;
+            hizmet kalitesini garanti etmez. İletişimi ve kararı doğrudan sen verirsin.
+          </p>
           <div className="fn">© samsunkent · Samsun&apos;un hizmet rehberi</div>
         </div>
       </div>

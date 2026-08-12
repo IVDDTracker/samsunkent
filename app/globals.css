@@ -343,3 +343,7 @@ form.mini button:focus-visible{ outline:3px solid #ffd27a; outline-offset:2px; }
   border:1px solid rgba(23,58,90,.16); border-radius:11px; padding:11px 12px; text-decoration:none; }
 .hz-sec a:hover{ background:rgba(23,58,90,.13); }
 .hz-sec a:focus-visible{ outline:3px solid var(--navy); outline-offset:2px; }
+
+/* Rol/sorumluluk satırı — "kefil" izlenimini önler */
+.hz-role{ max-width:56ch; margin:0 auto 12px; font-size:11.5px; line-height:1.55;
+  color:var(--ink-soft); text-align:center; }
