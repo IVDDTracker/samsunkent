@@ -111,6 +111,21 @@ export default async function HomePage() {
         </article>
 
         <div className="board">
+          {/* Hizmet Rehberi — yerel hizmet keşfi */}
+          <article className="note" style={{ "--rot": "-1.4deg" } as React.CSSProperties}>
+            <span className="pin" />
+            <span className="eyebrow">Hizmet Rehberi</span>
+            <h3>Samsun&apos;da bir usta mı lazım?</h3>
+            <p>
+              Nakliyat, klima-kombi servisi, temizlik, su tesisatçısı… Güvenilir yerel firmaları
+              senin için topladık. İlçene göre bul, doğrudan ara.
+            </p>
+            <a className="channel" href="/hizmetler">
+              Hizmet rehberine gir →
+            </a>
+            <span className="meta">Samsunkent&apos;in yerel firma rehberi 🧭</span>
+          </article>
+
           {/* Sabit iş birliği notu */}
           <article className="note" style={{ "--rot": "1.6deg" } as React.CSSProperties}>
             <span className="pin navy" />
