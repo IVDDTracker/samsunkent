@@ -7,7 +7,7 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Samsun Hizmet Rehberi — Firmalar & Servisler | samsunkent",
   description:
-    "Samsun'da güvenilir yerel hizmet firmaları tek yerde: nakliyat, oto çekici, klima-kombi servisi ve daha fazlası. İlçene göre bul, doğrula, ara.",
+    "Samsun'un yerel hizmet firmaları tek yerde: nakliyat, oto çekici, klima-kombi servisi ve daha fazlası. İlçene göre bul, karşılaştır, doğrudan ara.",
   alternates: { canonical: "/hizmetler" },
 };
 
@@ -48,7 +48,7 @@ export default async function HizmetlerHub() {
           <nav className="hz-crumb" aria-label="Konum"><a href="/">Ana Sayfa</a> › Hizmetler</nav>
           <span className="hz-eyebrow">Samsunkent · Hizmet Rehberi</span>
           <h1 className="hz-h1">Samsun Hizmet Rehberi</h1>
-          <p className="hz-sub">Samsun&apos;da güvenilir yerel firmaları senin için topluyoruz. Aradığın hizmeti seç, ilçene göre bul, doğrudan iletişime geç.</p>
+          <p className="hz-sub">Samsun&apos;un yerel hizmet firmalarını bir araya getiriyoruz. Aradığın hizmeti seç, ilçene göre bul, doğrudan iletişime geç.</p>
         </div>
 
         {services.length === 0 ? (
@@ -69,6 +69,10 @@ export default async function HizmetlerHub() {
         )}
 
         <div className="hz-foot">
+          <p className="hz-role">
+            Samsunkent firmaları bir araya getirir ve mümkün olduğunda kimlik/faaliyet teyidi yapar;
+            hizmet kalitesini garanti etmez. İletişimi ve kararı doğrudan sen verirsin.
+          </p>
           <div className="fn">© samsunkent · Samsun&apos;un hizmet rehberi</div>
         </div>
       </div>
