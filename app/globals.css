@@ -333,3 +333,13 @@ form.mini button:focus-visible{ outline:3px solid #ffd27a; outline-offset:2px; }
 
 .hz-chip:focus-visible, .hz-cta a:focus-visible, .hz-profil:focus-visible,
 .hz-details summary:focus-visible, .hz-rel:focus-visible{ outline:3px solid var(--navy); outline-offset:2px; border-radius:6px; }
+
+/* Firma profili — temas aksiyonları */
+.hz-actions{ padding:4px 18px 6px; }
+.hz-actions .hz-cta{ margin-bottom:10px; }
+.hz-sec{ display:flex; gap:10px; flex-wrap:wrap; }
+.hz-sec a{ flex:1 1 auto; display:inline-flex; align-items:center; justify-content:center; gap:7px;
+  font-weight:700; font-size:13.5px; color:var(--navy); background:rgba(23,58,90,.08);
+  border:1px solid rgba(23,58,90,.16); border-radius:11px; padding:11px 12px; text-decoration:none; }
+.hz-sec a:hover{ background:rgba(23,58,90,.13); }
+.hz-sec a:focus-visible{ outline:3px solid var(--navy); outline-offset:2px; }
