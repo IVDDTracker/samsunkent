@@ -10,15 +10,26 @@ const LABELS: Record<string, string> = {
   perde: "Perde",
 };
 
-async function notifyTelegram(text: string) {
+async function notifyTelegram(text: string, rentalId?: string) {
   const token = process.env.TELEGRAM_BOT_TOKEN;
   const chat = process.env.TELEGRAM_CHAT_ID;
   if (!token || !chat) return;
+  // Telegram'ın içinden tek tıkla onayla/reddet için inline butonlar.
+  const reply_markup = rentalId
+    ? {
+        inline_keyboard: [
+          [
+            { text: "✅ Onayla", callback_data: `c:${rentalId}` },
+            { text: "❌ Reddet", callback_data: `x:${rentalId}` },
+          ],
+        ],
+      }
+    : undefined;
   try {
     await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ chat_id: chat, text }),
+      body: JSON.stringify({ chat_id: chat, text, reply_markup }),
     });
   } catch {
     /* bildirim başarısız olsa da rezervasyon kaydedildi */
@@ -81,17 +92,21 @@ export async function POST(req: Request) {
         { status: 409 },
       );
 
-    const { error } = await db.from("rentals").insert({
-      items,
-      start_date: start,
-      days,
-      end_date: end,
-      customer_name: name || null,
-      customer_phone: phone.slice(0, 30),
-      total,
-      payment,
-      note: note || null,
-    });
+    const { data: inserted, error } = await db
+      .from("rentals")
+      .insert({
+        items,
+        start_date: start,
+        days,
+        end_date: end,
+        customer_name: name || null,
+        customer_phone: phone.slice(0, 30),
+        total,
+        payment,
+        note: note || null,
+      })
+      .select("id")
+      .single();
     if (error) throw error;
 
     await notifyTelegram(
@@ -102,7 +117,8 @@ export async function POST(req: Request) {
         `• Ödeme: ${payment === "kapida-kart" ? "Kapıda kart" : "Kapıda nakit"}\n` +
         `• Ad: ${name || "—"}\n` +
         `• Tel: ${phone}\n\n` +
-        `Teyit için müşteriyi ara. (sk-yonetim panelinden onayla)`,
+        `Teyit için müşteriyi ara — ya da aşağıdan onayla/reddet.`,
+      inserted?.id,
     );
 
     return NextResponse.json({ ok: true });
