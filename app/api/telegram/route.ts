@@ -1,9 +1,24 @@
 import { NextResponse } from "next/server";
+import crypto from "crypto";
 import { adminDb, checkPassword } from "../../../lib/db";
 
 export const dynamic = "force-dynamic";
 
 const LABELS: Record<string, string> = { ps5: "PS5", proj: "Projeksiyon", perde: "Perde" };
+
+/**
+ * Webhook doğrulama secret'ı.
+ * Elle TELEGRAM_WEBHOOK_SECRET tanımlıysa onu kullanır; değilse bot token'dan
+ * deterministik türetir (ekstra env gerekmez). Hem register hem doğrulama
+ * aynı değeri ürettiği için uyumlu çalışır.
+ */
+function webhookSecret(): string | null {
+  const explicit = process.env.TELEGRAM_WEBHOOK_SECRET;
+  if (explicit) return explicit;
+  const token = process.env.TELEGRAM_BOT_TOKEN;
+  if (!token) return null;
+  return "wh" + crypto.createHash("sha256").update(token).digest("hex").slice(0, 48);
+}
 
 async function tg(method: string, body: Record<string, unknown>) {
   const token = process.env.TELEGRAM_BOT_TOKEN;
@@ -27,8 +42,8 @@ async function tg(method: string, body: Record<string, unknown>) {
  * Güvenlik: Telegram'ın secret_token header'ı doğrulanır + chat_id eşleşmesi aranır.
  */
 export async function POST(req: Request) {
-  const secret = process.env.TELEGRAM_WEBHOOK_SECRET;
-  // Secret tanımlı değilse webhook'u aç bırakma.
+  const secret = webhookSecret();
+  // Secret üretilemiyorsa (token yok) webhook'u aç bırakma.
   if (!secret) return NextResponse.json({ ok: true });
   if (req.headers.get("x-telegram-bot-api-secret-token") !== secret) {
     return NextResponse.json({ ok: true }); // sessizce yut, 200 dön
@@ -105,11 +120,11 @@ export async function GET(req: Request) {
   if (!checkPassword(key)) return NextResponse.json({ error: "Yetkisiz" }, { status: 401 });
 
   const token = process.env.TELEGRAM_BOT_TOKEN;
-  const secret = process.env.TELEGRAM_WEBHOOK_SECRET;
+  const secret = webhookSecret();
   if (!token) return NextResponse.json({ error: "TELEGRAM_BOT_TOKEN eksik." }, { status: 400 });
 
   if (action === "register") {
-    if (!secret) return NextResponse.json({ error: "TELEGRAM_WEBHOOK_SECRET env'ini ekle, sonra tekrar dene." }, { status: 400 });
+    if (!secret) return NextResponse.json({ error: "TELEGRAM_BOT_TOKEN eksik." }, { status: 400 });
     const host = req.headers.get("x-forwarded-host") || req.headers.get("host");
     const hookUrl = `https://${host}/api/telegram`;
     const r = await tg("setWebhook", {
