@@ -11,6 +11,8 @@ const nextConfig = {
       beforeFiles: [
         // Firma tanıtım demoları: temiz URL (/oznakliyat) statik HTML'e yönlenir.
         { source: "/oznakliyat", destination: "/oznakliyat.html" },
+        // Büyük Ekran Kiralama (PS5 · projeksiyon · perde) — temiz URL.
+        { source: "/kirala", destination: "/kirala.html" },
       ],
     };
   },
