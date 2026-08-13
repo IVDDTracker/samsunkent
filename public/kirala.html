@@ -3,10 +3,10 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Büyük Ekran Kiralama — Samsun | PS5 · Projeksiyon · Maç & Film Gecesi</title>
-<meta name="description" content="Samsun'da evine büyük ekran keyfi. PS5 (oyunlar dahil), projeksiyon ve perde kiralama — maç günü, film gecesi, oyun gecesi. Ücretsiz teslim + kurulum, teslimde nakit/kart."/>
+<meta name="description" content="Samsun'da evine büyük ekran keyfi. PS5 (oyunlar dahil), projeksiyon ve perde kiralama — maç günü, film gecesi, oyun gecesi. Canlı takvimden müsait günü seç, rezervasyon yap. Ücretsiz teslim + kurulum, teslimde nakit/kart."/>
 <meta name="theme-color" content="#0B0B12"/>
 <meta property="og:title" content="Büyük Ekran Kiralama — Samsun"/>
-<meta property="og:description" content="PS5 · Projeksiyon · Perde — maç, film, oyun gecesi. Evine teslim + kurulum."/>
+<meta property="og:description" content="PS5 · Projeksiyon · Perde — maç, film, oyun gecesi. Canlı takvimden seç, evine teslim + kurulum."/>
 <style>
 :root{
   --bg:#0B0B12;--bg2:#101019;--card:#15151F;--card2:#1B1B27;--line:rgba(255,255,255,.09);--line2:rgba(255,255,255,.16);
@@ -69,7 +69,7 @@ section{padding:48px 0}
 .book-form{padding:28px}
 .book-form h3{font-size:20px;font-weight:900;margin-bottom:4px}
 .book-form .sub{color:var(--muted);font-size:13.5px;margin-bottom:22px}
-.field{margin-bottom:20px}
+.field{margin-bottom:22px}
 .field>label{display:block;font-weight:800;font-size:13px;margin-bottom:10px;color:#DDD9EC}
 .selectlist{display:flex;flex-direction:column;gap:9px}
 .opt{display:flex;align-items:center;gap:13px;padding:13px 15px;border-radius:12px;background:var(--card2);border:1.5px solid var(--line);cursor:pointer;transition:.12s}
@@ -83,18 +83,49 @@ section{padding:48px 0}
 .opt .t b{font-size:15px;font-weight:800;display:block}
 .opt .t small{font-size:12px;color:var(--muted)}
 .opt .p{font-weight:800;font-size:14px;white-space:nowrap}
-.row2{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:end}
-input[type=date]{width:100%;background:var(--card2);border:1.5px solid var(--line2);color:var(--ink);font-size:15px;font-weight:700;padding:12px 14px;border-radius:12px;font-family:var(--sans)}
-input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.7)}
-.stepper{display:flex;align-items:center;gap:0;background:var(--card2);border:1.5px solid var(--line2);border-radius:12px;overflow:hidden}
-.stepper button{width:46px;height:48px;background:none;border:0;color:var(--ink);font-size:22px;cursor:pointer}
+
+/* calendar */
+.cal{background:var(--card2);border:1.5px solid var(--line2);border-radius:14px;padding:14px 14px 16px}
+.cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.cal-head b{font-size:15px;font-weight:800;text-transform:capitalize}
+.cal-nav{display:flex;gap:6px}
+.cal-nav button{width:34px;height:34px;border-radius:9px;background:var(--card);border:1px solid var(--line2);color:var(--ink);font-size:15px;cursor:pointer;display:grid;place-items:center;transition:.12s}
+.cal-nav button:hover:not(:disabled){border-color:var(--violet)}
+.cal-nav button:disabled{opacity:.3;cursor:not-allowed}
+.cal-nav svg{width:16px;height:16px}
+.cal-dow{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-bottom:6px}
+.cal-dow span{text-align:center;font-size:11px;font-weight:800;color:var(--muted2);text-transform:uppercase}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.cal-cell{aspect-ratio:1;display:grid;place-items:center;border-radius:9px;font-size:13.5px;font-weight:700;cursor:pointer;position:relative;border:1.5px solid transparent;transition:background .1s,border-color .1s}
+.cal-cell.pad{visibility:hidden;pointer-events:none}
+.cal-cell:not(.dis):not(.instart):hover{background:rgba(124,92,255,.16);border-color:rgba(124,92,255,.4)}
+.cal-cell.dis{color:var(--muted2);cursor:not-allowed;opacity:.35}
+.cal-cell.booked{color:var(--red);cursor:not-allowed}
+.cal-cell.booked::after{content:"";position:absolute;left:26%;right:26%;bottom:6px;height:3px;border-radius:3px;background:var(--red);opacity:.65}
+.cal-cell.wknd:not(.dis):not(.booked):not(.inrange):not(.instart){color:var(--amber)}
+.cal-cell.inrange{background:rgba(124,92,255,.22);color:#EAE6FF}
+.cal-cell.instart{background:var(--violet);color:#fff;border-color:var(--violet);box-shadow:0 4px 14px rgba(124,92,255,.5)}
+.cal-legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;font-size:11.5px;color:var(--muted);font-weight:600}
+.cal-legend .lg{display:flex;align-items:center;gap:6px}
+.cal-legend .dot{width:11px;height:11px;border-radius:4px}
+.cal-legend .dot.free{background:var(--card);border:1.5px solid var(--line2)}
+.cal-legend .dot.sel{background:var(--violet)}
+.cal-legend .dot.busy{background:var(--red);opacity:.7}
+.cal-hint{font-size:12px;color:var(--muted2);margin-top:10px}
+
+.stepper-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px;background:var(--card2);border:1.5px solid var(--line2);border-radius:12px;padding:10px 14px}
+.stepper-row .lbl{font-size:13px;font-weight:800;color:#DDD9EC}
+.stepper{display:flex;align-items:center;gap:0;background:var(--card);border:1.5px solid var(--line2);border-radius:10px;overflow:hidden}
+.stepper button{width:42px;height:42px;background:none;border:0;color:var(--ink);font-size:22px;cursor:pointer}
 .stepper button:hover{background:rgba(255,255,255,.06)}
-.stepper .n{min-width:56px;text-align:center;font-weight:800;font-size:16px}
-.disc-note{margin-top:10px;font-size:12px;color:var(--amber);font-weight:600}
+.stepper .n{min-width:64px;text-align:center;font-weight:800;font-size:15px}
+.disc-note{margin-top:10px;font-size:12px;color:var(--amber);font-weight:600;min-height:16px}
 
 /* result */
 .result{background:linear-gradient(160deg,#171626,#0F0E18);padding:28px;display:flex;flex-direction:column}
 .result .rl{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--violet2)}
+.daterange{margin-top:10px;font-size:13.5px;font-weight:700;color:#EAE6FF;min-height:18px}
+.daterange .em{color:var(--muted2);font-weight:600}
 .breakdown{margin:14px 0;display:flex;flex-direction:column;gap:8px;font-size:13.5px;color:var(--muted)}
 .breakdown .li{display:flex;justify-content:space-between}
 .breakdown .li.disc{color:var(--amber)}
@@ -111,9 +142,37 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.7)}
 .chk{display:flex;align-items:flex-start;gap:11px;margin-top:14px;cursor:pointer}
 .chk input{margin-top:3px;width:20px;height:20px;accent-color:var(--violet);flex:0 0 auto}
 .chk span{font-size:13px;color:#CFC9E6}
-.btn-wa{margin-top:16px;width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--green);color:#052b16;font-weight:900;font-size:16px;padding:15px;border-radius:13px;border:0;cursor:pointer;transition:.15s}
-.btn-wa:disabled{opacity:.45;cursor:not-allowed}
-.btn-wa svg{width:21px;height:21px}
+
+.cfields{margin-top:16px;display:flex;flex-direction:column;gap:10px}
+.cfields input[type=text],.cfields input[type=tel]{width:100%;background:var(--card2);border:1.5px solid var(--line2);color:var(--ink);font-size:15px;font-weight:600;padding:12px 14px;border-radius:11px;font-family:var(--sans)}
+.cfields input::placeholder{color:var(--muted2)}
+.cfields input:focus{outline:none;border-color:var(--violet)}
+.payopts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.payopt{display:flex;align-items:center;gap:9px;padding:11px 12px;border-radius:11px;background:var(--card2);border:1.5px solid var(--line);cursor:pointer;font-size:13.5px;font-weight:700;transition:.12s}
+.payopt:hover{border-color:rgba(124,92,255,.5)}
+.payopt.on{border-color:var(--violet);background:rgba(124,92,255,.12)}
+.payopt input{position:absolute;opacity:0;pointer-events:none}
+.payopt .rd{width:18px;height:18px;border-radius:50%;border:2px solid var(--line2);flex:0 0 auto;display:grid;place-items:center}
+.payopt.on .rd{border-color:var(--violet)}
+.payopt.on .rd::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--violet)}
+
+.btn-go{margin-top:18px;width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--violet);color:#fff;font-weight:900;font-size:16px;padding:15px;border-radius:13px;border:0;cursor:pointer;transition:.15s;box-shadow:0 12px 30px -12px rgba(124,92,255,.9)}
+.btn-go:hover:not(:disabled){background:var(--violet2)}
+.btn-go:disabled{opacity:.4;cursor:not-allowed;box-shadow:none}
+.btn-go svg{width:19px;height:19px}
+.errline{margin-top:12px;font-size:13px;font-weight:700;color:var(--red);min-height:18px;text-align:center}
+.microhint{margin-top:10px;font-size:11.5px;color:var(--muted2);text-align:center;line-height:1.5}
+.microhint a{color:var(--green);font-weight:700}
+
+/* success */
+.success{display:none;flex-direction:column;align-items:center;text-align:center;padding:22px 6px}
+.success .ok{width:66px;height:66px;border-radius:50%;background:rgba(37,211,102,.15);display:grid;place-items:center;margin-bottom:16px}
+.success .ok svg{width:34px;height:34px;color:var(--green)}
+.success h3{font-size:22px;font-weight:900;margin-bottom:8px}
+.success p{font-size:14px;color:var(--muted);line-height:1.55;max-width:320px}
+.success .sum{margin:16px 0;padding:14px 16px;background:var(--card2);border:1px solid var(--line);border-radius:12px;font-size:13.5px;color:#DDD9EC;font-weight:600;width:100%;text-align:left;line-height:1.6}
+.success .wa{margin-top:6px;display:inline-flex;align-items:center;gap:9px;background:var(--green);color:#052b16;font-weight:800;font-size:14px;padding:12px 18px;border-radius:11px}
+.success .wa svg{width:18px;height:18px}
 @media(max-width:820px){.book{grid-template-columns:1fr}}
 
 /* how */
@@ -147,7 +206,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted2);font-
 <header class="hero"><div class="wrap">
   <span class="eyebrow">Samsun · Evine teslim + kurulum</span>
   <h1>Evine <span class="g">büyük ekran</span> keyfi getiriyoruz.</h1>
-  <p>PS5 (onlarca oyun hazır), Full HD projeksiyon (<b>Netflix, Prime dahili</b>) ve perde — <b>maç günü</b>, <b>film gecesi</b>, <b>oyun gecesi</b>. Tek tek ya da hepsi birlikte kirala. Kurulumu biz yaparız, sen keyfine bak.</p>
+  <p>PS5 (onlarca oyun hazır), Full HD projeksiyon (<b>Netflix, Prime dahili</b>) ve perde — <b>maç günü</b>, <b>film gecesi</b>, <b>oyun gecesi</b>. Canlı takvimden müsait günü seç, anında rezervasyon yap. Kurulumu biz yaparız, sen keyfine bak.</p>
   <div class="uses">
     <span class="use"><span>🎮</span> Oyun Gecesi</span>
     <span class="use"><span>⚽</span> Maç Günü</span>
@@ -156,7 +215,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted2);font-
   <div class="strip">
     <div class="s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Ücretsiz teslim + kurulum</div>
     <div class="s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Teslimde nakit / kart</div>
-    <div class="s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Oyunlar hazır dahil</div>
+    <div class="s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Canlı müsaitlik takvimi</div>
   </div>
 </div></header>
 
@@ -194,7 +253,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted2);font-
 </div></section>
 
 <section id="rezervasyon"><div class="wrap">
-  <div class="sec-h"><span class="eyebrow">Rezervasyon</span><h2>Tarih ve ürünleri seç, fiyatı gör</h2><p>Uzun kiralamada indirim otomatik uygulanır. Onay için WhatsApp'tan bize düşer.</p></div>
+  <div class="sec-h"><span class="eyebrow">Rezervasyon</span><h2>Takvimden müsait günü seç, rezervasyonu yap</h2><p>Dolu günler takvimde kırmızı görünür. Uzun kiralamada indirim otomatik uygulanır.</p></div>
   <div class="book">
     <div class="book-form">
       <h3>1 · Ne kiralıyorsun?</h3><p class="sub">Tek tek ya da hepsini seç.</p>
@@ -214,21 +273,39 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted2);font-
           </div>
         </div>
       </div>
-      <h3 style="margin-top:6px">2 · Ne zaman?</h3><p class="sub">Başlangıç günü + kaç gün.</p>
+
+      <h3 style="margin-top:6px">2 · Hangi gün?</h3><p class="sub">Takvimden başlangıç gününü seç, sonra kaç gün olduğunu ayarla.</p>
       <div class="field">
-        <div class="row2">
-          <div><label>Başlangıç tarihi</label><input type="date" id="startDate"></div>
-          <div><label>Kaç gün</label>
-            <div class="stepper"><button type="button" id="minus">−</button><span class="n" id="dayN">1</span><button type="button" id="plus">+</button></div>
+        <div class="cal" id="cal">
+          <div class="cal-head">
+            <b id="calTitle">—</b>
+            <div class="cal-nav">
+              <button type="button" id="calPrev" aria-label="Önceki ay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+              <button type="button" id="calNext" aria-label="Sonraki ay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+            </div>
           </div>
+          <div class="cal-dow"><span>Pt</span><span>Sa</span><span>Ça</span><span>Pe</span><span>Cu</span><span>Ct</span><span>Pz</span></div>
+          <div class="cal-grid" id="calGrid"></div>
+          <div class="cal-legend">
+            <span class="lg"><span class="dot free"></span> Müsait</span>
+            <span class="lg"><span class="dot sel"></span> Seçili</span>
+            <span class="lg"><span class="dot busy"></span> Dolu</span>
+          </div>
+          <div class="cal-hint" id="calHint">Önce ürün seç, sonra takvimden gün seç.</div>
+        </div>
+
+        <div class="stepper-row">
+          <span class="lbl">Kaç gün kiralıyorsun?</span>
+          <div class="stepper"><button type="button" id="minus">−</button><span class="n" id="dayN">1 gün</span><button type="button" id="plus">+</button></div>
         </div>
         <div class="disc-note" id="discNote"></div>
       </div>
     </div>
 
-    <div class="result">
+    <div class="result" id="resultPanel">
       <span class="rl">Tahmini Tutar</span>
-      <div class="breakdown" id="breakdown"><div class="li"><span>Ürün seç →</span><span></span></div></div>
+      <div class="daterange" id="daterange"><span class="em">Ürün ve gün seç →</span></div>
+      <div class="breakdown" id="breakdown"><div class="li"><span class="em" style="color:var(--muted2)">Henüz seçim yok</span><span></span></div></div>
       <div class="total"><span class="tl">Toplam</span><span class="tv" id="totalOut">₺0</span></div>
       <div class="pay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Teslimde nakit veya kart · Samsun içi teslim ücretsiz</div>
 
@@ -245,10 +322,29 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted2);font-
       </details>
       <label class="chk"><input type="checkbox" id="agree"><span>Kiralama sözleşmesini okudum, onaylıyorum. Rezervasyon telefonla teyit edilecektir.</span></label>
 
-      <button class="btn-wa" id="waBtn" disabled>
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Z"/></svg>
-        WhatsApp'tan Rezervasyon
+      <div class="cfields">
+        <input type="text" id="cname" placeholder="Adın Soyadın" autocomplete="name">
+        <input type="tel" id="cphone" placeholder="Telefon numaran *" inputmode="tel" autocomplete="tel">
+        <div class="payopts">
+          <label class="payopt on" data-pay="kapida-nakit"><input type="radio" name="pay" value="kapida-nakit" checked><span class="rd"></span> Kapıda nakit</label>
+          <label class="payopt" data-pay="kapida-kart"><input type="radio" name="pay" value="kapida-kart"><span class="rd"></span> Kapıda kart</label>
+        </div>
+      </div>
+
+      <button class="btn-go" id="goBtn" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5v14"/></svg>
+        <span id="goLabel">Rezervasyonu Gönder</span>
       </button>
+      <div class="errline" id="errLine"></div>
+      <div class="microhint">Onay için sizi telefonla ararız. Ödeme teslimde alınır.<br>Sorun olursa <a id="waFallback" href="#" target="_blank" rel="noopener">WhatsApp'tan yaz →</a></div>
+    </div>
+
+    <div class="result success" id="successPanel">
+      <div class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+      <h3>Rezervasyon alındı 🎉</h3>
+      <p>Talebin bize ulaştı. En kısa sürede seni telefonla arayıp teyit edeceğiz. Ödeme teslimde.</p>
+      <div class="sum" id="successSum"></div>
+      <a class="wa" id="successWa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Z"/></svg> WhatsApp'tan da yaz</a>
     </div>
   </div>
 </div></section>
@@ -256,8 +352,8 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted2);font-
 <section><div class="wrap">
   <div class="sec-h"><span class="eyebrow">Nasıl çalışır</span><h2>4 adımda büyük ekran</h2></div>
   <div class="how">
-    <div class="step"><div class="n">1</div><h4>Seç</h4><p>Ürünleri + tarihi seç, fiyatı anında gör.</p></div>
-    <div class="step"><div class="n">2</div><h4>Rezervasyon</h4><p>WhatsApp'tan gönder, telefonla teyit edelim.</p></div>
+    <div class="step"><div class="n">1</div><h4>Seç</h4><p>Ürünleri + takvimden günü seç, fiyatı anında gör.</p></div>
+    <div class="step"><div class="n">2</div><h4>Rezervasyon</h4><p>Bilgini bırak, telefonla teyit edelim.</p></div>
     <div class="step"><div class="n">3</div><h4>Teslim + kurulum</h4><p>Adresine getirir, kurar, gösteririz.</p></div>
     <div class="step"><div class="n">4</div><h4>Keyfine bak</h4><p>Maç, film, oyun — büyük ekranda. Ertesi gün toplarız.</p></div>
   </div>
@@ -273,19 +369,45 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted2);font-
 <script>
 (function(){
   var PHONE="905456408555"; // Emre WhatsApp
-  var items={ps5:{n:"PS5 + 2 kol",day:1250,wkd:1600,on:false},proj:{n:"Projeksiyon",day:800,wkd:1150,on:false},perde:{n:"Perde",day:400,wkd:500,on:false}};
-  var days=1, start=null;
+  var MONTHS=["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"];
+  var items={
+    ps5:{n:"PS5 + 2 kol",day:1250,wkd:1600,on:false},
+    proj:{n:"Projeksiyon",day:800,wkd:1150,on:false},
+    perde:{n:"Perde",day:400,wkd:500,on:false}
+  };
+  var days=1, start=null, payment="kapida-nakit";
+  var booked={ps5:[],proj:[],perde:[]}; // API'den gelen dolu günler
+  var today=new Date(); today.setHours(0,0,0,0);
+  var viewY=today.getFullYear(), viewM=today.getMonth();
+
   var fmt=function(n){return "₺"+Math.round(n).toLocaleString("tr-TR");};
+  function iso(d){return d.getFullYear()+"-"+("0"+(d.getMonth()+1)).slice(-2)+"-"+("0"+d.getDate()).slice(-2);}
+  function trDate(d){return ("0"+d.getDate()).slice(-2)+"."+("0"+(d.getMonth()+1)).slice(-2)+"."+d.getFullYear();}
   function discPct(n){return n>=7?0.20:n>=3?0.10:n>=2?0.05:0;}
   function isWeekend(d){var g=d.getDay();return g===0||g===6;} // Paz/Cmt
+  function chosenKeys(){return Object.keys(items).filter(function(k){return items[k].on;});}
 
-  // default start = bugün
-  var t=new Date();var iso=t.toISOString().slice(0,10);
-  var sd=document.getElementById("startDate");sd.value=iso;sd.min=iso;start=new Date(iso);
+  // Seçili ürünler için dolu günler birleşimi
+  function bookedSet(){
+    var s={};
+    chosenKeys().forEach(function(k){(booked[k]||[]).forEach(function(iso){s[iso]=1;});});
+    return s;
+  }
+  // Aralıktaki günlerden biri dolu/geçmiş mi?
+  function rangeConflict(){
+    if(!start) return true;
+    var bs=bookedSet();
+    for(var i=0;i<days;i++){
+      var d=new Date(start.getTime()+i*86400000);
+      var dd=new Date(d);dd.setHours(0,0,0,0);
+      if(dd<today) return true;
+      if(bs[iso(d)]) return true;
+    }
+    return false;
+  }
 
   function compute(){
-    var chosen=Object.keys(items).filter(function(k){return items[k].on;});
-    var lines=[],sub=0;
+    var chosen=chosenKeys(), lines=[], sub=0;
     if(chosen.length&&start){
       chosen.forEach(function(k){
         var it=items[k],sum=0,wkCount=0;
@@ -298,43 +420,181 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted2);font-
     return {chosen:chosen,lines:lines,sub:sub,pct:pct,disc:disc,total:total};
   }
 
+  // ---- Takvim ----
+  function renderCal(){
+    var title=document.getElementById("calTitle");
+    title.textContent=MONTHS[viewM]+" "+viewY;
+    var grid=document.getElementById("calGrid");grid.innerHTML="";
+    // prev buton: bu aydan öncesine gitme
+    var prevBtn=document.getElementById("calPrev");
+    prevBtn.disabled=(viewY===today.getFullYear()&&viewM===today.getMonth());
+
+    var first=new Date(viewY,viewM,1);
+    var startPad=(first.getDay()+6)%7; // Pzt=0
+    var dim=new Date(viewY,viewM+1,0).getDate();
+    var bs=bookedSet(), hasItems=chosenKeys().length>0;
+
+    for(var p=0;p<startPad;p++){var e=document.createElement("div");e.className="cal-cell pad";grid.appendChild(e);}
+    for(var dnum=1;dnum<=dim;dnum++){
+      var d=new Date(viewY,viewM,dnum); d.setHours(0,0,0,0);
+      var cell=document.createElement("div");cell.className="cal-cell";cell.textContent=dnum;
+      var isPast=d<today;
+      var isBooked=hasItems&&bs[iso(d)];
+      if(isWeekend(d)) cell.classList.add("wknd");
+      if(isPast||!hasItems){cell.classList.add("dis");}
+      else if(isBooked){cell.classList.add("booked");}
+      else{
+        (function(dd){cell.addEventListener("click",function(){start=dd;renderCal();render();});})(new Date(d));
+      }
+      // seçili aralık vurgusu
+      if(start){
+        for(var i=0;i<days;i++){
+          var rd=new Date(start.getTime()+i*86400000);rd.setHours(0,0,0,0);
+          if(iso(rd)===iso(d)){cell.classList.add(i===0?"instart":"inrange");break;}
+        }
+      }
+      grid.appendChild(cell);
+    }
+    var hint=document.getElementById("calHint");
+    if(!hasItems) hint.textContent="Önce ürün seç, sonra takvimden gün seç.";
+    else if(!start) hint.textContent="Başlangıç gününe tıkla.";
+    else if(rangeConflict()) hint.innerHTML='<span style="color:var(--red);font-weight:700">Seçtiğin '+days+' günlük aralıkta dolu/geçmiş gün var. Başka gün ya da daha az gün seç.</span>';
+    else hint.textContent="Seçili: "+trDate(start)+" → "+trDate(new Date(start.getTime()+(days-1)*86400000))+" ("+days+" gün)";
+  }
+
   function render(){
     var r=compute();
+    // breakdown
     var bd=document.getElementById("breakdown");bd.innerHTML="";
-    if(!r.lines.length){bd.innerHTML='<div class="li"><span>Ürün seç →</span><span></span></div>';}
+    if(!r.lines.length){bd.innerHTML='<div class="li"><span class="em" style="color:var(--muted2)">Henüz seçim yok</span><span></span></div>';}
     else{
       r.lines.forEach(function(l){var e=document.createElement("div");e.className="li";e.innerHTML='<span>'+l.label+'</span><span>'+fmt(l.val)+'</span>';bd.appendChild(e);});
       if(r.pct>0){var dv=document.createElement("div");dv.className="div";bd.appendChild(dv);
         var s=document.createElement("div");s.className="li";s.innerHTML='<span>Ara toplam</span><span>'+fmt(r.sub)+'</span>';bd.appendChild(s);
         var e=document.createElement("div");e.className="li disc";e.innerHTML='<span>'+days+' gün indirimi (%'+(r.pct*100)+')</span><span>−'+fmt(r.disc)+'</span>';bd.appendChild(e);}
     }
+    // date range line
+    var drl=document.getElementById("daterange");
+    if(start&&r.chosen.length){
+      var endD=new Date(start.getTime()+(days-1)*86400000);
+      drl.innerHTML=trDate(start)+" → "+trDate(endD)+' <span class="em">· '+days+' gün</span>';
+    } else drl.innerHTML='<span class="em">Ürün ve gün seç →</span>';
+
     document.getElementById("totalOut").textContent=fmt(r.total);
     document.getElementById("totalBot").textContent=fmt(r.total);
+
     // disc note
     var dn=document.getElementById("discNote");
-    var next=days<2?"2 gün → %5 indirim":days<3?"3 gün → %10 indirim":days<7?"7 gün (haftalık) → %20 indirim":"Haftalık %20 indirim uygulandı 🎉";
-    dn.textContent=days>=7?"Haftalık %20 indirim uygulandı 🎉":("İpucu: "+next);
-    // wa button
-    var ok=r.chosen.length>0 && document.getElementById("agree").checked && start;
-    var btn=document.getElementById("waBtn");btn.disabled=!ok;
-    btn.onclick=function(){if(!ok)return;window.open("https://wa.me/"+PHONE+"?text="+encodeURIComponent(msg(r)),"_blank");};
+    var next=days<2?"2 gün → %5 indirim":days<3?"3 gün → %10 indirim":days<7?"7 gün (haftalık) → %20 indirim":"";
+    dn.textContent=days>=7?"Haftalık %20 indirim uygulandı 🎉":(next?"İpucu: "+next:"");
+
+    // WhatsApp fallback linkleri
+    var waUrl="https://wa.me/"+PHONE+"?text="+encodeURIComponent(waMsg(r));
+    document.getElementById("waFallback").href=waUrl;
+
+    // buton durumu
+    validate(r);
   }
-  function msg(r){
-    var d=start,tar=("0"+d.getDate()).slice(-2)+"."+("0"+(d.getMonth()+1)).slice(-2)+"."+d.getFullYear();
+
+  function phoneOk(){
+    var digits=(document.getElementById("cphone").value||"").replace(/\D/g,"");
+    return digits.length>=10;
+  }
+  function validate(r){
+    r=r||compute();
+    var ok = r.chosen.length>0 && !!start && !rangeConflict()
+          && document.getElementById("agree").checked && phoneOk();
+    document.getElementById("goBtn").disabled=!ok;
+    // hata satırı
+    var el=document.getElementById("errLine");
+    if(r.chosen.length&&start&&rangeConflict()) el.textContent="Seçili günlerde bu ürün(ler) dolu. Başka gün seç.";
+    else el.textContent="";
+  }
+
+  function waMsg(r){
+    r=r||compute();
+    var tar=start?trDate(start):"—";
     return "Merhaba, büyük ekran kiralama — rezervasyon talebi:\n"
       +"• Ürünler: "+r.chosen.map(function(k){return items[k].n;}).join(", ")+"\n"
       +"• Başlangıç: "+tar+" ("+days+" gün)\n"
       +(r.pct>0?"• İndirim: %"+(r.pct*100)+"\n":"")
       +"• Tahmini tutar: "+fmt(r.total)+"\n"
+      +"• Ödeme: "+(payment==="kapida-kart"?"Kapıda kart":"Kapıda nakit")+"\n"
       +"• Teslimat: Samsun içi\n\nUygunluk ve teyit rica ederim.";
   }
 
-  document.querySelectorAll(".opt").forEach(function(o){o.addEventListener("click",function(){var k=o.dataset.key;items[k].on=!items[k].on;o.classList.toggle("on",items[k].on);render();});});
-  document.getElementById("plus").onclick=function(){days=Math.min(30,days+1);document.getElementById("dayN").textContent=days;render();};
-  document.getElementById("minus").onclick=function(){days=Math.max(1,days-1);document.getElementById("dayN").textContent=days;render();};
-  sd.addEventListener("change",function(){start=this.value?new Date(this.value):null;render();});
-  document.getElementById("agree").addEventListener("change",render);
-  render();
+  // ---- Müsaitlik çek ----
+  function loadAvailability(){
+    fetch("/api/kiralama/musaitlik",{cache:"no-store"})
+      .then(function(res){return res.ok?res.json():null;})
+      .then(function(j){ if(j&&j.booked){booked=j.booked;} renderCal(); render(); })
+      .catch(function(){ /* sessizce geç — her gün müsait kabul */ });
+  }
+
+  // ---- Rezervasyon gönder ----
+  function submit(){
+    var r=compute();
+    if(document.getElementById("goBtn").disabled) return;
+    var btn=document.getElementById("goBtn"), lbl=document.getElementById("goLabel");
+    btn.disabled=true; lbl.textContent="Gönderiliyor…";
+    var payload={
+      items:r.chosen, start_date:iso(start), days:days,
+      customer_name:(document.getElementById("cname").value||"").trim(),
+      customer_phone:(document.getElementById("cphone").value||"").trim(),
+      total:Math.round(r.total), payment:payment, hp:""
+    };
+    fetch("/api/kiralama",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)})
+      .then(function(res){return res.json().then(function(j){return {status:res.status,ok:res.ok,body:j};});})
+      .then(function(res){
+        if(res.ok&&res.body&&res.body.ok){ showSuccess(r); return; }
+        if(res.status===409){
+          // dolu — müsaitliği tazele, kullanıcıya göster
+          lbl.textContent="Rezervasyonu Gönder"; btn.disabled=false;
+          document.getElementById("errLine").textContent=(res.body&&res.body.error)||"Seçtiğin günlerde dolu. Başka gün seç.";
+          loadAvailability();
+          return;
+        }
+        throw new Error((res.body&&res.body.error)||"fail");
+      })
+      .catch(function(){
+        // API yoksa/hata → WhatsApp'a düş
+        lbl.textContent="Rezervasyonu Gönder"; btn.disabled=false;
+        window.open("https://wa.me/"+PHONE+"?text="+encodeURIComponent(waMsg(r)),"_blank");
+      });
+  }
+
+  function showSuccess(r){
+    var endD=new Date(start.getTime()+(days-1)*86400000);
+    var name=(document.getElementById("cname").value||"").trim();
+    document.getElementById("successSum").innerHTML=
+      "<b>"+r.chosen.map(function(k){return items[k].n;}).join(", ")+"</b><br>"
+      +trDate(start)+" → "+trDate(endD)+" · "+days+" gün<br>"
+      +"Tutar: <b>"+fmt(r.total)+"</b> · "+(payment==="kapida-kart"?"Kapıda kart":"Kapıda nakit")
+      +(name?"<br>Ad: "+name:"");
+    document.getElementById("successWa").href="https://wa.me/"+PHONE+"?text="+encodeURIComponent(waMsg(r));
+    document.getElementById("resultPanel").style.display="none";
+    document.getElementById("successPanel").style.display="flex";
+  }
+
+  // ---- Olaylar ----
+  document.querySelectorAll(".opt").forEach(function(o){o.addEventListener("click",function(){var k=o.dataset.key;items[k].on=!items[k].on;o.classList.toggle("on",items[k].on);renderCal();render();});});
+  document.getElementById("plus").onclick=function(){days=Math.min(30,days+1);document.getElementById("dayN").textContent=days+" gün";renderCal();render();};
+  document.getElementById("minus").onclick=function(){days=Math.max(1,days-1);document.getElementById("dayN").textContent=days+" gün";renderCal();render();};
+  document.getElementById("calPrev").onclick=function(){if(this.disabled)return;viewM--;if(viewM<0){viewM=11;viewY--;}renderCal();};
+  document.getElementById("calNext").onclick=function(){viewM++;if(viewM>11){viewM=0;viewY++;}renderCal();};
+  document.getElementById("agree").addEventListener("change",function(){validate();});
+  document.getElementById("cphone").addEventListener("input",function(){validate();});
+  document.getElementById("cname").addEventListener("input",function(){validate();});
+  document.querySelectorAll(".payopt").forEach(function(p){p.addEventListener("click",function(){
+    payment=p.dataset.pay;
+    document.querySelectorAll(".payopt").forEach(function(x){x.classList.remove("on");});
+    p.classList.add("on");
+    p.querySelector("input").checked=true;
+  });});
+  document.getElementById("goBtn").addEventListener("click",submit);
+
+  document.getElementById("dayN").textContent=days+" gün";
+  renderCal(); render(); loadAvailability();
 })();
 </script>
 </body></html>
