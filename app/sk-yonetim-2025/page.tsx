@@ -128,6 +128,9 @@ export default function AdminPage() {
           <a className="btn" href="/sk-yonetim-2025/firmalar">
             🏢 Firmalar
           </a>
+          <a className="btn" href="/sk-yonetim-2025/kiralama">
+            🎮 Kiralamalar
+          </a>
           <a className="btn" href="/sk-yonetim-2025/panel">
             📊 Patron Paneli
           </a>
