@@ -16,6 +16,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
   const entries: MetadataRoute.Sitemap = [
     { url: `${BASE}/`, lastModified: now, changeFrequency: "daily", priority: 1 },
+    // Büyük Ekran Kiralama — gerçek ürün/hizmet sayfası, indekslenebilir.
+    { url: `${BASE}/kirala`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
   ];
 
   const services = await getActiveServices();
