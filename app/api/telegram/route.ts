@@ -79,26 +79,34 @@ export async function POST(req: Request) {
       .select("items,start_date,end_date,days,customer_phone,status")
       .single();
     if (error || !row) throw error || new Error("bulunamadı");
-    statusText = op === "c" ? "✅ ONAYLANDI" : "❌ REDDEDİLDİ";
+    statusText = op === "c" ? "✅ ONAYLANDI" : "❌ İPTAL EDİLDİ";
 
     // Toast bildirim
     await tg("answerCallbackQuery", {
       callback_query_id: cq.id,
-      text: op === "c" ? "Onaylandı ✅" : "Reddedildi ❌",
+      text: op === "c" ? "Onaylandı ✅ — gün kapandı" : "İptal edildi ❌ — gün tekrar açıldı",
     });
 
-    // Mesajı güncelle: durumu ekle, butonları kaldır (tekrar basılamasın)
-    const origText = cq.message?.text || "Rezervasyon";
+    // Mesajı güncelle. Önceki durum ekini temizle ki tekrar tekrar birikmesin.
+    let base = cq.message?.text || "Rezervasyon";
+    ["\n\n✅", "\n\n❌"].forEach((m) => {
+      const i = base.indexOf(m);
+      if (i >= 0) base = base.slice(0, i);
+    });
     const summary =
       `\n\n${statusText}` +
       (op === "c"
         ? `\n${row.items.map((i: string) => LABELS[i] || i).join(", ")} · ${row.start_date} (${row.days} gün) dolu olarak işaretlendi.`
         : `\n${row.start_date}–${row.end_date} tekrar müsait.`);
+    // Karşı aksiyon butonunu bırak: onaylıysa "İptal et", iptalliyse "Tekrar onayla".
+    const toggle = op === "c"
+      ? [{ text: "❌ İptal et", callback_data: `x:${id}` }]
+      : [{ text: "✅ Tekrar onayla", callback_data: `c:${id}` }];
     await tg("editMessageText", {
       chat_id: chatId,
       message_id: cq.message?.message_id,
-      text: origText + summary,
-      reply_markup: { inline_keyboard: [] },
+      text: base + summary,
+      reply_markup: { inline_keyboard: [toggle] },
     });
   } catch {
     await tg("answerCallbackQuery", { callback_query_id: cq.id, text: "İşlem başarısız — panelden dene." });
