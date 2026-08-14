@@ -40,7 +40,7 @@
     "@type":"OfferCatalog",
     "name":"Kiralık ekipman",
     "itemListElement":[
-      {"@type":"Offer","priceCurrency":"TRY","price":"1250","itemOffered":{"@type":"Product","name":"PlayStation 5 + 2 kol kiralama (oyunlar dahil)"}},
+      {"@type":"Offer","priceCurrency":"TRY","price":"1000","itemOffered":{"@type":"Product","name":"PlayStation 5 + 2 kol kiralama (oyunlar dahil)"}},
       {"@type":"Offer","priceCurrency":"TRY","price":"800","itemOffered":{"@type":"Product","name":"Projeksiyon kiralama — Full HD, Netflix/Prime dahili"}},
       {"@type":"Offer","priceCurrency":"TRY","price":"400","itemOffered":{"@type":"Product","name":"Projeksiyon perdesi kiralama — taşınabilir"}}
     ]
@@ -52,7 +52,7 @@
   "@context":"https://schema.org",
   "@type":"FAQPage",
   "mainEntity":[
-    {"@type":"Question","name":"Samsun'da PS5 kiralama fiyatı ne kadar?","acceptedAnswer":{"@type":"Answer","text":"PS5 + 2 kol günlük 1.250 ₺ (hafta sonu 1.600 ₺). Onlarca oyun hazır kurulu gelir. 2 gün %5, 3 gün %10, haftalık %20 indirim otomatik uygulanır."}},
+    {"@type":"Question","name":"Samsun'da PS5 kiralama fiyatı ne kadar?","acceptedAnswer":{"@type":"Answer","text":"Açılışa özel (Ağustos sonuna kadar): PS5 + 2 kol günlük 1.000 ₺, hafta sonu 1.250 ₺ (normal 1.250/1.600). Onlarca oyun hazır kurulu gelir. 2 gün %5, 3 gün %10, haftalık %20 indirim otomatik uygulanır."}},
     {"@type":"Question","name":"Projeksiyon ve perde kiralayabilir miyim?","acceptedAnswer":{"@type":"Answer","text":"Evet. Full HD projeksiyon günlük 800 ₺, taşınabilir perde günlük 400 ₺. Projeksiyonda Netflix ve Prime Video dahilidir, ek cihaz gerekmez. Tek tek ya da PS5 ile birlikte kiralayabilirsin."}},
     {"@type":"Question","name":"Maç veya film gecesi için kiralayabilir miyim?","acceptedAnswer":{"@type":"Answer","text":"Kesinlikle. Maç günü, film gecesi ve oyun gecesi için projeksiyon + perde ya da tam paket kiralanır. Kurulum tarafımızdan yapılır."}},
     {"@type":"Question","name":"Teslimat ve kurulum dahil mi?","acceptedAnswer":{"@type":"Answer","text":"Canik, Atakum ve İlkadım'a teslim ve kurulum ücretsizdir; diğer ilçeler için bize sorun. Adresine getirir, kurar, nasıl kullanılacağını gösteririz; ertesi gün toplarız."}},
@@ -121,6 +121,10 @@ section{padding:48px 0}
 .item .price{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);display:flex;align-items:baseline;justify-content:space-between}
 .item .price b{font-size:24px;font-weight:900}
 .item .price .wk{font-size:12px;color:var(--muted2)}
+.old{color:var(--muted2);text-decoration:line-through;font-weight:700;margin-right:5px;opacity:.8}
+.camp-badge{position:absolute;top:0;right:0;background:var(--amber);color:#2a1c00;font-size:10.5px;font-weight:900;padding:5px 11px;border-bottom-left-radius:12px;letter-spacing:.02em;z-index:2}
+.camp-strip{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:20px;background:rgba(255,178,62,.1);border:1px solid rgba(255,178,62,.4);border-radius:12px;padding:11px 15px;font-size:13.5px;font-weight:700;color:#FFD9A0}
+.camp-strip b{color:var(--amber)}
 @media(max-width:760px){.items{grid-template-columns:1fr}}
 
 /* booking */
@@ -295,6 +299,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted2);font-
       WhatsApp'tan sor
     </a>
   </div>
+  <div class="camp-strip">🔥 <b>Açılışa özel:</b> PS5 hafta içi <span class="old">1.250</span><b>1.000₺</b> · hafta sonu <span class="old">1.600</span><b>1.250₺</b> — Ağustos sonuna kadar</div>
   <div class="uses">
     <span class="use"><span>🎮</span> Oyun Gecesi</span>
     <span class="use"><span>⚽</span> Maç Günü</span>
@@ -311,13 +316,14 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted2);font-
   <div class="sec-h"><span class="eyebrow">Ne kiralayabilirsin</span><h2>Tek tek ya da hepsi birlikte</h2><p>İhtiyacına göre seç — sadece maç için projeksiyon, ya da tam oyun gecesi paketi.</p></div>
   <div class="items">
     <div class="item">
+      <span class="camp-badge">🔥 Açılışa özel</span>
       <div class="ic">🎮</div><h3>PlayStation 5 + 2 Kol</h3><div class="tag">Oyun gecesi</div>
       <ul>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Onlarca oyun hazır kurulu (FC, GTA, UFC…)</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 2 kol — arkadaşlarla karşılıklı</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> İndirme/güncelleme derdi yok</li>
       </ul>
-      <div class="price"><b>₺1.250<span class="wk"> /gün</span></b><span class="wk">Hafta sonu ₺1.600</span></div>
+      <div class="price"><b><span class="old">₺1.250</span>₺1.000<span class="wk"> /gün</span></b><span class="wk"><span class="old">₺1.600</span>h.sonu ₺1.250</span></div>
     </div>
     <div class="item">
       <div class="ic">📽️</div><h3>Projeksiyon · XGIMI Elfin Flip</h3><div class="tag">Maç · Film · Full HD</div>
@@ -347,9 +353,9 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted2);font-
       <h3>1 · Ne kiralıyorsun?</h3><p class="sub">Tek tek ya da hepsini seç.</p>
       <div class="field">
         <div class="selectlist">
-          <div class="opt" data-key="ps5" data-day="1250" data-wkd="1600">
+          <div class="opt" data-key="ps5" data-day="1000" data-wkd="1250">
             <span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-            <span class="t"><b>🎮 PS5 + 2 kol</b><small>Oyunlar dahil</small></span><span class="p">₺1.250<small style="color:var(--muted)"> /gün</small></span>
+            <span class="t"><b>🎮 PS5 + 2 kol</b><small>Oyunlar dahil · 🔥 açılışa özel</small></span><span class="p"><span class="old">₺1.250</span>₺1.000<small style="color:var(--muted)"> /gün</small></span>
           </div>
           <div class="opt" data-key="proj" data-day="800" data-wkd="1150">
             <span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
@@ -467,7 +473,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted2);font-
 
   <div class="sec-h" style="margin-top:34px"><span class="eyebrow">SSS</span><h2>Sık sorulan sorular</h2></div>
   <div class="faq">
-    <details><summary>Samsun'da PS5 kiralama fiyatı ne kadar?</summary><div class="a">PS5 + 2 kol günlük <b>1.250 ₺</b> (hafta sonu 1.600 ₺). Onlarca oyun hazır kurulu gelir. 2 gün %5, 3 gün %10, haftalık %20 indirim takvimde otomatik uygulanır.</div></details>
+    <details><summary>Samsun'da PS5 kiralama fiyatı ne kadar?</summary><div class="a"><b>Açılışa özel</b> (Ağustos sonuna kadar): PS5 + 2 kol günlük <b>1.000 ₺</b>, hafta sonu <b>1.250 ₺</b> <span class="old">normal 1.250/1.600</span>. Onlarca oyun hazır kurulu gelir. 2 gün %5, 3 gün %10, haftalık %20 indirim takvimde otomatik uygulanır.</div></details>
     <details><summary>Projeksiyon ve perde kiralayabilir miyim?</summary><div class="a">Evet. Full HD projeksiyon günlük <b>800 ₺</b>, taşınabilir perde günlük <b>400 ₺</b>. Projeksiyonda Netflix ve Prime Video dahilidir, ek cihaz gerekmez. Tek tek ya da PS5 ile birlikte kiralayabilirsin.</div></details>
     <details><summary>Maç veya film gecesi için kiralayabilir miyim?</summary><div class="a">Kesinlikle. Maç günü, film gecesi ve oyun gecesi için projeksiyon + perde ya da tam paket kiralanır. Kurulum tarafımızdan yapılır, sen sadece keyfine bakarsın.</div></details>
     <details><summary>Teslimat ve kurulum dahil mi?</summary><div class="a"><b>Canik, Atakum ve İlkadım</b>'a teslim ve kurulum <b>ücretsizdir</b>; diğer ilçeler için bize sor. Adresine getirir, kurar, nasıl kullanılacağını gösteririz; ertesi gün toplarız.</div></details>
@@ -487,7 +493,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted2);font-
   var PHONE="905456408555"; // Emre WhatsApp
   var MONTHS=["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"];
   var items={
-    ps5:{n:"PS5 + 2 kol",day:1250,wkd:1600,on:false},
+    ps5:{n:"PS5 + 2 kol",day:1000,wkd:1250,on:false},
     proj:{n:"Projeksiyon",day:800,wkd:1150,on:false},
     perde:{n:"Perde",day:400,wkd:500,on:false}
   };
