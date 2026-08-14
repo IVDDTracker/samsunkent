@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   description:
     "Buralıyım, buraları biliyorum. Samsun'un mekânı, sokağı, gündemi — ve iş birliği için ulaşabileceğin tek pano.",
   metadataBase: new URL("https://samsunkent.com"),
+  verification: {
+    google: "SFdjOmq3jjKd4vUGMGgR7N4cymxTwfCyYYYRX0GguSQ",
+  },
   openGraph: {
     title: "samsunkent — Mekân · Sokak · Gündem",
     description: "Buralıyım, buraları biliyorum. İş birliği için: samsunkent.com",
