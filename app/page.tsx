@@ -24,7 +24,6 @@ const JSON_LD = [
     sameAs: [
       "https://www.instagram.com/samsunkentcom",
       "https://www.tiktok.com/@samsunkentcom",
-      "https://www.youtube.com/@samsunkentcom",
     ],
   },
   {
