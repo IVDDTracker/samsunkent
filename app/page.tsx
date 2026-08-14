@@ -118,7 +118,7 @@ export default async function HomePage() {
             <h3>Evine büyük ekran keyfi.</h3>
             <p>
               PS5 (oyunlar hazır dahil), projeksiyon ve perde — maç günü, film gecesi, oyun
-              gecesi. Tek tek ya da hepsi birlikte. Samsun içi ücretsiz teslim + kurulum.
+              gecesi. Tek tek ya da hepsi birlikte. Canik, Atakum, İlkadım&apos;a ücretsiz teslim + kurulum.
             </p>
             <a className="channel" href="/kirala">
               Fiyat al &amp; rezervasyon →
