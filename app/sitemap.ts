@@ -18,6 +18,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/`, lastModified: now, changeFrequency: "daily", priority: 1 },
     // Büyük Ekran Kiralama — gerçek ürün/hizmet sayfası, indekslenebilir.
     { url: `${BASE}/kirala`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    // Kiralama SEO landing sayfaları (niyet bazlı).
+    { url: `${BASE}/samsun-ps5-kiralama`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${BASE}/samsun-projeksiyon-kiralama`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${BASE}/samsun-mac-izleme-kiralama`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${BASE}/evde-sinema-kiralama-samsun`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
   ];
 
   const services = await getActiveServices();
