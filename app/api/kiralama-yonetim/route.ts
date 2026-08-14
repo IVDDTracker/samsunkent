@@ -10,14 +10,22 @@ function authed(req: Request) {
 export async function GET(req: Request) {
   if (!authed(req)) return NextResponse.json({ error: "Yetkisiz" }, { status: 401 });
   const db = adminDb();
-  if (!db) return NextResponse.json({ rentals: [] });
+  if (!db) return NextResponse.json({ rentals: [], waitlist: [] });
   const { data, error } = await db
     .from("rentals")
     .select("*")
     .order("start_date", { ascending: true })
     .limit(1000);
-  if (error) return NextResponse.json({ rentals: [], warn: "Tablo yok mu? supabase-kiralama.sql çalıştır." });
-  return NextResponse.json({ rentals: data || [] });
+  if (error) return NextResponse.json({ rentals: [], waitlist: [], warn: "Tablo yok mu? supabase-kiralama.sql çalıştır." });
+  // Bekleme listesi (tablo yoksa sessizce boş).
+  let waitlist: unknown[] = [];
+  const wl = await db
+    .from("waitlist")
+    .select("*")
+    .order("created_at", { ascending: false })
+    .limit(500);
+  if (!wl.error) waitlist = wl.data || [];
+  return NextResponse.json({ rentals: data || [], waitlist });
 }
 
 export async function POST(req: Request) {
@@ -46,6 +54,21 @@ export async function POST(req: Request) {
       }
       case "delete": {
         const { error } = await db.from("rentals").delete().eq("id", id);
+        if (error) throw error;
+        break;
+      }
+      case "wl_notified": {
+        const { error } = await db.from("waitlist").update({ status: "notified" }).eq("id", id);
+        if (error) throw error;
+        break;
+      }
+      case "wl_waiting": {
+        const { error } = await db.from("waitlist").update({ status: "waiting" }).eq("id", id);
+        if (error) throw error;
+        break;
+      }
+      case "wl_delete": {
+        const { error } = await db.from("waitlist").delete().eq("id", id);
         if (error) throw error;
         break;
       }

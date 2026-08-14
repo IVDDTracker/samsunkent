@@ -164,6 +164,15 @@ section{padding:48px 0}
 .microhint{margin-top:10px;font-size:11.5px;color:var(--muted2);text-align:center;line-height:1.5}
 .microhint a{color:var(--green);font-weight:700}
 
+/* bekleme listesi (dolu gün) */
+.waitbox{margin-top:14px;border:1.5px solid rgba(255,178,62,.4);background:rgba(255,178,62,.08);border-radius:13px;padding:14px 15px}
+.waitbox .wb-title{font-weight:800;font-size:14px;color:var(--amber)}
+.waitbox .wb-sub{font-size:12.5px;color:var(--muted);margin-top:5px;line-height:1.5}
+.btn-wait{margin-top:11px;width:100%;display:flex;align-items:center;justify-content:center;gap:9px;background:var(--amber);color:#3a2600;font-weight:900;font-size:15px;padding:13px;border-radius:12px;border:0;cursor:pointer;transition:.15s}
+.btn-wait:hover:not(:disabled){filter:brightness(1.06)}
+.btn-wait:disabled{opacity:.5;cursor:not-allowed}
+.wb-ok{margin-top:10px;font-size:13.5px;font-weight:800;color:var(--green);text-align:center;line-height:1.5}
+
 /* success */
 .success{display:none;flex-direction:column;align-items:center;text-align:center;padding:22px 6px}
 .success .ok{width:66px;height:66px;border-radius:50%;background:rgba(37,211,102,.15);display:grid;place-items:center;margin-bottom:16px}
@@ -336,6 +345,14 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted2);font-
         <span id="goLabel">Rezervasyonu Gönder</span>
       </button>
       <div class="errline" id="errLine"></div>
+
+      <div class="waitbox" id="waitbox" style="display:none">
+        <div class="wb-title">😕 Seçtiğin günler dolu</div>
+        <p class="wb-sub">Boşalırsa <b>ilk sana</b> haber verelim mi? Telefonunu yukarıya yaz, tek tıkla bekleme listesine ekleyelim. İptal çıkarsa hemen ararız.</p>
+        <button class="btn-wait" id="waitBtn">🔔 Boşalırsa haber ver</button>
+        <div class="wb-ok" id="wbOk" style="display:none">✓ Bekleme listesine eklendik. Bu günler boşalırsa ilk seni ararız 🧡</div>
+      </div>
+
       <div class="microhint">Onay için sizi telefonla ararız. Ödeme teslimde alınır.<br>Sorun olursa <a id="waFallback" href="#" target="_blank" rel="noopener">WhatsApp'tan yaz →</a></div>
     </div>
 
@@ -502,13 +519,47 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted2);font-
   }
   function validate(r){
     r=r||compute();
+    var conflict = r.chosen.length>0 && !!start && rangeConflict();
     var ok = r.chosen.length>0 && !!start && !rangeConflict()
           && document.getElementById("agree").checked && phoneOk();
     document.getElementById("goBtn").disabled=!ok;
     // hata satırı
     var el=document.getElementById("errLine");
-    if(r.chosen.length&&start&&rangeConflict()) el.textContent="Seçili günlerde bu ürün(ler) dolu. Başka gün seç.";
-    else el.textContent="";
+    el.textContent = conflict ? "Seçili günlerde bu ürün(ler) dolu. Başka gün seç ya da bekleme listesine yazıl 👇" : "";
+    // bekleme kutusu: yalnızca dolu/çakışma varken
+    var wb=document.getElementById("waitbox");
+    if(conflict){
+      wb.style.display="block";
+      document.getElementById("waitBtn").disabled=!phoneOk();
+    } else {
+      wb.style.display="none";
+      document.getElementById("wbOk").style.display="none";
+      var wbtn=document.getElementById("waitBtn");wbtn.style.display="";wbtn.disabled=false;wbtn.innerHTML="🔔 Boşalırsa haber ver";
+    }
+  }
+
+  function submitWait(){
+    if(!phoneOk()){ document.getElementById("cphone").focus(); document.getElementById("errLine").textContent="Önce telefonunu yaz, sonra listeye ekleyelim."; return; }
+    var chosen=chosenKeys();
+    if(!chosen.length||!start) return;
+    var btn=document.getElementById("waitBtn"); btn.disabled=true; btn.textContent="Gönderiliyor…";
+    var payload={
+      items:chosen, start_date:iso(start), days:days,
+      customer_name:(document.getElementById("cname").value||"").trim(),
+      customer_phone:(document.getElementById("cphone").value||"").trim(), hp:""
+    };
+    fetch("/api/kiralama/bekleme",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)})
+      .then(function(res){return res.json().then(function(j){return {ok:res.ok,body:j};});})
+      .then(function(res){
+        if(res.ok&&res.body&&res.body.ok){ document.getElementById("wbOk").style.display="block"; btn.style.display="none"; }
+        else throw new Error();
+      })
+      .catch(function(){
+        btn.disabled=false; btn.innerHTML="🔔 Boşalırsa haber ver";
+        window.open("https://wa.me/"+PHONE+"?text="+encodeURIComponent(
+          "Merhaba, "+iso(start)+" tarihi dolu görünüyor. Boşalırsa haber verir misiniz?\nÜrün: "+chosen.map(function(k){return items[k].n;}).join(", ")
+        ),"_blank");
+      });
   }
 
   function waMsg(r){
@@ -592,6 +643,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted2);font-
     p.querySelector("input").checked=true;
   });});
   document.getElementById("goBtn").addEventListener("click",submit);
+  document.getElementById("waitBtn").addEventListener("click",submitWait);
 
   document.getElementById("dayN").textContent=days+" gün";
   renderCal(); render(); loadAvailability();
