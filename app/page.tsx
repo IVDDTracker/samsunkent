@@ -111,23 +111,8 @@ export default async function HomePage() {
         </article>
 
         <div className="board">
-          {/* Hizmet Rehberi — yerel hizmet keşfi */}
+          {/* Büyük Ekran Kiralama — PS5 · projeksiyon · perde (panoda ilk sıra) */}
           <article className="note" style={{ "--rot": "-1.4deg" } as React.CSSProperties}>
-            <span className="pin" />
-            <span className="eyebrow">Hizmet Rehberi</span>
-            <h3>Samsun&apos;da bir usta mı lazım?</h3>
-            <p>
-              Nakliyat, klima-kombi servisi, temizlik, su tesisatçısı… Samsun&apos;un yerel
-              firmalarını bir araya getirdik. İlçene göre bul, karşılaştır, doğrudan ara.
-            </p>
-            <a className="channel" href="/hizmetler">
-              Hizmet rehberine gir →
-            </a>
-            <span className="meta">Samsunkent&apos;in yerel firma rehberi 🧭</span>
-          </article>
-
-          {/* Büyük Ekran Kiralama — PS5 · projeksiyon · perde */}
-          <article className="note" style={{ "--rot": "2.2deg" } as React.CSSProperties}>
             <span className="pin green" />
             <span className="eyebrow">🎮 Kiralık</span>
             <h3>Evine büyük ekran keyfi.</h3>
@@ -139,6 +124,21 @@ export default async function HomePage() {
               Fiyat al &amp; rezervasyon →
             </a>
             <span className="meta">Teslimde nakit/kart · Samsun 🕹️📽️</span>
+          </article>
+
+          {/* Hizmet Rehberi — yerel hizmet keşfi */}
+          <article className="note" style={{ "--rot": "2.2deg" } as React.CSSProperties}>
+            <span className="pin" />
+            <span className="eyebrow">Hizmet Rehberi</span>
+            <h3>Samsun&apos;da bir usta mı lazım?</h3>
+            <p>
+              Nakliyat, klima-kombi servisi, temizlik, su tesisatçısı… Samsun&apos;un yerel
+              firmalarını bir araya getirdik. İlçene göre bul, karşılaştır, doğrudan ara.
+            </p>
+            <a className="channel" href="/hizmetler">
+              Hizmet rehberine gir →
+            </a>
+            <span className="meta">Samsunkent&apos;in yerel firma rehberi 🧭</span>
           </article>
 
           {/* Sabit iş birliği notu */}
