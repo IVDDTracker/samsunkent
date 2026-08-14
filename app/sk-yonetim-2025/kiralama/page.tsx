@@ -15,6 +15,16 @@ interface Rental {
   note: string | null;
   status: "pending" | "confirmed" | "cancelled";
 }
+interface WaitItem {
+  id: string;
+  created_at: string;
+  items: string[];
+  start_date: string;
+  days: number | null;
+  customer_name: string | null;
+  customer_phone: string;
+  status: "waiting" | "notified" | "done";
+}
 
 const ITEM_LABEL: Record<string, string> = { ps5: "🎮 PS5", proj: "📽️ Projeksiyon", perde: "🖥️ Perde" };
 const PAY_LABEL: Record<string, string> = { "kapida-nakit": "Kapıda nakit", "kapida-kart": "Kapıda kart" };
@@ -35,6 +45,8 @@ export default function KiralamaAdminPage() {
   const [err, setErr] = useState("");
   const [warn, setWarn] = useState("");
   const [rentals, setRentals] = useState<Rental[]>([]);
+  const [waitlist, setWaitlist] = useState<WaitItem[]>([]);
+  const [view, setView] = useState<"rezervasyon" | "bekleme">("rezervasyon");
   const [filter, setFilter] = useState<"aktif" | "pending" | "confirmed" | "cancelled" | "hepsi">("aktif");
 
   useEffect(() => {
@@ -47,6 +59,7 @@ export default function KiralamaAdminPage() {
     if (!res.ok) { setErr("Parola yanlış."); setAuthed(false); return false; }
     const j = await res.json();
     setRentals(j.rentals || []);
+    setWaitlist(j.waitlist || []);
     setWarn(j.warn || "");
     setAuthed(true); setErr("");
     return true;
@@ -108,6 +121,16 @@ export default function KiralamaAdminPage() {
 
       {warn && <div className="err" style={{ marginBottom: 12 }}>{warn}</div>}
 
+      <div className="row" style={{ marginBottom: 16, flexWrap: "wrap" }}>
+        <button className={`btn ${view === "rezervasyon" ? "" : "ghost"}`} onClick={() => setView("rezervasyon")}>📋 Rezervasyonlar</button>
+        <button className={`btn ${view === "bekleme" ? "" : "ghost"}`} onClick={() => setView("bekleme")}>
+          🔖 Bekleme listesi ({waitlist.filter((w) => w.status === "waiting").length})
+        </button>
+        <button className="btn ghost" onClick={() => load(key)}>↻ Yenile</button>
+      </div>
+
+      {view === "rezervasyon" ? (
+      <>
       <div className="kpis">
         <div className="kpi red">
           <span className="k-lbl">🟠 Onay bekleyen</span>
@@ -200,6 +223,69 @@ export default function KiralamaAdminPage() {
       <p className="muted sm" style={{ marginTop: 12, color: "var(--ink-soft)", fontSize: 12.5 }}>
         Not: Yalnızca <b>bekleyen</b> ve <b>onaylı</b> rezervasyonlar takvimde günü kapatır. İptal edilenler günü tekrar açar.
       </p>
+      </>
+      ) : (
+      <>
+      <div className="kpis">
+        <div className="kpi red">
+          <span className="k-lbl">🔖 Bekleyen talep</span>
+          <span className="k-val">{waitlist.filter((w) => w.status === "waiting").length}</span>
+          <span className="k-sub">dolu güne talip müşteri</span>
+        </div>
+        <div className="kpi">
+          <span className="k-lbl">📊 Toplam kayıt</span>
+          <span className="k-val">{waitlist.length}</span>
+          <span className="k-sub">kaçan talep = 2. set verisi</span>
+        </div>
+      </div>
+
+      <div className="card" style={{ marginTop: 16 }}>
+        {waitlist.length === 0 && (
+          <p className="muted" style={{ color: "var(--ink-soft)", fontSize: 14 }}>
+            Henüz bekleyen talep yok. Dolu bir güne tıklayıp telefon bırakan müşteriler burada birikir.
+          </p>
+        )}
+        {waitlist.map((w) => (
+          <div key={w.id} className={`ledger ${w.status === "waiting" ? "borc" : "done"}`} style={{ flexDirection: "column", alignItems: "stretch", gap: 8 }}>
+            <div className="row" style={{ justifyContent: "space-between", alignItems: "flex-start" }}>
+              <div>
+                <b style={{ fontSize: 15 }}>{w.items.map((i) => ITEM_LABEL[i] || i).join(" · ")}</b>
+                <div className="muted sm" style={{ color: "var(--ink-soft)", marginTop: 3 }}>
+                  İstenen: <b>{d(w.start_date)}</b>{w.days ? ` · ${w.days} gün` : ""}
+                </div>
+              </div>
+              <span className="chip" style={{
+                background: w.status === "waiting" ? "rgba(203,58,43,.12)" : "rgba(0,0,0,.08)",
+                color: w.status === "waiting" ? "var(--red)" : "var(--ink-soft)",
+              }}>
+                {w.status === "waiting" ? "bekliyor" : w.status === "notified" ? "arandı" : "kapandı"}
+              </span>
+            </div>
+            <div className="row" style={{ justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 6 }}>
+              <span style={{ fontSize: 13 }}>
+                📞 <a href={`tel:${w.customer_phone}`} style={{ fontWeight: 800, color: "var(--navy)" }}>{w.customer_phone}</a>
+                {w.customer_name && <span style={{ color: "var(--ink-soft)" }}> · {w.customer_name}</span>}
+              </span>
+              <span style={{ fontSize: 11, color: "var(--ink-soft)" }}>geldi: {dtFull(w.created_at)}</span>
+            </div>
+            <div className="row" style={{ gap: 8, flexWrap: "wrap" }}>
+              <a className="btn" style={{ padding: "7px 14px" }} href={`https://wa.me/${w.customer_phone.replace(/\D/g, "").replace(/^0/, "90")}`} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              {w.status === "waiting" ? (
+                <button className="btn ghost" style={{ padding: "7px 14px" }} onClick={() => act({ action: "wl_notified", id: w.id })}>Arandı işaretle</button>
+              ) : (
+                <button className="btn ghost" style={{ padding: "7px 14px" }} onClick={() => act({ action: "wl_waiting", id: w.id })}>Geri al</button>
+              )}
+              <button className="btn red" style={{ padding: "7px 14px", marginLeft: "auto" }} onClick={() => confirm("Kayıt silinsin mi?") && act({ action: "wl_delete", id: w.id })}>Sil</button>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <p className="muted sm" style={{ marginTop: 12, color: "var(--ink-soft)", fontSize: 12.5 }}>
+        Bir rezervasyon iptal olunca ilgili tarihe bekleyen varsa <b>ilk onu ara</b> — boşluğu anında doldur. Biriken kayıt sayısı, 2. set kararının en dürüst verisi.
+      </p>
+      </>
+      )}
     </div>
   );
 }
