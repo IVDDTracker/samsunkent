@@ -499,7 +499,12 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted2);font-
   };
   var days=1, start=null, payment="kapida-nakit";
   var booked={ps5:[],proj:[],perde:[]}; // API'den gelen dolu günler
-  var today=new Date(); today.setHours(0,0,0,0);
+  // Türkiye (İstanbul) saatine göre bugün. 21:00'i geçtiyse aynı güne rezervasyon
+  // kapanır → en erken yarın seçilebilir.
+  var istNow=new Date(new Date().toLocaleString("en-US",{timeZone:"Europe/Istanbul"}));
+  var today=new Date(istNow.getFullYear(), istNow.getMonth(), istNow.getDate());
+  var afterCutoff = istNow.getHours()>=21;
+  if(afterCutoff) today.setDate(today.getDate()+1);
   var viewY=today.getFullYear(), viewM=today.getMonth();
 
   var fmt=function(n){return "₺"+Math.round(n).toLocaleString("tr-TR");};
@@ -578,8 +583,9 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted2);font-
       grid.appendChild(cell);
     }
     var hint=document.getElementById("calHint");
-    if(!hasItems) hint.textContent="Önce ürün seç, sonra takvimden gün seç.";
-    else if(!start) hint.textContent="Başlangıç gününe tıkla.";
+    var cutoffNote = afterCutoff ? " (Saat 21:00'i geçti — bugüne rezervasyon kapalı, en erken yarın.)" : "";
+    if(!hasItems) hint.textContent="Önce ürün seç, sonra takvimden gün seç."+cutoffNote;
+    else if(!start) hint.textContent="Başlangıç gününe tıkla."+cutoffNote;
     else if(rangeConflict()) hint.innerHTML='<span style="color:var(--red);font-weight:700">Seçtiğin '+days+' günlük aralıkta dolu/geçmiş gün var. Başka gün ya da daha az gün seç.</span>';
     else hint.textContent="Seçili: "+trDate(start)+" → "+trDate(new Date(start.getTime()+(days-1)*86400000))+" ("+days+" gün)";
   }
