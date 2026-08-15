@@ -1,499 +1,684 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Özin Nakliyat — Samsun Evden Eve Nakliyat</title>
-<meta name="description" content="Samsun evden eve nakliyat. Türkiye geneli tahmini fiyat hesapla — nereden nereye, mesafe ve fiyat anında. Ücretsiz ekspertiz, sigortalı taşıma."/>
-<meta name="robots" content="noindex, nofollow"/>
-<meta name="theme-color" content="#0a121b"/>
-<meta property="og:type" content="website"/>
-<meta property="og:title" content="Özin Nakliyat — Samsun Evden Eve Nakliyat"/>
-<meta property="og:description" content="Türkiye geneli tahmini fiyat hesapla. Ücretsiz ekspertiz, sigortalı taşıma."/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Özin Nakliyat — Samsun Evden Eve & Şehirler Arası Nakliyat</title>
+<meta name="description" content="Samsun evden eve, şehirler arası, ofis ve asansörlü nakliyat. Paketinden yerleştirmesine kadar sigortalı, zamanında, tek fiyat. Anında tahmini fiyat al, ücretsiz keşif iste.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#0a121b;--bg2:#0d1824;--card:#111f2e;--card2:#152838;--row:#0f1e2c;
-  --line:#20364a;--line2:#2a4056;
-  --ink:#eef4fa;--muted:#8ea6bd;--muted2:#6f899f;
-  --orange:#F5811E;--orange-d:#d96e12;--blue:#2f80ed;--blue-d:#1f66c9;
-  --green:#25D366;--km:#37d67a;
-  --shadow:0 20px 50px rgba(0,0,0,.45);--shadow-sm:0 8px 24px rgba(0,0,0,.35);
-}
-*{box-sizing:border-box}
-body{margin:0;background:linear-gradient(180deg,#0a121b,#0b1521 40%,#0a121b);color:var(--ink);
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:76px}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:940px;margin:0 auto;padding:0 16px}
-img{max-width:100%;display:block}
 
-/* top bar */
-.bar{position:sticky;top:0;z-index:60;background:rgba(10,18,27,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{display:flex;align-items:center;gap:11px}
-.logo .mk{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,#F5811E,#d96e12);display:grid;place-items:center;box-shadow:0 8px 18px rgba(245,129,30,.4)}
-.logo .mk svg{width:26px;height:26px}
-.logo .tx b{display:block;font-size:12px;font-weight:700;color:#cdddec;line-height:1;letter-spacing:.02em}
-.logo .tx strong{display:block;font-size:19px;font-weight:900;color:var(--orange);line-height:1.15;letter-spacing:.01em}
-.bar .acts{display:flex;gap:9px}
-.iconbtn{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;border:1px solid var(--line2);background:var(--card);cursor:pointer}
-.iconbtn svg{width:20px;height:20px;color:#dbe7f2}
-.iconbtn.wa{background:var(--green);border-color:var(--green)}
-.iconbtn.wa svg{color:#062b16}
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  :root{
+    --bg:#0B1020; --bg2:#0E1428; --surface:#121A31; --surface2:#182142;
+    --line:rgba(255,255,255,.09); --line2:rgba(255,255,255,.14);
+    --text:#ECEFF7; --muted:#8E9BB8; --muted2:#6B7794;
+    --gold:#E7B15A; --gold2:#F4CE86; --goldd:#C98F3C;
+    --grad:linear-gradient(118deg,#F4CE86,#E7B15A 55%,#C98F3C);
+    --r:18px;
+  }
+  html{ scroll-behavior:smooth; }
+  body{ background:var(--bg); color:var(--text); font-family:'Inter',system-ui,sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  body::before{ content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
+    background:
+      radial-gradient(120% 80% at 78% -10%, rgba(231,177,90,.16), transparent 55%),
+      radial-gradient(90% 60% at 10% 0%, rgba(90,120,200,.10), transparent 50%); }
+  .wrap{ width:min(1200px,92vw); margin-inline:auto; }
+  h1,h2,h3{ font-family:'Bricolage Grotesque',serif; font-weight:600; letter-spacing:-.02em; line-height:1.04; }
+  .mono{ font-family:'Space Mono',monospace; }
+  a{ color:inherit; text-decoration:none; }
+  section{ position:relative; z-index:1; }
 
-.section-title{font-size:20px;font-weight:900;letter-spacing:-.01em;margin:26px 2px 12px}
-.section-title .sub{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-top:2px}
+  /* eyebrow */
+  .eyebrow{ font-family:'Space Mono',monospace; font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:var(--gold); display:inline-flex; align-items:center; gap:10px; }
+  .eyebrow::before{ content:""; width:22px; height:1px; background:var(--gold); opacity:.7; }
 
-/* hero calc card */
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-sm);overflow:hidden}
-.hero{margin-top:16px;padding:18px}
-.hero h1{font-size:19px;font-weight:900;margin:0 0 12px;letter-spacing:-.01em}
-.mapbox{border-radius:14px;overflow:hidden;background:radial-gradient(120% 120% at 50% 0%,#12283c,#0b1826);border:1px solid var(--line)}
-svg.tr{display:block;width:100%;height:auto}
-.land{fill:#152f45;stroke:#2b4f6d;stroke-width:1.1}
-.prov{fill:#163247;stroke:#295072;stroke-width:.7;cursor:pointer;transition:fill .12s}
-.prov:hover{fill:#2c5878}
-.prov.on-from{fill:var(--blue)}
-.prov.on-to{fill:var(--orange)}
-.plabel{fill:#eaf2f9;font-size:12px;font-weight:800;paint-order:stroke;stroke:#0b1826;stroke-width:3.2px;pointer-events:none}
-.route{fill:none;stroke:var(--orange);stroke-width:3.4;stroke-linecap:round;stroke-dasharray:2 8;filter:drop-shadow(0 0 6px rgba(245,129,30,.7))}
-.glow{fill:none;stroke:var(--orange);stroke-width:8;stroke-linecap:round;opacity:.18;filter:blur(3px)}
-.pulse{transform-box:fill-box;transform-origin:center;animation:pl 1.8s ease-out infinite}
-@keyframes pl{0%{r:6;opacity:.65}100%{r:20;opacity:0}}
-.truck{filter:drop-shadow(0 5px 8px rgba(0,0,0,.55))}
+  /* buttons */
+  .btn{ display:inline-flex; align-items:center; gap:9px; padding:14px 22px; border-radius:100px; font-weight:600; font-size:14.5px; cursor:pointer; border:1px solid transparent; transition:transform .18s ease, box-shadow .25s ease, background .2s; white-space:nowrap; }
+  .btn.gold{ background:var(--grad); color:#241a06; box-shadow:0 14px 40px -14px rgba(231,177,90,.6); }
+  .btn.gold:hover{ transform:translateY(-2px); box-shadow:0 20px 50px -14px rgba(231,177,90,.75); }
+  .btn.ghost{ border-color:var(--line2); color:var(--text); background:rgba(255,255,255,.03); }
+  .btn.ghost:hover{ border-color:var(--gold); color:var(--gold2); }
 
-/* summary strip */
-.sumstrip{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:12px}
-.sumstrip .s{background:var(--row);border:1px solid var(--line);border-radius:12px;padding:11px 12px;display:flex;align-items:center;gap:9px}
-.sumstrip .s .ic{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;flex:0 0 auto}
-.sumstrip .s .ic svg{width:15px;height:15px}
-.ic.b{background:rgba(47,128,237,.16)}.ic.b svg{color:var(--blue)}
-.ic.o{background:rgba(245,129,30,.16)}.ic.o svg{color:var(--orange)}
-.ic.g{background:rgba(55,214,122,.14)}.ic.g svg{color:var(--km)}
-.sumstrip .s small{display:block;font-size:10.5px;color:var(--muted2);font-weight:700;letter-spacing:.02em}
-.sumstrip .s b{font-size:13.5px;font-weight:800}
-.sumstrip .s.km b{color:var(--km)}
-@media(max-width:560px){.sumstrip{grid-template-columns:1fr}.sumstrip .s{padding:10px 12px}}
+  /* nav */
+  header.nav{ position:fixed; top:0; left:0; right:0; z-index:50; transition:background .3s, border-color .3s, backdrop-filter .3s; border-bottom:1px solid transparent; }
+  header.nav.scrolled{ background:rgba(9,13,26,.72); backdrop-filter:blur(14px); border-bottom:1px solid var(--line); }
+  .nav-in{ display:flex; align-items:center; justify-content:space-between; padding:16px 0; }
+  .brand{ display:flex; align-items:center; gap:11px; font-family:'Bricolage Grotesque',serif; font-weight:700; font-size:22px; letter-spacing:-.02em; }
+  .brand .mark{ width:34px; height:34px; border-radius:9px; background:var(--grad); display:grid; place-items:center; color:#241a06; position:relative; overflow:hidden; }
+  .brand .mark svg{ width:20px; height:20px; }
+  .brand small{ display:block; font-family:'Space Mono',monospace; font-size:9px; letter-spacing:.18em; color:var(--muted); font-weight:400; margin-top:-2px; }
+  .nav-links{ display:flex; gap:30px; align-items:center; }
+  .nav-links a{ font-size:14px; color:var(--muted); transition:color .18s; }
+  .nav-links a:hover{ color:var(--text); }
+  .nav-cta{ display:flex; gap:10px; align-items:center; }
+  .nav-phone{ font-family:'Space Mono',monospace; font-size:13px; color:var(--text); display:flex; align-items:center; gap:7px; }
+  .nav-phone b{ color:var(--gold2); font-weight:700; }
 
-/* accordion rows */
-.rows{margin-top:12px;display:flex;flex-direction:column;gap:9px}
-.arow{background:var(--row);border:1px solid var(--line);border-radius:13px;overflow:hidden}
-.arow .hd{display:flex;align-items:center;gap:12px;padding:14px 14px;cursor:pointer;user-select:none}
-.arow .num{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
-.arow .num svg{width:16px;height:16px}
-.arow .lbl{flex:1;font-weight:800;font-size:15px}
-.arow .lbl .q{display:block;font-size:11px;color:var(--muted2);font-weight:700;margin-top:1px}
-.arow .val{font-weight:800;font-size:15px;color:var(--ink);white-space:nowrap}
-.arow .chev{width:18px;height:18px;color:var(--muted);transition:transform .2s;flex:0 0 auto}
-.arow.open .chev{transform:rotate(180deg)}
-.arow .panel{max-height:0;overflow:hidden;transition:max-height .25s ease}
-.arow.open .panel{max-height:360px}
-.arow .panel .inner{padding:4px 14px 14px;display:flex;gap:8px;flex-wrap:wrap}
-.arow .panel.scroll .inner{max-height:230px;overflow-y:auto}
-.opt{padding:10px 14px;border-radius:10px;background:var(--card2);border:1.5px solid var(--line2);color:var(--ink);font-weight:800;font-size:14px;cursor:pointer;transition:.12s}
-.opt:hover{border-color:var(--orange)}
-.opt.on{background:var(--orange);border-color:var(--orange);color:#1a1206}
-/* inline toggle (Evet/Hayır) */
-.toggle{display:flex;gap:8px;margin-left:auto}
-.tg{padding:9px 20px;border-radius:9px;background:var(--card2);border:1.5px solid var(--line2);color:var(--muted);font-weight:800;font-size:14px;cursor:pointer}
-.tg.on{background:var(--blue);border-color:var(--blue);color:#fff}
-.arow.tgrow .hd{cursor:default}
+  /* hero */
+  .hero{ min-height:100vh; display:flex; align-items:center; padding:120px 0 70px; }
+  .hero-grid{ display:grid; grid-template-columns:1.05fr .95fr; gap:40px; align-items:center; }
+  .hero h1{ font-size:clamp(44px,6.4vw,88px); margin:20px 0 0; }
+  .hero h1 .line{ display:block; overflow:hidden; }
+  .hero h1 .line span{ display:block; transform:translateY(110%); animation:rise .9s cubic-bezier(.22,1,.36,1) forwards; }
+  .hero h1 .line:nth-child(2) span{ animation-delay:.12s; }
+  .hero h1 .g{ background:var(--grad); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .hero p.lead{ color:var(--muted); font-size:18px; max-width:34ch; margin:24px 0 30px; opacity:0; animation:fade .8s ease .5s forwards; }
+  .hero-cta{ display:flex; gap:12px; flex-wrap:wrap; opacity:0; animation:fade .8s ease .66s forwards; }
+  .hero-stats{ display:flex; gap:30px; margin-top:40px; opacity:0; animation:fade .8s ease .8s forwards; }
+  .hero-stats .s .n{ font-family:'Bricolage Grotesque',serif; font-size:30px; font-weight:700; letter-spacing:-.02em; }
+  .hero-stats .s .n b{ color:var(--gold2); }
+  .hero-stats .s .l{ font-family:'Space Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted2); margin-top:2px; }
+  .hero-stats .s + .s{ padding-left:30px; border-left:1px solid var(--line); }
 
-/* price card */
-.pricecard{margin-top:14px;background:linear-gradient(160deg,#14263a,#0e1c2a);border:1px solid var(--line2);border-radius:16px;padding:20px}
-.pricecard .top{display:flex;align-items:center;gap:12px}
-.pricecard .tag{width:46px;height:46px;border-radius:12px;background:rgba(245,129,30,.16);display:grid;place-items:center;flex:0 0 auto}
-.pricecard .tag svg{width:24px;height:24px;color:var(--orange)}
-.pricecard .rlabel{font-size:13px;color:var(--muted);font-weight:700}
-.pricecard .price{font-size:clamp(26px,7vw,38px);font-weight:900;color:var(--orange);letter-spacing:-.01em;line-height:1.05;margin-top:2px}
-.pricecard .note{font-size:12.5px;color:var(--muted2);margin:8px 0 0}
-.btn-wa{margin-top:16px;width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--green);color:#052b16;font-weight:900;font-size:17px;padding:15px;border-radius:13px;border:0;cursor:pointer;box-shadow:0 12px 26px rgba(37,211,102,.3)}
-.btn-wa svg{width:22px;height:22px}
-.wamsg{margin-top:14px;display:flex;align-items:center;gap:9px}
-.wamsg .wc{width:34px;height:34px;border-radius:50%;background:var(--green);display:grid;place-items:center;flex:0 0 auto}
-.wamsg .wc svg{width:19px;height:19px;color:#052b16}
-.wamsg .bub{background:#0c2318;border:1px solid #16401f;color:#cdeed7;font-size:12.5px;padding:9px 12px;border-radius:12px;border-bottom-left-radius:3px;position:relative}
-.wamsg .bub .tick{color:#4fc3f7;font-weight:800;margin-left:6px}
+  /* route signature */
+  .route{ position:relative; aspect-ratio:1/.86; }
+  .route svg{ width:100%; height:100%; overflow:visible; }
+  .route .path{ fill:none; stroke:url(#gr); stroke-width:2.5; stroke-linecap:round; stroke-dasharray:1400; stroke-dashoffset:1400; animation:draw 2.6s cubic-bezier(.6,0,.2,1) .35s forwards; }
+  .route .track{ fill:none; stroke:rgba(255,255,255,.06); stroke-width:2.5; stroke-dasharray:2 9; stroke-linecap:round; }
+  .pin{ position:absolute; transform:translate(-50%,-100%); text-align:center; opacity:0; animation:fade .6s ease forwards; }
+  .pin .dot{ width:15px; height:15px; border-radius:50%; margin:0 auto 8px; background:var(--gold); box-shadow:0 0 0 6px rgba(231,177,90,.16); position:relative; }
+  .pin .dot::after{ content:""; position:absolute; inset:0; border-radius:50%; box-shadow:0 0 0 2px var(--gold); animation:pulse 2.4s ease-out infinite; }
+  .pin .lb{ font-family:'Space Mono',monospace; font-size:10.5px; letter-spacing:.1em; }
+  .pin .lb b{ display:block; color:var(--text); text-transform:uppercase; letter-spacing:.16em; font-size:11px; }
+  .pin .lb span{ color:var(--muted2); }
+  .pin.a{ left:12%; top:30%; animation-delay:.5s; }
+  .pin.b{ left:83%; top:74%; animation-delay:2.5s; }
+  .truck{ fill:var(--gold2); filter:drop-shadow(0 4px 10px rgba(231,177,90,.5)); }
+  .route .card{ position:absolute; right:-2%; top:-4%; background:rgba(18,26,49,.86); backdrop-filter:blur(8px); border:1px solid var(--line2); border-radius:14px; padding:12px 15px; display:flex; align-items:center; gap:11px; opacity:0; animation:fade .7s ease 1.4s forwards; }
+  .route .card .ic{ width:38px; height:38px; border-radius:10px; background:rgba(231,177,90,.14); display:grid; place-items:center; }
+  .route .card .ic svg{ width:20px; height:20px; stroke:var(--gold2); }
+  .route .card .t b{ font-size:13px; } .route .card .t span{ display:block; font-family:'Space Mono',monospace; font-size:10px; color:var(--muted); letter-spacing:.06em; }
 
-/* how it works */
-.how{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:8px;align-items:stretch;margin-top:10px}
-.how .st{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:15px;display:flex;gap:11px;align-items:flex-start}
-.how .st .ic{width:38px;height:38px;border-radius:10px;background:var(--bg2);display:grid;place-items:center;flex:0 0 auto}
-.how .st .ic svg{width:20px;height:20px;color:var(--orange)}
-.how .st h4{margin:0 0 3px;font-size:14.5px;font-weight:800}
-.how .st p{margin:0;font-size:12px;color:var(--muted)}
-.how .arr{align-self:center;color:var(--muted2)}
-.how .arr svg{width:18px;height:18px}
-@media(max-width:720px){.how{grid-template-columns:1fr}.how .arr{display:none}}
+  /* trust strip */
+  .trust{ border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:rgba(255,255,255,.015); }
+  .trust-in{ display:grid; grid-template-columns:repeat(4,1fr); }
+  .trust .it{ padding:26px 20px; display:flex; gap:13px; align-items:center; }
+  .trust .it + .it{ border-left:1px solid var(--line); }
+  .trust .it svg{ width:26px; height:26px; stroke:var(--gold); flex:0 0 auto; }
+  .trust .it b{ font-size:14.5px; display:block; }
+  .trust .it span{ font-size:12.5px; color:var(--muted); }
 
-/* gallery */
-.galhead{display:flex;align-items:baseline;justify-content:space-between}
-.galhead a{color:var(--orange);font-weight:800;font-size:13px}
-.gal{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
-.cell{position:relative;border-radius:14px;overflow:hidden;background:#12222f;border:1px solid var(--line);aspect-ratio:16/10}
-.cell img{width:100%;height:100%;object-fit:cover;position:relative;z-index:2}
-.cell .ph{position:absolute;inset:0;z-index:1;display:grid;place-items:center;color:#5f7d95;text-align:center;font-size:12px;font-weight:700;padding:12px;gap:6px;flex-direction:column}
-.cell .ph svg{width:28px;height:28px;opacity:.55}
-.cell .badge{position:absolute;z-index:3;left:10px;bottom:10px;background:rgba(245,129,30,.92);color:#1a1206;font-weight:900;font-size:11px;padding:4px 9px;border-radius:7px}
+  /* section shell */
+  .sec{ padding:100px 0; }
+  .sec-head{ max-width:640px; margin-bottom:52px; }
+  .sec-head h2{ font-size:clamp(30px,4vw,46px); margin:16px 0 0; }
+  .sec-head p{ color:var(--muted); font-size:16.5px; margin-top:14px; }
 
-/* reviews */
-.revhead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:26px 2px 12px}
-.revhead .g{width:26px;height:26px;flex:0 0 auto}
-.revhead .score{font-weight:900;font-size:20px}
-.revhead .score .st{color:#ffb300;font-size:15px;margin-left:4px}
-.revhead .cnt{color:var(--muted);font-weight:700;font-size:14px}
-.revhead .all{margin-left:auto;color:var(--orange);font-weight:800;font-size:13px}
-.revs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.rev{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
-.rev .h{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-.rev .av{width:34px;height:34px;border-radius:50%;background:var(--blue);display:grid;place-items:center;font-weight:900;color:#fff;flex:0 0 auto}
-.rev .h b{font-size:14px}.rev .h .st{color:#ffb300;font-size:12px}
-.rev .h .dt{margin-left:auto;font-size:11px;color:var(--muted2)}
-.rev p{margin:0;font-size:13px;color:var(--muted);line-height:1.5}
-@media(max-width:640px){.gal,.revs{grid-template-columns:1fr}}
+  /* services */
+  .svc{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .svc .c{ background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:26px; transition:transform .25s ease, border-color .25s, background .25s; position:relative; overflow:hidden; }
+  .svc .c::after{ content:""; position:absolute; inset:0 0 auto 0; height:2px; background:var(--grad); transform:scaleX(0); transform-origin:left; transition:transform .3s ease; }
+  .svc .c:hover{ transform:translateY(-5px); border-color:var(--line2); background:var(--surface2); }
+  .svc .c:hover::after{ transform:scaleX(1); }
+  .svc .c .ic{ width:50px; height:50px; border-radius:13px; background:rgba(231,177,90,.12); display:grid; place-items:center; margin-bottom:18px; }
+  .svc .c .ic svg{ width:26px; height:26px; stroke:var(--gold2); }
+  .svc .c h3{ font-size:20px; font-weight:600; }
+  .svc .c p{ color:var(--muted); font-size:14.5px; margin-top:9px; }
+  .svc .c .n{ position:absolute; top:22px; right:24px; font-family:'Space Mono',monospace; font-size:12px; color:var(--muted2); }
 
-/* stats bar */
-.stats{margin-top:22px;background:linear-gradient(180deg,#0e1c2a,#0a141d);border:1px solid var(--line);border-radius:16px;display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden}
-.stat{padding:18px 12px;text-align:center;border-right:1px solid var(--line)}
-.stat:last-child{border-right:0}
-.stat .ic{width:34px;height:34px;margin:0 auto 8px;border-radius:9px;background:rgba(245,129,30,.14);display:grid;place-items:center}
-.stat .ic svg{width:19px;height:19px;color:var(--orange)}
-.stat b{display:block;font-size:19px;font-weight:900;line-height:1}
-.stat span{font-size:11.5px;color:var(--muted);font-weight:600}
-@media(max-width:640px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--line)}}
+  /* process */
+  .proc{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; border:1px solid var(--line); border-radius:var(--r); overflow:hidden; }
+  .proc .step{ padding:34px 26px; position:relative; }
+  .proc .step + .step{ border-left:1px solid var(--line); }
+  .proc .step .no{ font-family:'Space Mono',monospace; font-size:13px; color:var(--gold); letter-spacing:.1em; }
+  .proc .step h3{ font-size:20px; margin:16px 0 8px; font-weight:600; }
+  .proc .step p{ color:var(--muted); font-size:14px; }
+  .proc .step .bar{ height:2px; background:var(--line); margin-top:22px; position:relative; overflow:hidden; }
+  .proc .step .bar i{ position:absolute; inset:0; width:0; background:var(--grad); transition:width 1s ease; }
+  .proc.in .step .bar i{ width:100%; }
+  .proc.in .step:nth-child(2) .bar i{ transition-delay:.15s; }
+  .proc.in .step:nth-child(3) .bar i{ transition-delay:.3s; }
+  .proc.in .step:nth-child(4) .bar i{ transition-delay:.45s; }
 
-.disc{text-align:center;color:var(--muted2);font-size:11.5px;margin:20px 0 8px;padding:0 10px}
+  /* why */
+  .why{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
+  .why-list{ display:flex; flex-direction:column; gap:22px; }
+  .why-list .it{ display:flex; gap:16px; }
+  .why-list .it .ic{ width:44px; height:44px; flex:0 0 auto; border-radius:12px; border:1px solid var(--line2); display:grid; place-items:center; }
+  .why-list .it .ic svg{ width:22px; height:22px; stroke:var(--gold2); }
+  .why-list .it b{ font-size:16.5px; }
+  .why-list .it p{ color:var(--muted); font-size:14.5px; margin-top:3px; }
+  .why-visual{ background:var(--surface); border:1px solid var(--line); border-radius:22px; padding:40px; position:relative; overflow:hidden; }
+  .why-visual::before{ content:""; position:absolute; right:-40px; top:-40px; width:200px; height:200px; border-radius:50%; background:radial-gradient(circle,rgba(231,177,90,.22),transparent 70%); }
+  .why-visual .big{ font-family:'Bricolage Grotesque',serif; font-size:76px; font-weight:700; line-height:1; background:var(--grad); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .why-visual .cap{ color:var(--muted); margin-top:8px; }
+  .why-visual .quote{ margin-top:30px; padding-top:26px; border-top:1px solid var(--line); font-family:'Bricolage Grotesque',serif; font-size:20px; line-height:1.4; }
+  .why-visual .who{ font-family:'Space Mono',monospace; font-size:12px; color:var(--muted); margin-top:14px; }
 
-/* bottom bar */
-.botbar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:8px;padding:10px 12px;background:rgba(10,18,27,.97);backdrop-filter:blur(10px);border-top:1px solid var(--line2)}
-.botbar a{display:flex;align-items:center;justify-content:center;gap:7px;padding:13px;border-radius:12px;font-weight:900;font-size:14px}
-.botbar svg{width:18px;height:18px}
-.bb-call{background:var(--card2);border:1px solid var(--line2);color:#dbe7f2}
-.bb-wa{background:var(--green);color:#052b16}
-.bb-of{background:var(--orange);color:#1a1206}
+  /* cta band */
+  .band{ background:linear-gradient(120deg,#161f3a,#0e1530); border:1px solid var(--line2); border-radius:26px; padding:56px; display:flex; justify-content:space-between; align-items:center; gap:30px; position:relative; overflow:hidden; }
+  .band::before{ content:""; position:absolute; inset:0; background:radial-gradient(80% 140% at 100% 0%, rgba(231,177,90,.18), transparent 55%); pointer-events:none; }
+  .band h2{ font-size:clamp(26px,3.4vw,40px); }
+  .band p{ color:var(--muted); margin-top:12px; max-width:44ch; }
+  .band .side{ display:flex; flex-direction:column; gap:12px; position:relative; }
+  .band .call{ font-family:'Space Mono',monospace; text-align:center; color:var(--muted); font-size:12px; margin-top:2px; }
+  .band .call b{ color:var(--gold2); }
 
-/* ===== cinematic layer (v3) ===== */
-.bar{position:fixed;left:0;right:0;top:0;background:transparent;backdrop-filter:none;border-bottom:1px solid transparent;transition:background .3s ease,border-color .3s ease}
-.bar.solid{background:rgba(10,18,27,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.bar .logo .tx b{color:#e7f0f8}
-.iconbtn{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18)}
-.bar.solid .iconbtn{background:var(--card);border-color:var(--line2)}
+  /* faq */
+  .faq-grid{ display:grid; grid-template-columns:1fr; gap:12px; max-width:820px; }
+  .q{ border:1px solid var(--line); border-radius:14px; background:var(--surface); overflow:hidden; }
+  .q summary{ list-style:none; cursor:pointer; padding:20px 24px; display:flex; justify-content:space-between; align-items:center; gap:16px; font-family:'Bricolage Grotesque',serif; font-size:17.5px; font-weight:500; }
+  .q summary::-webkit-details-marker{ display:none; }
+  .q summary .pl{ width:22px; height:22px; flex:0 0 auto; position:relative; }
+  .q summary .pl::before,.q summary .pl::after{ content:""; position:absolute; inset:50% 0 auto 50%; width:12px; height:2px; background:var(--gold); transform:translate(-50%,-50%); transition:transform .25s; }
+  .q summary .pl::after{ transform:translate(-50%,-50%) rotate(90deg); }
+  .q[open] summary .pl::after{ transform:translate(-50%,-50%) rotate(0); }
+  .q .a{ padding:0 24px 22px; color:var(--muted); font-size:15px; }
 
-.cine{position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden;background:
-  radial-gradient(120% 90% at 80% -10%,rgba(245,129,30,.18),transparent 55%),
-  linear-gradient(180deg,#0c1621,#0a121b 55%,#0a121b)}
-.cine .bg{position:absolute;inset:0;z-index:0}
-.cine .bg img{width:100%;height:100%;object-fit:cover;opacity:.5;animation:ken 22s ease-in-out infinite alternate}
-@keyframes ken{0%{transform:scale(1.02) translateY(0)}100%{transform:scale(1.16) translateY(-2%)}}
-.cine .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,18,27,.55),rgba(10,18,27,.35) 40%,rgba(10,18,27,.92))}
-.cine .veil{position:absolute;inset:0;z-index:0;opacity:.5;background:
-  repeating-linear-gradient(115deg,rgba(255,255,255,.03) 0 2px,transparent 2px 22px)}
-.cine .wrap{position:relative;z-index:2;padding:120px 16px 64px;width:100%}
-.cine .eyebrow{font-size:12.5px;font-weight:900;letter-spacing:.28em;text-transform:uppercase;color:var(--orange);margin-bottom:18px}
-.cine h1{font-size:clamp(40px,11vw,88px);font-weight:900;letter-spacing:-.035em;line-height:.95;margin:0;max-width:14ch}
-.cine h1 .th{color:var(--orange)}
-.cine .lead{font-size:clamp(16px,2.6vw,21px);color:#c6d5e3;max-width:34ch;margin:22px 0 0;line-height:1.45}
-.cine .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
-.cine .cbtn{display:inline-flex;align-items:center;gap:10px;font-weight:900;font-size:17px;padding:17px 26px;border-radius:14px;cursor:pointer;transition:transform .12s}
-.cine .cbtn:active{transform:translateY(1px)}
-.cine .cbtn.o{background:var(--orange);color:#1a1206;box-shadow:0 16px 36px rgba(245,129,30,.4)}
-.cine .cbtn.g{background:var(--green);color:#052b16;box-shadow:0 16px 36px rgba(37,211,102,.32)}
-.cine .cbtn svg{width:21px;height:21px}
-.cine .tchips{display:flex;gap:10px 22px;flex-wrap:wrap;margin-top:34px;padding-top:24px;border-top:1px solid rgba(255,255,255,.13);color:#aebccb;font-weight:700;font-size:13.5px}
-.cine .tchips span{display:flex;align-items:center;gap:8px}
-.cine .tchips svg{width:17px;height:17px;color:var(--orange)}
-.scrollcue{position:absolute;left:50%;bottom:20px;z-index:2;transform:translateX(-50%);color:#9fb3c6;animation:bob 1.8s ease-in-out infinite}
-.scrollcue svg{width:26px;height:26px}
-@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,7px)}}
+  /* footer */
+  footer{ border-top:1px solid var(--line); margin-top:40px; padding:64px 0 34px; position:relative; z-index:1; }
+  .foot{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:34px; }
+  .foot h4{ font-family:'Space Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted2); margin-bottom:16px; }
+  .foot a{ display:block; color:var(--muted); font-size:14px; margin-bottom:10px; transition:color .18s; }
+  .foot a:hover{ color:var(--gold2); }
+  .foot .about p{ color:var(--muted); font-size:14px; margin-top:14px; max-width:32ch; }
+  .foot-bottom{ display:flex; justify-content:space-between; align-items:center; margin-top:48px; padding-top:22px; border-top:1px solid var(--line); font-family:'Space Mono',monospace; font-size:12px; color:var(--muted2); flex-wrap:wrap; gap:12px; }
 
-/* manifesto band */
-.manifesto{margin:56px 0 8px;padding:56px 20px;text-align:center;background:
-  radial-gradient(80% 120% at 50% 0%,rgba(245,129,30,.10),transparent 60%),linear-gradient(180deg,#0e1c2a,#0a141d);
-  border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.manifesto .lbl{font-size:12px;font-weight:900;letter-spacing:.26em;text-transform:uppercase;color:var(--orange)}
-.manifesto p{max-width:20ch;margin:16px auto 0;font-size:clamp(24px,5.5vw,40px);font-weight:900;letter-spacing:-.02em;line-height:1.12}
-.manifesto p .th{color:var(--orange)}
+  /* reveal */
+  .rv{ opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1); }
+  .rv.in{ opacity:1; transform:none; }
 
-/* section titles bigger */
-.section-title{font-size:23px}
-.section-title .sub{font-weight:600}
+  @keyframes rise{ to{ transform:translateY(0); } }
+  @keyframes fade{ to{ opacity:1; } }
+  @keyframes draw{ to{ stroke-dashoffset:0; } }
+  @keyframes pulse{ 0%{ box-shadow:0 0 0 2px var(--gold); opacity:.9 } 100%{ box-shadow:0 0 0 16px rgba(231,177,90,0); opacity:0 } }
 
-/* reveal */
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
-.reveal.in{opacity:1;transform:none}
+  /* aurora hero bg */
+  .hero{ overflow:hidden; }
+  .aurora{ position:absolute; inset:0; z-index:0; pointer-events:none; }
+  .aurora span{ position:absolute; border-radius:50%; filter:blur(70px); }
+  .aurora .a1{ width:440px; height:440px; background:rgba(231,177,90,.24); top:-130px; right:4%; animation:fl1 15s ease-in-out infinite; }
+  .aurora .a2{ width:380px; height:380px; background:rgba(88,120,205,.20); bottom:-160px; left:-70px; animation:fl2 20s ease-in-out infinite; }
+  .aurora .a3{ width:320px; height:320px; background:rgba(231,177,90,.12); top:34%; left:42%; animation:fl1 24s ease-in-out infinite reverse; }
+  .hero-grid{ position:relative; z-index:2; }
+  @keyframes fl1{ 0%,100%{ transform:translate(0,0) } 50%{ transform:translate(-46px,34px) } }
+  @keyframes fl2{ 0%,100%{ transform:translate(0,0) } 50%{ transform:translate(50px,-30px) } }
 
-body{padding-top:0}
+  /* city marquee */
+  .marquee{ overflow:hidden; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:15px 0; -webkit-mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent); mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent); background:rgba(255,255,255,.012); }
+  .marquee .track{ display:flex; width:max-content; animation:scrollx 34s linear infinite; }
+  .marquee .track b{ font-family:'Space Mono',monospace; color:var(--muted2); font-size:14px; letter-spacing:.08em; font-weight:400; padding:0 26px; display:inline-flex; align-items:center; gap:26px; white-space:nowrap; }
+  .marquee .track b::after{ content:"→"; color:var(--gold); opacity:.45; }
+  @keyframes scrollx{ to{ transform:translateX(-50%) } }
+
+  /* calculator */
+  .calc{ background:var(--surface); border:1px solid var(--line2); border-radius:24px; overflow:hidden; display:grid; grid-template-columns:1.4fr .82fr; box-shadow:0 40px 90px -50px rgba(0,0,0,.8); }
+  .calc-form{ padding:36px; }
+  .calc-grp{ margin-bottom:20px; }
+  .calc-grp > .glabel{ font-family:'Space Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin-bottom:11px; display:flex; align-items:center; gap:9px; }
+  .calc-grp > .glabel::before{ content:""; width:16px; height:1px; background:var(--gold); opacity:.6; }
+  .frow{ display:grid; grid-template-columns:1fr 1fr; gap:13px; }
+  .f{ min-width:0; } .f + .f{ }
+  .f label{ font-size:11px; color:var(--muted); display:block; margin-bottom:6px; }
+  .f select, .f input{ width:100%; background:#0D1327; border:1px solid var(--line2); color:var(--text); border-radius:11px; padding:12px 13px; font-family:'Inter',sans-serif; font-size:14px; appearance:none; cursor:pointer; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238E9BB8' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 13px center; padding-right:34px; transition:border-color .15s; }
+  .f select:focus, .f input:focus{ outline:none; border-color:var(--gold); }
+  .f select option{ background:#0D1327; color:var(--text); }
+  .chips{ display:flex; flex-wrap:wrap; gap:8px; }
+  .chip{ padding:9px 15px; border:1px solid var(--line2); border-radius:100px; font-size:13px; cursor:pointer; color:var(--muted); transition:all .15s; user-select:none; }
+  .chip:hover{ color:var(--text); border-color:var(--line2); }
+  .chip.on{ background:var(--grad); color:#241a06; border-color:transparent; font-weight:600; }
+  .checks{ display:grid; grid-template-columns:1fr 1fr; gap:9px; }
+  .check{ display:flex; align-items:center; gap:10px; padding:11px 13px; border:1px solid var(--line); border-radius:11px; cursor:pointer; font-size:13.5px; color:var(--muted); transition:all .15s; user-select:none; }
+  .check:hover{ border-color:var(--line2); color:var(--text); }
+  .check.on{ border-color:var(--gold); background:rgba(231,177,90,.08); color:var(--text); }
+  .check .bx{ width:19px; height:19px; border-radius:6px; border:1px solid var(--line2); flex:0 0 auto; display:grid; place-items:center; transition:all .15s; }
+  .check.on .bx{ background:var(--grad); border-color:transparent; }
+  .check .bx svg{ width:12px; height:12px; opacity:0; }
+  .check.on .bx svg{ opacity:1; }
+  .calc-side{ background:linear-gradient(165deg,#17203d,#0d1430); padding:34px; border-left:1px solid var(--line2); display:flex; flex-direction:column; position:relative; overflow:hidden; }
+  .calc-side::before{ content:""; position:absolute; right:-60px; top:-60px; width:220px; height:220px; border-radius:50%; background:radial-gradient(circle,rgba(231,177,90,.22),transparent 68%); pointer-events:none; }
+  .calc-side .lbl{ font-family:'Space Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .calc-price{ font-family:'Bricolage Grotesque',serif; font-weight:700; letter-spacing:-.02em; font-size:clamp(34px,4vw,46px); line-height:1.04; margin-top:12px; }
+  .calc-price .sep{ color:var(--muted2); font-weight:400; }
+  .calc-price .cur{ color:var(--gold2); }
+  .calc-note{ color:var(--muted); font-size:12.5px; margin-top:12px; line-height:1.5; }
+  .breakdown{ margin-top:22px; border-top:1px solid var(--line); padding-top:16px; display:flex; flex-direction:column; gap:9px; font-size:13px; }
+  .breakdown .r{ display:flex; justify-content:space-between; gap:10px; color:var(--muted); }
+  .breakdown .r span:last-child{ color:var(--text); font-family:'Space Mono',monospace; white-space:nowrap; }
+  .calc-side .btn{ margin-top:22px; width:100%; justify-content:center; }
+  .calc-side .tiny{ text-align:center; font-family:'Space Mono',monospace; font-size:10.5px; color:var(--muted2); margin-top:10px; letter-spacing:.05em; }
+
+  .menu-btn{ display:none; }
+
+  @media (max-width:960px){
+    .hero-grid{ grid-template-columns:1fr; gap:10px; }
+    .route{ order:-1; max-width:440px; margin-inline:auto; width:100%; }
+    .nav-links, .nav-phone{ display:none; }
+    .svc,.proc,.trust-in{ grid-template-columns:1fr 1fr; }
+    .proc .step + .step{ border-left:none; } .proc .step:nth-child(3),.proc .step:nth-child(4){ border-top:1px solid var(--line); }
+    .why,.foot{ grid-template-columns:1fr; }
+    .band{ flex-direction:column; align-items:flex-start; padding:38px; }
+    .calc{ grid-template-columns:1fr; } .calc-side{ border-left:none; border-top:1px solid var(--line2); }
+  }
+  @media (max-width:600px){
+    .svc,.trust-in{ grid-template-columns:1fr; } .trust .it + .it{ border-left:none; border-top:1px solid var(--line); }
+    .proc{ grid-template-columns:1fr; } .proc .step + .step{ border-top:1px solid var(--line); }
+    .hero-stats{ gap:18px; } .hero-stats .s + .s{ padding-left:18px; }
+    .foot-bottom{ flex-direction:column; align-items:flex-start; }
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{ animation:none!important; transition:none!important; }
+    .hero h1 .line span{ transform:none; } .hero p.lead,.hero-cta,.hero-stats,.pin,.route .card{ opacity:1; }
+    .route .path{ stroke-dashoffset:0; } .rv{ opacity:1; transform:none; }
+    .aurora span{ animation:none!important; } .marquee .track{ animation:none!important; }
+  }
 </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
-<div class="bar"><div class="wrap">
-  <div class="logo">
-    <span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 4l9 6.5"/><path d="M5 10v9h14v-9"/><rect x="9" y="13" width="6" height="6"/></svg></span>
-    <span class="tx"><b>Samsun</b><strong>Özin Nakliyat</strong></span>
-  </div>
-  <div class="acts">
-    <a class="iconbtn" href="tel:+905462592055"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></a>
-    <a class="iconbtn wa" id="wa-top" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm4.4 12c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5.2-.4v-.4l-.8-1.8c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.9.9-.9 2.1-.6 3.2.6 2 2 3.6 4 4.6 1.2.6 2.3.9 3.4.6.7-.2 1.4-.7 1.6-1.4.1-.4.1-.8 0-.9l-.5-.3Z"/></svg></a>
-    <button class="iconbtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
-  </div>
-</div></div>
-
-<!-- CINEMATIC HERO -->
-<header class="cine">
-  <div class="bg"><img src="/oznakliyat/ozin-1.jpg" alt="" onerror="this.style.display='none'"></div>
-  <div class="veil"></div>
-  <div class="wrap">
-    <div class="eyebrow">Samsun · Evden Eve Nakliyat</div>
-    <h1>Eşyanız,<br><span class="th">bizim eşyamız.</span></h1>
-    <p class="lead">Samsun'dan Türkiye'nin her yerine — tek bir çizik bile olmadan, sigortalı ve zamanında.</p>
-    <div class="ctas">
-      <a class="cbtn o" href="#hesapla" onclick="document.getElementById('hesapla').scrollIntoView({behavior:'smooth'});return false;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 12 22l-9-9V4h9l8.6 8.6a1.4 1.4 0 0 1 0 2Z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>
-        Ücretsiz Fiyat Al
-      </a>
-      <a class="cbtn g" id="wa-hero" href="#" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Z"/></svg>
-        WhatsApp'tan Yaz
-      </a>
-    </div>
-    <div class="tchips">
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>Sigortalı Taşıma</span>
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Ücretsiz Ekspertiz</span>
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>7/24 Ulaşım</span>
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#" class="brand">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#241a06" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h11V6H3zM14 9h4l3 3v4h-7z"/><circle cx="7" cy="17" r="1.6"/><circle cx="17.5" cy="17" r="1.6"/></svg></span>
+      <span>Özin<small>NAKLİYAT · SAMSUN</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#fiyat">Fiyat Hesapla</a>
+      <a href="#hizmetler">Hizmetler</a>
+      <a href="#surec">Süreç</a>
+      <a href="#neden">Neden Biz</a>
+      <a href="#sss">S.S.S.</a>
+    </nav>
+    <div class="nav-cta">
+      <span class="nav-phone"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E7B15A" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><b>0546 259 20 55</b></span>
+      <a href="#teklif" class="btn gold">Ücretsiz keşif</a>
     </div>
   </div>
-  <div class="scrollcue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></div>
 </header>
 
-<div class="wrap">
+<!-- HERO -->
+<section class="hero">
+  <div class="aurora"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Samsun · evden eve · şehirler arası</span>
+      <h1>
+        <span class="line"><span>Eşyan değil,</span></span>
+        <span class="line"><span class="g">evin taşınıyor.</span></span>
+      </h1>
+      <p class="lead">Paketinden yerleştirmesine kadar her şeyi biz yapıyoruz. Sigortalı taşıma, sabit fiyat, dakikası dakikasına teslim.</p>
+      <div class="hero-cta">
+        <a href="#teklif" class="btn gold">Ücretsiz keşif iste
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#241a06" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="https://wa.me/905462592055" target="_blank" rel="noopener" class="btn ghost">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E7B15A" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 20.5l1.6-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>
+          WhatsApp'tan yaz</a>
+      </div>
+      <div class="hero-stats" id="heroStats">
+        <div class="s"><div class="n"><b class="cnt" data-to="12400" data-suffix="+">0</b></div><div class="l">taşınma</div></div>
+        <div class="s"><div class="n"><b class="cnt" data-to="99.3" data-dec="1" data-prefix="%">0</b></div><div class="l">hasarsız</div></div>
+        <div class="s"><div class="n"><span class="cnt" data-to="4.9" data-dec="1">0</span><span style="color:var(--gold2)">★</span></div><div class="l">1.800 yorum</div></div>
+      </div>
+    </div>
 
-  <!-- HERO CALC -->
-  <div class="card hero" id="hesapla">
-  <div class="card hero">
-    <h1>Türkiye Geneli Tahmini Fiyat Hesapla</h1>
-    <div class="mapbox">
-      <svg class="tr" id="map" viewBox="0 0 1029 451" role="img" aria-label="Türkiye haritası">
-        <g id="provinces"></g>
-        <path id="glowPath" class="glow" style="display:none"></path>
-        <path id="routePath" class="route" style="display:none"></path>
-        <g id="pins"></g>
-        <g id="truck" class="truck" style="display:none">
-          <svg x="-19" y="-14" width="38" height="28" viewBox="0 0 38 28">
-            <rect x="1" y="6" width="21" height="14" rx="2" fill="#f4f6f8"/>
-            <rect x="1" y="6" width="21" height="4" fill="#F5811E"/>
-            <path d="M22 9h6l7 6v5H22z" fill="#e9edf1"/>
-            <path d="M28 9h0l5 5h-5z" fill="#cfd6dd"/>
-            <rect x="29" y="10.5" width="4.5" height="4" rx="1" fill="#8fd0ff"/>
-            <circle cx="8" cy="21" r="3.6" fill="#12181F"/><circle cx="8" cy="21" r="1.5" fill="#7a7a7a"/>
-            <circle cx="27" cy="21" r="3.6" fill="#12181F"/><circle cx="27" cy="21" r="1.5" fill="#7a7a7a"/>
-          </svg>
+    <div class="route" id="route">
+      <svg viewBox="0 0 460 400" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <linearGradient id="gr" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#F4CE86"/><stop offset="1" stop-color="#C98F3C"/>
+          </linearGradient>
+        </defs>
+        <path class="track" d="M55 120 C 170 60, 250 210, 360 150 S 470 300, 400 300"/>
+        <path class="path" id="rp" d="M55 120 C 170 60, 250 210, 360 150 S 470 300, 400 300"/>
+        <g class="truck">
+          <rect x="-11" y="-7" width="16" height="12" rx="2"/>
+          <path d="M5 -3 h5 l4 4 v4 h-9 z"/>
+          <circle cx="-5" cy="7" r="2.4" fill="#0B1020" stroke="#F4CE86" stroke-width="1.4"/>
+          <circle cx="9" cy="7" r="2.4" fill="#0B1020" stroke="#F4CE86" stroke-width="1.4"/>
+          <animateMotion dur="6s" repeatCount="indefinite" rotate="auto" keyPoints="0;1" keyTimes="0;1" calcMode="linear" begin="1.2s">
+            <mpath href="#rp"/>
+          </animateMotion>
         </g>
       </svg>
-    </div>
-
-    <div class="sumstrip">
-      <div class="s"><span class="ic b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><small>NEREDEN</small><b id="sumFrom">Samsun</b></span></div>
-      <div class="s"><span class="ic o"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><small>NEREYE</small><b id="sumTo">Ankara</b></span></div>
-      <div class="s km"><span class="ic g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19 20 5M9 5H5v4M15 19h4v-4"/></svg></span><span><small>TAHMİNİ MESAFE</small><b id="sumKm">— km</b></span></div>
-    </div>
-
-    <!-- accordion -->
-    <div class="rows" id="rows">
-      <div class="arow" data-kind="from">
-        <div class="hd"><span class="num" style="background:rgba(47,128,237,.16)"><svg viewBox="0 0 24 24" fill="none" stroke="#2f80ed" stroke-width="2"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
-          <span class="lbl">Nereden alınıyor?<span class="q">Çıkış ili</span></span><span class="val" id="valFrom">Samsun</span>
-          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
-        <div class="panel scroll"><div class="inner" id="fromOpts"></div></div>
-      </div>
-      <div class="arow" data-kind="to">
-        <div class="hd"><span class="num" style="background:rgba(245,129,30,.16)"><svg viewBox="0 0 24 24" fill="none" stroke="#F5811E" stroke-width="2"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
-          <span class="lbl">Nereye gidiyor?<span class="q">Varış ili</span></span><span class="val" id="valTo">Ankara</span>
-          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
-        <div class="panel scroll"><div class="inner" id="toOpts"></div></div>
-      </div>
-      <div class="arow" data-kind="home">
-        <div class="hd"><span class="num" style="background:rgba(47,128,237,.16)"><svg viewBox="0 0 24 24" fill="none" stroke="#2f80ed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 4l9 6.5V20H3z"/><path d="M9 20v-6h6v6"/></svg></span>
-          <span class="lbl">Ev tipi<span class="q">Eşya hacmi</span></span><span class="val" id="valHome">3+1</span>
-          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
-        <div class="panel"><div class="inner">
-          <div class="opt" data-price="4500">1+1</div><div class="opt" data-price="6500">2+1</div>
-          <div class="opt on" data-price="8500">3+1</div><div class="opt" data-price="11000">4+1</div>
-          <div class="opt" data-price="14000">5+1 / Villa</div>
-        </div></div>
-      </div>
-      <div class="arow" data-kind="floor">
-        <div class="hd"><span class="num" style="background:rgba(245,129,30,.16)"><svg viewBox="0 0 24 24" fill="none" stroke="#F5811E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h.01M12 7h.01M15 7h.01M9 11h.01M12 11h.01M15 11h.01M9 15h.01M15 15h.01M11 21v-3h2v3"/></svg></span>
-          <span class="lbl">Kat bilgisi<span class="q">Çıkış katı</span></span><span class="val" id="valFloor">3–4. Kat</span>
-          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
-        <div class="panel"><div class="inner">
-          <div class="opt on" data-add="0">Zemin / 1–2. Kat</div><div class="opt" data-add="700">3–4. Kat</div>
-          <div class="opt" data-add="1500">5. Kat ve üzeri</div>
-        </div></div>
-      </div>
-      <div class="arow tgrow" data-kind="lift">
-        <div class="hd"><span class="num" style="background:rgba(47,128,237,.16)"><svg viewBox="0 0 24 24" fill="none" stroke="#2f80ed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 8l3-3 3 3M9 16l3 3 3-3"/></svg></span>
-          <span class="lbl">Asansör var mı?</span>
-          <span class="toggle"><span class="tg on" data-lift="var">Var</span><span class="tg" data-lift="yok">Yok</span></span></div>
-      </div>
-      <div class="arow tgrow" data-kind="pack">
-        <div class="hd"><span class="num" style="background:rgba(245,129,30,.16)"><svg viewBox="0 0 24 24" fill="none" stroke="#F5811E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8l9 5 9-5Z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg></span>
-          <span class="lbl">Paketleme hizmeti</span>
-          <span class="toggle"><span class="tg on" data-pack="evet">Evet</span><span class="tg" data-pack="hayir">Hayır</span></span></div>
-      </div>
-    </div>
-
-    <!-- price -->
-    <div class="pricecard">
-      <div class="top">
-        <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 12 22l-9-9V4h9l8.6 8.6a1.4 1.4 0 0 1 0 2Z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span>
-        <div><div class="rlabel">Tahmini Fiyat Aralığı</div><div class="price" id="priceOut">—</div></div>
-      </div>
-      <p class="note">Net fiyat için ücretsiz ekspertiz planlanır. Sürpriz ek ücret çıkmaz.</p>
-      <a class="btn-wa" id="wa-calc" href="#" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm4.4 12c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5.2-.4v-.4l-.8-1.8c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.9.9-.9 2.1-.6 3.2.6 2 2 3.6 4 4.6 1.2.6 2.3.9 3.4.6.7-.2 1.4-.7 1.6-1.4.1-.4.1-.8 0-.9l-.5-.3Z"/></svg>
-        Tek Tıkla Teklif Al
-      </a>
-      <div class="wamsg">
-        <span class="wc"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Z"/></svg></span>
-        <div class="bub" id="waPreview">Yeni talep: Samsun → Ankara, 3+1<span class="tick">✓✓</span></div>
+      <div class="pin a"><div class="dot"></div><div class="lb"><b>Kalkış</b><span>41.28 N · 36.33 E</span></div></div>
+      <div class="pin b"><div class="dot"></div><div class="lb"><b>Varış</b><span>yeni evin</span></div></div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div>
+        <div class="t"><b>Sigortalı taşıma</b><span>her sevkiyat güvence altında</span></div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- HOW -->
-  <div class="section-title">Nasıl Çalışır?</div>
-  <div class="how">
-    <div class="st"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span><div><h4>Bilgileri Gir</h4><p>Taşıma bilgilerini kolayca girin.</p></div></div>
-    <div class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m9 6 6 6-6 6"/></svg></div>
-    <div class="st"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span><div><h4>Tahmini Fiyatı Gör</h4><p>Anında tahmini fiyat aralığını görün.</p></div></div>
-    <div class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m9 6 6 6-6 6"/></svg></div>
-    <div class="st"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Z"/></svg></span><div><h4>Teklif Al</h4><p>Tek tıkla teklif alın, hemen dönüş yapalım.</p></div></div>
+<!-- TRUST -->
+<section class="trust">
+  <div class="wrap trust-in">
+    <div class="it"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg><div><b>Sigortalı taşıma</b><span>eşyan güvence altında</span></div></div>
+    <div class="it"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><div><b>Sabit fiyat</b><span>keşifte netleşir, değişmez</span></div></div>
+    <div class="it"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Zamanında teslim</b><span>randevu saatine sadık</span></div></div>
+    <div class="it"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/></svg><div><b>Ambalaj dahil</b><span>profesyonel paketleme</span></div></div>
   </div>
+</section>
 
-  <!-- MANIFESTO -->
-  <div class="manifesto reveal">
-    <div class="lbl">Bizim Sözümüz</div>
-    <p>On yıldır tek kuralımız: her eşyayı <span class="th">kendi evimizmiş gibi</span> taşımak.</p>
+<!-- CITY MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <b>İstanbul<b>Ankara<b>İzmir<b>Bursa<b>Antalya<b>Samsun<b>Trabzon<b>Adana<b>Konya<b>Gaziantep<b>Eskişehir<b>Kayseri<b>Muğla<b>Denizli<b>Kocaeli</b></b></b></b></b></b></b></b></b></b></b></b></b></b></b>
+    <b>İstanbul<b>Ankara<b>İzmir<b>Bursa<b>Antalya<b>Samsun<b>Trabzon<b>Adana<b>Konya<b>Gaziantep<b>Eskişehir<b>Kayseri<b>Muğla<b>Denizli<b>Kocaeli</b></b></b></b></b></b></b></b></b></b></b></b></b></b></b>
   </div>
-
-  <!-- GALLERY -->
-  <div class="galhead" style="margin-top:26px"><div class="section-title" style="margin:0">Gerçek Taşıma Fotoğrafları</div><a href="#">Tümünü Gör ›</a></div>
-  <div class="gal">
-    <div class="cell"><img src="/oznakliyat/ozin-2.jpg" alt="Özin Nakliyat ekibi" onerror="this.style.display='none'"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div><span class="badge">Güler yüzlü ekip</span></div>
-    <div class="cell"><img src="/oznakliyat/ozin-3.jpg" alt="Profesyonel paketleme" onerror="this.style.display='none'"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div><span class="badge">Profesyonel sarım</span></div>
-  </div>
-
-  <!-- REVIEWS -->
-  <div class="revhead">
-    <svg class="g" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.6 12.2c0-.8-.1-1.4-.2-2H12v3.8h6a5.1 5.1 0 0 1-2.2 3.4v2.8h3.6c2.1-2 3.2-4.9 3.2-8Z"/><path fill="#34A853" d="M12 23c2.9 0 5.4-1 7.2-2.7l-3.6-2.8c-1 .7-2.3 1.1-3.6 1.1-2.8 0-5.1-1.9-6-4.4H2.3v2.9A11 11 0 0 0 12 23Z"/><path fill="#FBBC05" d="M6 14.2a6.6 6.6 0 0 1 0-4.2V7.1H2.3a11 11 0 0 0 0 9.9L6 14.2Z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3 .5 4.1 1.6l3.1-3.1A11 11 0 0 0 2.3 7.1L6 10c.9-2.6 3.2-4.6 6-4.6Z"/></svg>
-    <span class="score">4.9 <span class="st">★★★★★</span></span>
-    <span class="cnt">Google Puanı · örnek</span>
-    <span class="all">Tüm Yorumlar ›</span>
-  </div>
-  <div class="revs">
-    <div class="rev"><div class="h"><span class="av">M</span><b>Mehmet Y.</b><span class="st">★★★★★</span><span class="dt">2 gün önce</span></div><p>Atakum'dan Ankara'ya sorunsuz taşındık. Ekip çok profesyonel ve güler yüzlüydü. Eşyalarımız sapasağlam ulaştı, teşekkürler!</p></div>
-    <div class="rev"><div class="h"><span class="av" style="background:#8e44ad">S</span><b>Seda K.</b><span class="st">★★★★★</span><span class="dt">1 hafta önce</span></div><p>Zamanında geldiler, hızlı ve titiz çalıştılar. Asansörleri çok iyi, eşyalarımız zarar görmeden taşındı. Kesinlikle tavsiye ederim.</p></div>
-  </div>
-
-  <!-- STATS -->
-  <div class="stats">
-    <div class="stat"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 15 8l6 .9-4.5 4.3L18 20l-6-3-6 3 1.5-6.8L3 8.9 9 8Z"/></svg></span><b><span data-count="10" data-suf="+">0</span> Yıl</b><span>Sektör Deneyimi</span></div>
-    <div class="stat"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></span><b><span data-count="2500" data-suf="+">0</span></b><span>Mutlu Müşteri</span></div>
-    <div class="stat"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></span><b>Sigortalı</b><span>Taşıma</span></div>
-    <div class="stat"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 7h.01M15 7h.01M9 11h.01M15 11h.01M9 15h.01M15 15h.01"/></svg></span><b>21 Kata</b><span>Kadar Asansör</span></div>
-  </div>
-
-  <p class="disc">Fiyatlar tahmini aralıktır; kesin fiyat ücretsiz ekspertizle netleşir. Bu sayfa Özin Nakliyat tanıtım çalışmasıdır.</p>
 </div>
 
-<!-- BOTTOM BAR -->
-<div class="botbar">
-  <a class="bb-call" href="tel:+905462592055"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>Ara</a>
-  <a class="bb-wa" id="wa-bot" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Z"/></svg>WhatsApp</a>
-  <a class="bb-of" href="#teklif" onclick="document.querySelector('.pricecard').scrollIntoView({behavior:'smooth'});return false;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg>Teklif Al</a>
-</div>
+<!-- CALCULATOR -->
+<section class="sec" id="fiyat" style="padding-bottom:40px">
+  <div class="wrap">
+    <div class="sec-head rv" style="text-align:center;max-width:620px;margin-left:auto;margin-right:auto">
+      <span class="eyebrow" style="justify-content:center">Anında tahmini fiyat</span>
+      <h2>Taşınmanı hesapla, saniyede fikrin olsun</h2>
+      <p>Nereden nereye, ev tipin ve ek hizmetleri seç; tahmini aralığı anında gör. Beğenirsen tek tıkla firma sahibinden net teklif iste.</p>
+    </div>
+    <div class="calc rv">
+      <div class="calc-form">
+        <div class="calc-grp">
+          <div class="glabel">Nereden</div>
+          <div class="frow">
+            <div class="f"><label>İl</label><select id="ilFrom"></select></div>
+            <div class="f"><label>İlçe</label><select id="ilceFrom"></select></div>
+          </div>
+        </div>
+        <div class="calc-grp">
+          <div class="glabel">Nereye</div>
+          <div class="frow">
+            <div class="f"><label>İl</label><select id="ilTo"></select></div>
+            <div class="f"><label>İlçe</label><select id="ilceTo"></select></div>
+          </div>
+        </div>
+        <div class="calc-grp">
+          <div class="glabel">Ev / işyeri tipi</div>
+          <div class="chips" id="homeType"></div>
+        </div>
+        <div class="calc-grp">
+          <div class="glabel">Eşya yoğunluğu</div>
+          <div class="chips" id="density"></div>
+        </div>
+        <div class="frow">
+          <div class="calc-grp" style="margin-bottom:0">
+            <div class="glabel">Çıkış katı & asansör</div>
+            <div class="frow">
+              <div class="f"><label>Kat</label><select id="katFrom"></select></div>
+              <div class="f"><label>Asansör</label><select id="asFrom"></select></div>
+            </div>
+          </div>
+          <div class="calc-grp" style="margin-bottom:0">
+            <div class="glabel">Varış katı & asansör</div>
+            <div class="frow">
+              <div class="f"><label>Kat</label><select id="katTo"></select></div>
+              <div class="f"><label>Asansör</label><select id="asTo"></select></div>
+            </div>
+          </div>
+        </div>
+        <div class="calc-grp" style="margin-top:22px;margin-bottom:0">
+          <div class="glabel">Ek hizmetler</div>
+          <div class="checks" id="extras"></div>
+        </div>
+      </div>
+      <div class="calc-side">
+        <div class="lbl">Tahmini fiyat aralığı</div>
+        <div class="calc-price"><span class="cur">₺</span><span id="pLow">0</span> <span class="sep">–</span> <span class="cur">₺</span><span id="pHigh">0</span></div>
+        <div class="calc-note">Bu bir <b>tahmini</b> hesaptır; net fiyat ücretsiz keşifte belirlenir. Mesafe, kat/asansör ve ek hizmetlere göre anında güncellenir.</div>
+        <div class="breakdown" id="breakdown"></div>
+        <a class="btn gold" id="teklifBtn" href="#" target="_blank" rel="noopener">Firma sahibinden net teklif al
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#241a06" stroke-width="2.2"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 20.5l1.6-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg></a>
+        <div class="tiny">seçimlerin WhatsApp mesajına otomatik eklenir</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec" id="hizmetler">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Hizmetler</span>
+      <h2>Ne taşınacaksa, ekibimiz hazır</h2>
+      <p>Tek bir kutudan koca bir eve, ya da bütün bir ofise — her iş için doğru araç, doğru ekip, doğru ambalaj.</p>
+    </div>
+    <div class="svc">
+      <div class="c rv"><span class="n">01</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></div><h3>Evden eve nakliyat</h3><p>Dairenden yeni evine; söküm, paketleme, taşıma ve kurulum dahil komple hizmet.</p></div>
+      <div class="c rv"><span class="n">02</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/><circle cx="12" cy="12" r="10"/></svg></div><h3>Şehirler arası</h3><p>Türkiye'nin her iline sigortalı, takip edilebilir ve zamanında sevkiyat.</p></div>
+      <div class="c rv"><span class="n">03</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V7l9-4 9 4v14"/><path d="M9 21v-6h6v6"/><path d="M9 9h.01M15 9h.01M9 12h.01M15 12h.01"/></svg></div><h3>Ofis & işyeri taşıma</h3><p>İşini aksatmadan; hafta sonu/mesai dışı planlama, dosya ve ekipman güvenliği.</p></div>
+      <div class="c rv"><span class="n">04</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4h6v18"/><path d="M12 8h6v14"/><path d="M4 22h18"/><path d="M9 8h.01M9 12h.01M15 12h.01"/></svg></div><h3>Asansörlü taşıma</h3><p>Dar merdiven, yüksek kat sorun değil — dış cephe asansörüyle hızlı ve hasarsız.</p></div>
+      <div class="c rv"><span class="n">05</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M3 11h18M8 7V4h8v3"/></svg></div><h3>Depolama & emanet</h3><p>Ara dönemde eşyan bize emanet; iklimlendirilmiş, güvenlikli, sigortalı depo.</p></div>
+      <div class="c rv"><span class="n">06</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8M12 13v8"/></svg></div><h3>Ambalaj & paketleme</h3><p>Kristalden televizyona; balonlu ambalaj, sarma battaniye ve özel sandıklama.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec" id="surec" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Nasıl çalışır</span>
+      <h2>Dört adımda, sürprizsiz</h2>
+      <p>Fiyatı keşifte netleştiririz, gerisi bizde. Sen sadece kapıyı aç.</p>
+    </div>
+    <div class="proc" id="proc">
+      <div class="step rv"><div class="no">01</div><h3>Keşif & teklif</h3><p>Video ya da yerinde keşif; eşya listesi çıkar, sabit fiyat verilir.</p><div class="bar"><i></i></div></div>
+      <div class="step rv"><div class="no">02</div><h3>Profesyonel paketleme</h3><p>Her parça doğru malzemeyle sarılır, etiketlenir, listelenir.</p><div class="bar"><i></i></div></div>
+      <div class="step rv"><div class="no">03</div><h3>Güvenli taşıma</h3><p>Sigortalı araç, deneyimli ekip; yolda konum paylaşımı.</p><div class="bar"><i></i></div></div>
+      <div class="step rv"><div class="no">04</div><h3>Kurulum & yerleştirme</h3><p>Mobilyan monte edilir, odalara yerleştirilir, ambalaj toplanır.</p><div class="bar"><i></i></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="sec" id="neden">
+  <div class="wrap why">
+    <div class="rv">
+      <span class="eyebrow">Neden Özin</span>
+      <h2 style="font-size:clamp(28px,3.6vw,42px);margin:16px 0 26px">Bir kutuyu emanet ediyorsun, bir evi teslim alıyorsun</h2>
+      <div class="why-list">
+        <div class="it"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div><div><b>Tam sigorta güvencesi</b><p>Beklenmedik bir durumda cebinden çıkmaz; her sevkiyat poliçeli.</p></div></div>
+        <div class="it"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3.1a4 4 0 0 1 0 7.8M8 3.1a4 4 0 0 0 0 7.8"/><path d="M2 21a6 6 0 0 1 12 0M14 21a6 6 0 0 1 8-5"/></svg></div><div><b>Kadrolu, eğitimli ekip</b><p>Gelen çala kalfa değil; kendi ekibimiz, tek tip, deneyimli.</p></div></div>
+        <div class="it"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div><b>Sabit fiyat, gizli ücret yok</b><p>Keşifte konuşulan rakam neyse o. Kapıda sürpriz zam olmaz.</p></div></div>
+      </div>
+    </div>
+    <div class="why-visual rv">
+      <div class="big"><span class="cnt" data-to="99.3" data-dec="1" data-prefix="%">0</span></div>
+      <div class="cap">taşınan eşya, tek çizik almadan yeni evine ulaşıyor.</div>
+      <div class="quote">"Kırılır diye aylarca sakladığım her şey, olduğu gibi yeni evimde yerini aldı."</div>
+      <div class="who">— E. Yıldız · Atakum → Ankara taşınması</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="sec" id="teklif" style="padding-top:20px">
+  <div class="wrap">
+    <div class="band rv">
+      <div>
+        <span class="eyebrow">2 dakikada başla</span>
+        <h2 style="margin-top:14px">Taşınmanı bugün planlayalım</h2>
+        <p>Eşya listeni ilet, sabit fiyat teklifini al. Keşif ve teklif tamamen ücretsiz.</p>
+      </div>
+      <div class="side">
+        <a href="https://wa.me/905462592055" target="_blank" rel="noopener" class="btn gold" style="justify-content:center;padding:16px 30px">WhatsApp'tan hemen yaz
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#241a06" stroke-width="2.2"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 20.5l1.6-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg></a>
+        <a href="tel:05462592055" class="btn ghost" style="justify-content:center">0546 259 20 55</a>
+        <div class="call">Hafta içi <b>08:00–20:00</b> · Hafta sonu <b>09:00–18:00</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="sss" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">S.S.S.</span>
+      <h2>Merak edilenler</h2>
+    </div>
+    <div class="faq-grid">
+      <details class="q rv" open><summary>Fiyat nasıl belirleniyor?<span class="pl"></span></summary><div class="a">Keşifte (yerinde ya da görüntülü) eşya listesi çıkarılır; kat, asansör, mesafe ve ambalaj ihtiyacına göre <b>sabit fiyat</b> verilir. Kapıda değişmez.</div></details>
+      <details class="q rv"><summary>Eşyalar sigortalı mı?<span class="pl"></span></summary><div class="a">Evet. Her sevkiyat taşıma sigortasıyla güvence altındadır; talep halinde poliçe detayı paylaşılır.</div></details>
+      <details class="q rv"><summary>Paketlemeyi siz mi yapıyorsunuz?<span class="pl"></span></summary><div class="a">Evet, profesyonel ambalaj (balonlu naylon, sarma battaniye, koli, kırılabilir için özel sandık) fiyata dahildir. İstersen yalnızca taşıma da alabilirsin.</div></details>
+      <details class="q rv"><summary>Asansör yoksa / yüksek kattaysam?<span class="pl"></span></summary><div class="a">Dış cephe asansörümüzle yüksek katlara hızlı ve hasarsız taşıma yaparız; dar merdiven sorun olmaz.</div></details>
+      <details class="q rv"><summary>Eşyamı bir süre saklatabilir miyim?<span class="pl"></span></summary><div class="a">Evet. İklimlendirilmiş, güvenlikli depomuzda günlük/aylık emanet mümkün; giriş-çıkış kayıt altındadır.</div></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="about">
+        <a href="#" class="brand"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#241a06" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h11V6H3zM14 9h4l3 3v4h-7z"/><circle cx="7" cy="17" r="1.6"/><circle cx="17.5" cy="17" r="1.6"/></svg></span><span>Özin<small>NAKLİYAT · SAMSUN</small></span></a>
+        <p>Eşyanı değil, evini taşıyoruz. Sigortalı, sabit fiyatlı, zamanında nakliyat.</p>
+      </div>
+      <div><h4>Hizmetler</h4><a href="#hizmetler">Evden eve</a><a href="#hizmetler">Şehirler arası</a><a href="#hizmetler">Ofis taşıma</a><a href="#hizmetler">Depolama</a></div>
+      <div><h4>Kurumsal</h4><a href="#neden">Neden biz</a><a href="#surec">Süreç</a><a href="#sss">S.S.S.</a><a href="#teklif">Teklif al</a></div>
+      <div><h4>İletişim</h4><a href="tel:05462592055">0546 259 20 55</a><a href="https://wa.me/905462592055" target="_blank" rel="noopener">WhatsApp</a><a href="#">Instagram</a><a href="#">Samsun / Türkiye geneli</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Özin Nakliyat & Taşımacılık</span>
+      <span>Sigortalı taşımacılık · Türkiye geneli</span>
+    </div>
+  </div>
+</footer>
 
 <script>
-var MAPDATA={"vb":[1029,451],"provs":[{"n":"Adana","d":"M516.1 381.5 L516.2 381.6 L516.3 381.8 L516 381.6 L516.1 381.5 ZM515.7 381.3 L515.8 381.4 L515.8 381.4 L515.7 381.4 L515.7 381.3 ZM512.3 380.9 L512.4 380.9 L512.4 381 L512.3 381 L512.3 380.9 ZM512.6 380.5 L512.6 380.7 L512.5 380.7 L512.4 380.6 L512.6 380.5 ZM512.6 380.2 L512.7 380.3 L512.5 380.3 L512.5 380.2 L512.6 380.2 ZM512.4 379 L512.6 379.1 L512.6 379.1 L512.4 379 L512.4 379 ZM532.4 377.3 L532.4 377.6 L532.4 377.6 L532.3 377.3 L532.4 377.3 ZM533.2 377.2 L533.2 377.5 L532.9 377.5 L533.1 377.2 L533.2 377.2 ZM537.2 376.5 L537 376.7 L536.9 376.6 L537.1 376.5 L537.2 376.5 ZM537.9 375.7 L538.2 375.9 L538.2 376 L537.9 376 L537.9 375.7 ZM571 295.6 L570.2 297.9 L570.4 301.4 L572.7 306.8 L569.5 313.6 L561.8 314.6 L555.5 319 L547.6 333.4 L547.6 341.2 L548.7 343.4 L546.1 348.7 L547.2 349.2 L553.8 345.7 L555.4 346.7 L557 350.1 L555.9 355.7 L551 360.3 L549.2 363.9 L550.3 365.5 L545.5 371.2 L543 373.1 L536.3 373 L534.3 374.5 L533.3 376.6 L533.5 375.4 L533 375.7 L532.8 377.6 L532.4 376.8 L530.9 376.7 L530.5 377.6 L531.3 377.1 L532 378.9 L534.4 376.1 L534.1 375.3 L535.7 374.9 L535.2 377 L535.8 375.6 L535.7 377 L538.4 376.7 L538.3 376 L539.3 376.7 L535.2 379.7 L534 384 L531.9 384.9 L531.1 386.6 L523.3 384.9 L519.2 388.4 L518.7 386.4 L518.3 386.1 L519.6 384 L516.4 382.5 L516.5 381.4 L515.7 380.8 L515.3 381.6 L514.5 380.6 L515.7 380.1 L514.6 379 L510.9 378 L510 379.2 L510.7 380.1 L515.8 383.7 L518.5 387 L501.4 376.6 L497.1 375.9 L498.9 373.9 L503.3 372.8 L505 369.6 L505.1 367.3 L504.3 359.4 L501.5 354.6 L497.6 351.4 L496.3 345.5 L490.3 331.9 L490.4 326.1 L494.2 322.1 L494.1 318.5 L491.9 313.1 L492.4 311.4 L494.7 309.7 L502.8 310.4 L505.8 309.1 L512.7 301.5 L512.3 296 L514.1 293.3 L525.4 295.6 L533.9 293.2 L537.1 286.2 L554.4 277.7 L562.2 262.4 L569.7 259 L573.5 258.9 L575.8 260.5 L579.4 268.9 L576 273.2 L571.3 290.4 L571 295.6 Z","cx":528.2,"cy":358.4,"lon":35.51,"lat":36.985},{"n":"Adıyaman","d":"M692.5 284 L703.1 284 L710.8 282.3 L714.4 280.4 L716.3 277.8 L718.9 278.5 L721.2 277.3 L723.4 279 L721.5 286.7 L714.3 290.7 L710.1 296 L709.3 298 L709.4 303.9 L708 307.1 L701.6 310.8 L702.1 313.1 L701.6 314.2 L690.4 318.6 L683.2 324.5 L675.5 324.8 L666.4 330 L661.4 328.4 L657.3 324 L647.6 320.8 L641.5 323 L638.5 323 L635.9 320.4 L630 318.3 L627.8 316 L628.1 310.1 L637 302 L644.5 301.3 L646.2 299.2 L649.7 298.1 L657.2 299.5 L667.7 295.6 L665.3 284.2 L679.1 276.8 L686.3 274.7 L691.4 276.8 L690.9 278.8 L687.7 281.8 L692.5 284 Z","cx":680.4,"cy":300,"lon":38.424,"lat":37.854},{"n":"Afyon","d":"M311.4 211.9 L312.7 215 L316.5 217.1 L328.9 216.7 L329.5 226.1 L325.1 235.2 L323.3 241.4 L324.4 244.8 L328 247.7 L306.1 261.5 L303.4 260.6 L299.1 255.7 L297.1 255.8 L282 270.7 L273.7 273.7 L267.3 277.7 L259.4 285.4 L254.1 289.1 L251.9 291.5 L249.8 296.8 L250.7 300.3 L249 302.7 L245 305.2 L238.5 304.7 L232.2 306.3 L230.6 302.4 L225.6 300.1 L222.7 300.1 L222.8 291 L236.3 283.2 L241.3 278.3 L242.4 275.3 L242.2 273.3 L236.2 262.4 L227.5 259.7 L228.3 256.2 L233.6 246.9 L234.7 242.5 L244.2 237.2 L246.3 235 L254.4 217.1 L260.3 214.5 L262.9 212 L263.9 209.1 L266.7 210.3 L268.6 214.2 L272.2 217.7 L273.7 217.8 L280.3 214.4 L282 211.4 L286.5 208.7 L291.9 212.3 L299.9 208.3 L305.1 203.9 L308.4 204.6 L311.4 211.9 Z","cx":270.8,"cy":250.5,"lon":30.584,"lat":38.591},{"n":"Ağrı","d":"M940.2 160.8 L940.1 169.6 L943.3 171.4 L944.5 171.5 L947.3 167.9 L952 167.7 L958.2 169.3 L971.7 176.9 L980.1 176.3 L983.9 177.9 L987.4 177.9 L991.6 176.4 L997.7 176.2 L997.3 180.6 L994.5 185.3 L995.4 189.3 L994.4 191.2 L994.8 193.7 L993.9 195.5 L987.5 198 L983.5 195.4 L980.9 196 L979.7 197.6 L979 197.5 L979.2 196.1 L975.4 195.8 L974.3 198.7 L973.5 198 L969.8 199 L956.9 198.1 L953.2 202.7 L950.5 203.6 L945.3 201 L941.8 196.9 L934.8 195.9 L929.5 200.9 L924.8 201.3 L923.6 202.3 L923.9 203.9 L928.2 207.1 L928.3 211.8 L927.3 213.6 L918 217.6 L910.5 218.6 L906.4 220.5 L905.4 212.3 L902.4 206.2 L900 204.7 L894.2 197.8 L891.6 191.8 L891.5 190.3 L894.6 184.8 L893.7 174 L892.1 171.6 L882.1 168.3 L880.6 165.1 L881.8 163.7 L888.5 164.3 L896.8 159.3 L900.6 161.3 L904.4 161.3 L924.9 155.2 L939 158.5 L940.2 160.8 Z","cx":942.2,"cy":187.4,"lon":43.434,"lat":39.529},{"n":"Aksaray","d":"M460 233.7 L463 236.9 L460 244.6 L463.5 248.5 L467.4 258.4 L469.9 260.7 L468.5 265.5 L468.2 270.6 L469.9 273.9 L469.6 279.3 L466.5 281.1 L463.3 286.4 L459 285.5 L456.9 286.7 L455.8 289.3 L437.7 293.1 L422.9 294.7 L418.6 293.5 L415.9 289.9 L409.5 275.7 L409.7 273 L412.7 266.9 L413.6 261.3 L416.9 252.4 L421.3 247.4 L432.6 242.4 L440.1 242.2 L445.3 237.7 L446.5 234.5 L443.4 226.1 L445.4 222.4 L453.3 229.5 L458.5 230.9 L460 233.7 Z","cx":446,"cy":260.2,"lon":33.939,"lat":38.446},{"n":"Amasya","d":"M538.2 96.8 L545.4 97.7 L551.4 97 L556.9 99.1 L563.2 95 L564.4 89.9 L567.3 90 L573.2 91.8 L573.4 94.8 L577.2 97.3 L575.5 100.5 L577.6 104 L578.4 108.2 L576.8 113.3 L570.7 120.6 L564.3 124.9 L559.5 125.8 L555.8 124.9 L551.6 122 L545.6 122.1 L538.9 133.9 L531.6 137.4 L529.2 140 L528.2 143 L520.9 142.7 L518.9 140.4 L519.5 131.7 L524.9 124.4 L525.7 117.3 L523.8 114.5 L514.9 111 L509.4 110.7 L505.8 107.9 L502.8 99.1 L503.9 98.5 L504.1 91.9 L506.3 86.4 L506.4 82.5 L526.9 87.8 L535.1 93.5 L536.3 95.7 L538.2 96.8 Z","cx":540.9,"cy":109.6,"lon":35.754,"lat":40.687},{"n":"Ankara","d":"M406.8 128 L408.5 132.2 L411 133.5 L414.3 133.3 L416 129.9 L418.4 129.7 L435.1 137.1 L431.1 142.2 L427.1 152.6 L429.2 158.1 L429.2 161.7 L428.1 163.6 L419.7 168.3 L415.6 172.5 L413.7 179.4 L413.6 184.4 L411.9 192 L409.2 197.7 L412 200.8 L416.3 201.7 L417.4 204.3 L416.1 207.8 L418.8 212.2 L424.6 205.9 L428.2 211.5 L446.3 220.6 L443.4 226.1 L446.5 235.6 L445.3 237.7 L440.3 242.1 L432.6 242.4 L421.3 247.4 L415.9 237 L416.5 220.4 L406.8 204.4 L403 208.1 L399.9 208.3 L398.1 212.3 L395 214.5 L391.4 212.6 L388.4 212.8 L383.5 217.5 L381.5 220.8 L373.8 219.6 L369.2 223.4 L360.1 218.4 L351.5 220.9 L349.1 220.1 L338.6 211.3 L344.4 207.7 L345.3 197.3 L344.4 189.1 L339.9 181.8 L336.9 173.9 L336.8 171.4 L338.8 168.7 L337.3 164.2 L334.1 163.6 L328.9 156.6 L324.7 154.7 L301.7 152.8 L293.7 154.5 L289.6 154.3 L288.3 153.4 L288 149.1 L285.9 146.4 L290.1 140.8 L295 137.5 L294.4 130.5 L295.7 127.9 L300 129 L306.3 132.5 L322.1 135.1 L329.3 132.7 L334 133.5 L339.7 132.6 L352.3 127.3 L364.2 127.9 L369.6 120.2 L367.2 112 L370.9 108.5 L379 108.6 L394.7 115.6 L406.8 128 Z","cx":376.7,"cy":174.9,"lon":32.611,"lat":39.715},{"n":"Antalya","d":"M221.4 416.4 L221.7 416.8 L220.8 417.4 L220.8 417.1 L221.4 416.4 ZM222.6 415.4 L222.5 415.8 L222.2 415.7 L222.2 415.6 L222.6 415.4 ZM227.5 415.1 L228 415.8 L226.6 416.4 L226.7 416.1 L227.5 415.1 ZM222.2 414.9 L222.3 415 L222.1 415.1 L222.1 415 L222.2 414.9 ZM220.6 414.3 L220.8 414.4 L220.5 414.5 L220.5 414.4 L220.6 414.3 ZM221 414.3 L221 414.4 L220.8 414.4 L220.9 414.4 L221 414.3 ZM213.7 413.8 L213.8 414 L213.9 413.9 L215 414 L213.4 414.5 L213.7 413.8 ZM220.7 413.7 L220.8 413.8 L220.6 413.8 L220.6 413.7 L220.7 413.7 ZM220.9 413.6 L220.9 413.7 L220.9 413.8 L220.8 413.7 L220.9 413.6 ZM219 413.4 L218.8 414.5 L219.7 414.9 L217.2 416.5 L219 413.4 ZM233.6 413.2 L233.6 413.3 L233.5 413.4 L233.5 413.3 L233.6 413.2 ZM231.7 413.1 L231.8 413.3 L231.7 413.4 L231.6 413.2 L231.7 413.1 ZM231.5 413.2 L231.5 413.1 L231.7 413 L231.7 413.1 L231.5 413.2 ZM216.7 412 L216.8 412.2 L216.8 412.3 L216.5 412.2 L216.7 412 ZM235.7 411.7 L235.7 411.9 L235.6 411.9 L235.5 411.9 L235.7 411.7 ZM261.5 411.7 L261.6 412.5 L261.5 412.8 L261.3 411.8 L261.5 411.7 ZM235.8 411.3 L234 413.2 L234.1 412.7 L231.9 413.2 L235.8 411.3 ZM261.4 411 L261.3 411.4 L261.1 411.3 L261.2 411 L261.4 411 ZM210.9 410.8 L210.8 411.2 L210.7 411.2 L210.7 410.9 L210.9 410.8 ZM235 410.7 L235.2 410.9 L235.2 411.1 L235 411 L235 410.7 ZM235.4 410.3 L235.2 410.7 L234.7 410.5 L234.9 410.4 L235.4 410.3 ZM207.1 409.9 L206.4 410.5 L206.1 410.6 L206.1 410.2 L207.1 409.9 ZM207.5 409.5 L207.5 409.8 L207.2 409.8 L207.3 409.5 L207.5 409.5 ZM265 408.4 L265.4 409 L265.3 409.1 L264.8 408.7 L265 408.4 ZM247.8 406.8 L247.7 406.9 L247.6 406.8 L247.6 406.8 L247.8 406.8 ZM269.2 393.6 L269.2 393.9 L268.8 393.9 L269 393.6 L269.2 393.6 ZM327.2 381.1 L327.2 381.2 L327 381.1 L327 381.1 L327.2 381.1 ZM271 370.5 L271.1 370.6 L271.1 370.8 L271 370.7 L271 370.5 ZM316 334.3 L330.5 335.4 L336.7 338 L356.9 357.4 L359.9 367.4 L367 369.4 L369.3 374.1 L368.6 379.3 L371.1 386.9 L373.7 390.4 L379.1 394.6 L378 398.8 L378.5 405.5 L375.1 417.2 L372.7 418.4 L370.2 417.3 L360.2 408.8 L359.1 405.2 L356 402 L353.4 396.6 L346.3 388.4 L345 388.1 L344.8 388.9 L344 389.2 L343.1 387.2 L333 384 L331.5 381.7 L327.6 381.3 L321.8 376.8 L312.7 373.2 L312.7 372.1 L309.7 370.2 L292.8 366.9 L279.8 367.8 L276.8 365.1 L272.8 367.4 L270.3 371.2 L270.1 379.2 L269.2 381.2 L269.5 383.5 L271.1 385 L269.4 388.1 L269.8 388.8 L268.5 389.5 L266.8 393.1 L266.9 395 L265.4 395.4 L265.9 396.3 L265.2 397.8 L267.9 402.1 L264.6 403.5 L264.7 404.5 L265.8 404.5 L265.7 405.8 L261.4 410.5 L261.6 406.1 L259.6 406.5 L254.9 403.5 L250.7 403.4 L248.1 404.4 L248.2 406.3 L247.5 405.9 L246.3 408 L243.5 407.1 L239.3 410.2 L236.2 408.9 L234.5 410.4 L234.3 411.6 L232.2 411.4 L231.3 411.9 L232.4 411.6 L229.8 413.5 L231.3 413.2 L229.4 415 L227.7 415.2 L228.9 414 L225.8 413.6 L223.7 415.8 L223.4 414.3 L222.2 414.7 L220.9 413.2 L221.5 412.2 L222 412.9 L221.7 411.4 L218.5 412.1 L220.9 410.8 L212 409.7 L211.1 410.5 L211.8 409.4 L209.5 409.5 L209.1 408.2 L209.8 407.1 L208.5 406.8 L207.2 406.9 L207.6 407.9 L206.4 409.2 L204.4 408 L201.4 404.4 L203.6 403.2 L205.2 397.6 L205.1 394.9 L218 383.3 L219.6 372.2 L223.2 365.8 L223.7 362.8 L227.3 361.7 L230.3 358 L232.3 349.2 L236.1 344.7 L242.7 341.4 L256.7 336.8 L259.1 337.3 L260.8 341.1 L263.4 342.4 L279.5 341.5 L282.3 342.3 L286.3 333 L289.2 332.3 L292.3 334.4 L301.9 331.2 L305 329 L309.4 328.9 L312.1 332.5 L316 334.3 Z","cx":252.9,"cy":398.8,"lon":30.242,"lat":36.383},{"n":"Ardahan","d":"M907.1 49.3 L910.9 49.4 L910.1 52.6 L908.7 53.9 L909.5 55.5 L911.8 56.8 L912.5 55.1 L914 54.7 L914.5 56.3 L917.9 58.3 L920.8 63.2 L924.8 64.8 L926.3 67.2 L930.1 68.4 L926 71.5 L929.5 71.6 L931.6 75.6 L931.3 76.8 L934.2 76.4 L933.3 78.2 L933.2 82.5 L931.3 86.5 L928.6 88.4 L923.3 89.5 L915.1 93.5 L913 98.1 L912.7 104 L910.9 107.8 L904.1 110 L899.2 112.8 L895.9 112.7 L892.9 107.3 L887 99.7 L884.6 93.7 L884.5 89.7 L888.1 82.9 L892.8 78.1 L896.4 76.1 L897.7 73.4 L895 68.4 L891.9 59 L894.4 59 L894.2 56.4 L897 54.3 L897.5 50.5 L898.7 49.4 L904.3 48.4 L907.1 49.3 Z","cx":909.9,"cy":73.7,"lon":42.817,"lat":41.222},{"n":"Artvin","d":"M845.8 54.1 L849.2 56.1 L852 55.1 L852.4 56.7 L855.8 57.4 L858 59.4 L864.9 53.3 L869.8 55.4 L871.8 54.2 L876.9 54 L877.9 55.4 L882 55.3 L884.7 56.9 L888.5 57.2 L891.9 59 L895 68.4 L897.7 73.4 L896.4 76.1 L892.8 78.1 L888.1 82.9 L884.5 89.7 L881.5 90.9 L872.4 91 L867.9 93.3 L865.8 98.2 L862.2 112.7 L858.1 114.2 L852.3 111.4 L848.9 111.3 L837.4 118 L833.9 116.9 L832.7 112.1 L835.7 105.7 L835.1 103.9 L825.4 103.4 L821.4 101.5 L832.6 86.5 L836.3 84.2 L837.1 82.3 L836.4 80.7 L834.3 80.5 L831 78.2 L828.3 74.6 L827.9 71.4 L826 68.2 L829.2 65.4 L836.5 62.6 L839.8 57.6 L842.3 56.2 L843.6 53.2 L845.8 54.1 Z","cx":855.6,"cy":77.4,"lon":41.777,"lat":41.166},{"n":"Aydın","d":"M100.7 335.1 L100.9 335.2 L100.8 335.8 L100.5 335.5 L100.7 335.1 ZM105 329.6 L105 329.9 L104.8 329.9 L104.8 329.7 L105 329.6 ZM93 319.5 L93 319.7 L93 319.8 L92.9 319.7 L93 319.5 ZM90.8 316.1 L90.9 316.7 L91.8 318 L90.8 316.6 L90.8 316.1 ZM83.8 313.5 L83.7 313.8 L83.5 313.8 L83.6 313.6 L83.8 313.5 ZM84.3 313.4 L84.2 313.6 L84 313.5 L84 313.4 L84.3 313.4 ZM84.5 310.8 L84.4 311 L84.3 311 L84.3 310.9 L84.5 310.8 ZM178.4 287.7 L181.2 291.4 L177.2 296.5 L175.7 300.7 L180.1 306.1 L181.6 310.9 L174.4 317.1 L167.8 316.4 L165.7 317.6 L164.5 319 L164.8 320.8 L167.3 325.3 L159.8 324 L151.1 318 L147.3 319.6 L143.6 325.5 L129.7 326.7 L120 324 L109.9 318.8 L106.7 323.4 L105.2 329.5 L102.8 330.5 L102.3 332.4 L100.7 332 L100.8 334.4 L98.4 333.5 L96.8 334.8 L93.5 333.6 L94.9 331 L94.4 330.6 L95.5 330.1 L94.9 329.2 L95.4 325.6 L95.3 324.6 L93 325.5 L94.1 324.5 L94 322.7 L93.7 321.6 L93.4 324.4 L92.9 324.9 L93.5 320.7 L92.3 321.4 L91.8 318.1 L92.7 319.6 L92.4 319.8 L92.4 320.5 L92.6 320.6 L94.8 317.7 L90 315 L83.6 313.1 L85.1 311 L88.7 311.7 L95.5 309 L97.4 304.6 L97.5 302.6 L95.8 301 L96.1 299.6 L97.2 299.2 L97.3 297.5 L102 297.5 L106.6 295.8 L109.3 294 L110.9 291.4 L121.1 291.2 L124 292.1 L131.8 290.5 L132.5 289 L133.3 289.7 L139.5 288.2 L148.8 288.9 L166 282.8 L172.1 282.7 L173.3 283.5 L172.9 285 L178.4 287.7 Z","cx":111.6,"cy":314.7,"lon":27.538,"lat":37.636},{"n":"Balıkesir","d":"M62.5 202.6 L62.7 204 L61.4 204.4 L62.1 202.7 L62.5 202.6 ZM58.9 201.4 L58.8 201.5 L58.7 201.4 L59 201.3 L58.9 201.4 ZM65.7 201.2 L65.7 201.3 L65.5 201.2 L65.5 201.2 L65.7 201.2 ZM59.4 200.7 L59.7 201.1 L59 201.2 L59 200.7 L59.4 200.7 ZM62.9 199.9 L63.3 200.6 L62.3 200.4 L62.7 200 L62.9 199.9 ZM61.4 199.8 L61.5 200.2 L61.2 200.6 L61.3 200 L61.4 199.8 ZM67.6 199.5 L67.7 199.9 L67 199.8 L67 199.7 L67.6 199.5 ZM62.3 199.4 L62.7 199.9 L61.8 199.9 L61.8 199.6 L62.3 199.4 ZM66.4 199.2 L66.3 199.3 L66 199.3 L66.1 199.2 L66.4 199.2 ZM67.7 198 L67.8 198.2 L67.6 198.3 L67.5 198 L67.7 198 ZM69.2 197.5 L69.2 197.7 L69.1 197.7 L69.1 197.6 L69.2 197.5 ZM71.4 197.5 L71.4 197.8 L70.9 198 L71 197.7 L71.4 197.5 ZM68.2 197.3 L68.3 197.9 L68 197.9 L68 197.5 L68.2 197.3 ZM61.1 197.1 L61.3 197.4 L61 197.6 L60.9 197.2 L61.1 197.1 ZM63.4 196.4 L66.3 196.8 L63.8 198.1 L67.3 200.6 L63.8 201 L63 199.4 L63.8 199 L63.5 197.4 L62.5 197.1 L63.4 196.4 ZM62.1 196.3 L62.8 196.5 L62 198.3 L61.3 196.8 L62.1 196.3 ZM68.5 195.4 L68.4 195.7 L68.1 195.7 L68.2 195.6 L68.5 195.4 ZM124.8 130.4 L124.7 130.7 L124.3 130.7 L124.3 130.5 L124.8 130.4 ZM140.5 125.2 L140.7 125.6 L140.2 125.4 L140.5 125.2 L140.5 125.2 ZM139.2 124.7 L139.7 124.8 L139.9 125.4 L139 125 L139.2 124.7 ZM118.1 124.4 L118.3 125.8 L117.8 125.9 L117.5 125.4 L118.1 124.4 ZM140.9 124.3 L141.3 124.3 L141.3 124.3 L140.9 124.5 L140.9 124.3 ZM113.1 124.2 L113.1 124.4 L113 124.5 L112.8 124.3 L113.1 124.2 ZM116 121.4 L116.1 122.4 L117.5 122.6 L116.5 124.1 L117.4 125.4 L113.7 124.7 L113.9 123.4 L115.3 123.4 L114.8 121.6 L116 121.4 ZM120.6 120.4 L120.6 120.5 L120.6 120.7 L120.5 120.5 L120.6 120.4 ZM114 120.3 L114.1 121.8 L113.8 122.6 L113.4 122.3 L114 120.3 ZM122.9 120.3 L124.1 120.4 L124.5 121.8 L125 120.9 L129 121 L137.4 123.5 L136.1 126.2 L130.4 129.6 L133.4 132.1 L138.9 130.1 L147 129 L143 134.7 L142.2 141.7 L142.2 148.1 L143 150.5 L146.8 153.7 L151.6 164.6 L153.4 164.9 L163 171.5 L170.8 172.2 L176.9 181 L183.3 181.1 L185.2 182.3 L186.1 183.4 L184.6 186 L184.9 188.1 L181.9 198.4 L177.2 203.9 L170.3 207.3 L170.3 212 L167.2 210.9 L160.1 214.7 L144.4 220.1 L141.6 218.8 L138.7 211.4 L135.6 208.2 L130.3 207.1 L129.6 204.9 L131.4 200.9 L130.3 199 L129.6 199.8 L124.8 199 L119 199.7 L115.5 198.8 L110.5 195.2 L104.8 197.4 L92.7 194.7 L81.3 205.6 L72.3 211.4 L69.9 209.5 L68.8 205.6 L63.1 204.7 L63.9 202.1 L65.2 201.3 L65.6 202.6 L64.2 203 L66.3 204.2 L65.9 202.5 L67.2 201.9 L67.9 200.1 L73.3 196.6 L72.9 193.9 L75.9 193.4 L76.1 190.9 L79.9 190.4 L81.1 185.9 L79.5 183.8 L77.3 183.7 L75.1 185.5 L71.7 184.6 L65.9 185.5 L66.1 179.3 L67.2 176.1 L69.8 174.7 L75.4 175.3 L82.5 170.4 L88.3 168.5 L91.7 168.5 L97.3 171.2 L105.6 167.2 L108.2 163.3 L109.2 159.8 L109 158.2 L107 156.5 L110 147.7 L108.2 142.3 L113.6 137.6 L114.2 134.4 L116.6 133.8 L118 135.2 L123.3 135.2 L129.5 130.6 L126.6 128.9 L125 130 L124.4 128.3 L122.4 126.9 L122.8 125.6 L119.4 124 L119.3 122 L122.9 120.3 ZM110.5 119.6 L112.4 120.8 L110.8 122.2 L111.6 123 L109.1 124.3 L108.5 122.6 L110.5 119.6 ZM109.7 118.6 L110 119 L107.8 119.6 L107.9 119 L109.7 118.6 ZM123.2 113.2 L123.1 113.4 L123 113.3 L123 113.3 L123.2 113.2 ZM108.9 112.3 L109.1 112.4 L109 113 L108.6 112.7 L108.9 112.3 ZM119 111.2 L119 111.3 L118.9 111.5 L118.8 111.4 L119 111.2 ZM116.7 110.9 L122.4 113.3 L115.3 117.2 L111.1 115.7 L111.3 112.3 L116.7 110.9 Z","cx":100.4,"cy":165.4,"lon":27.323,"lat":39.858},{"n":"Bartın","d":"M365.1 37.8 L365.1 38.1 L365.1 38.1 L365 37.9 L365.1 37.8 ZM380.5 32.5 L384.5 39.4 L388 48.6 L393.1 51.4 L387.8 54.1 L386.1 53.3 L384.2 55.7 L381.2 57.4 L377.8 64.7 L367.1 71.5 L363.2 72.6 L360.7 68 L346.1 51.7 L346.2 50 L348 50.3 L347.5 49.5 L352.5 47.8 L354.1 46.1 L353.8 45.5 L356.7 43.5 L356.5 42.5 L359.5 40.2 L362.5 40 L364.7 37.9 L366.4 38.9 L370.8 34.7 L374.7 34.1 L375.1 33 L380.5 32.5 Z","cx":367.5,"cy":46.4,"lon":32.436,"lat":41.628},{"n":"Batman","d":"M845.6 253.7 L848 256.1 L849.5 261.5 L850.5 266.8 L850.4 276.3 L848.8 283.3 L846.7 287.6 L840.1 288.8 L840.1 291.1 L837.6 293.1 L836.5 295.9 L842.1 299.7 L853.2 299.9 L853.5 301.9 L851.6 305.1 L854.4 307.5 L858.8 306 L860.4 306.4 L860.7 307.6 L850.9 312 L844.9 318.6 L838.3 320.1 L824.9 320 L817.7 309.1 L817.7 307.7 L820.2 305.7 L820.9 303.3 L817.7 301.9 L816.7 299.6 L820.5 295.8 L826 283.1 L827 278.4 L826.2 275.7 L826.2 267.8 L827.2 263.9 L828.6 260.8 L833.3 258.5 L837 258.1 L837.7 256.8 L836.8 255.1 L837.5 254.5 L845.6 253.7 Z","cx":838.3,"cy":286.9,"lon":41.446,"lat":38.049},{"n":"Bayburt","d":"M789 120.5 L790.3 123.4 L792.2 135.5 L795.7 139.2 L803.9 140.5 L804.4 142.1 L802.7 145.4 L796.5 148.2 L787.7 154.1 L782.3 154.2 L768.5 151.1 L756.5 155.2 L751.5 160.4 L747.3 157.4 L746.6 154.9 L749.2 150.6 L752.4 148 L753.2 145.7 L753.5 139 L755.1 133.9 L756.7 132.5 L762.1 131 L765.1 127.6 L767.6 121.4 L773.7 122.2 L788 119.8 L789 120.5 Z","cx":773.4,"cy":139.8,"lon":40.203,"lat":40.238},{"n":"Bilecik","d":"M247.4 131.1 L256.1 128.7 L264.6 129.7 L272.8 133.3 L278.2 144.2 L270.1 145.9 L267.6 155.3 L264.5 159.1 L258.9 160 L253.2 165.5 L246.7 164.7 L243.3 166.3 L240.2 171.1 L240.4 174 L242.6 176.4 L237.7 177.2 L225.8 173.2 L223.9 167.5 L224.2 163.9 L223.4 162.1 L228.3 162.1 L229.2 160.5 L229.2 158 L225.8 155.7 L223.9 151.6 L226.2 143 L229.8 139.8 L231.4 136.6 L230.1 132.6 L230.1 128.2 L231.8 124 L234.6 121.2 L237.2 120.1 L239.3 124.5 L247.4 131.1 Z","cx":241.6,"cy":149.7,"lon":30.026,"lat":40.091},{"n":"Bingöl","d":"M812 188.4 L816.5 191.7 L821.8 192.2 L826.4 199.1 L824.8 200.6 L824 203.5 L825.7 212 L827.4 212.6 L829.3 215.6 L829.3 221 L823.1 229.4 L828.9 241.4 L810.3 250.4 L790.2 249 L788.8 250.4 L787.6 255.9 L786 258 L778 258.3 L778.3 253.3 L775.3 249.3 L775.3 246.8 L777.8 241.4 L781.4 241.5 L783 236 L781.2 232.3 L779.5 231.7 L777.7 226.7 L777.6 220.2 L783.5 212.5 L783 209.8 L781.2 207.8 L763.3 217 L764.9 213.6 L764.3 209.6 L766.1 205 L767.9 201.9 L773.3 203.6 L783.2 197.3 L780.3 194.3 L789.7 189.1 L791.1 186.2 L798.5 188.6 L807.8 185 L810.3 186 L812 188.4 Z","cx":794.2,"cy":217.9,"lon":40.601,"lat":39.076},{"n":"Bitlis","d":"M926.6 227.8 L929.8 231 L929.8 234.5 L928.8 236.6 L922.4 241.6 L917.6 248.7 L916.7 248.9 L913.7 254.9 L905.4 259.4 L903.2 261.8 L905.9 271.6 L904.8 276.3 L906.7 278.4 L909 278.9 L907.9 281.6 L910.9 285.8 L905.9 289.3 L893.3 282.8 L886.7 280.9 L882.8 277.6 L878.1 275.6 L872.2 276.7 L868.6 281.5 L866.1 279.7 L862.9 280.2 L850.3 277.1 L850.5 266.1 L848.1 256.2 L846 253.9 L842.3 253.8 L844.8 250.9 L847.5 249.9 L860.1 250.5 L864.1 248.7 L870.2 243.5 L870.1 241.2 L867.2 237.2 L867.4 235.4 L874.4 234.8 L874.6 231.7 L883.4 227.3 L892.8 227.9 L896.6 226.8 L903 227.9 L907.4 227 L906.4 220.5 L910.5 218.6 L920.7 216.6 L919.8 223.9 L926.6 227.8 Z","cx":890,"cy":252.3,"lon":42.436,"lat":38.563},{"n":"Bolu","d":"M340.2 87.3 L359.6 88 L359.5 92.6 L371.3 97.8 L373 101.4 L372 106.8 L367.2 112 L369.6 120.2 L365 127.3 L361.6 128 L352.3 127.3 L339.7 132.6 L334 133.5 L329.3 132.7 L322.1 135.1 L306.3 132.5 L300 129 L295.7 127.9 L294.4 130.5 L295 137.5 L290.1 140.8 L285.9 146.4 L278.2 144.2 L273.5 135.1 L272.8 133.3 L274 129.9 L271.4 125.9 L275.6 121 L283.6 120.9 L287.8 119.6 L289.7 117.3 L290.1 109.9 L293.9 111.5 L302.5 110 L306.3 112.3 L311.4 111.3 L314.8 108.7 L315 101.7 L317 97.3 L324.1 96.6 L328.6 94.3 L331.1 92.1 L332.1 89.4 L332.1 87.5 L331 85.7 L340.2 87.3 Z","cx":318.7,"cy":115.4,"lon":31.502,"lat":40.601},{"n":"Burdur","d":"M268.5 310.1 L274.3 310.3 L277 311.8 L280.2 322.1 L287.7 330.6 L288.1 332.4 L285.7 333.6 L282.3 342.3 L279.5 341.5 L263.4 342.4 L260.8 341.1 L258.9 337 L255.3 336.9 L242.7 341.4 L233.8 346.5 L232.2 349.5 L231.1 356.4 L226.5 362.3 L223.7 362.8 L220.6 357.6 L216.6 355.5 L214.7 355.8 L211.3 359.8 L208.6 360.6 L209.3 356.7 L208.3 352.3 L208.7 347.2 L211.1 341.5 L215.3 336.2 L218.3 329.8 L218.3 328.1 L215.7 326.3 L215.5 317.7 L233.2 305.6 L239.9 304.9 L242 309.1 L244.5 310.1 L257.5 301 L259.6 301.6 L263.1 306.7 L268.5 310.1 Z","cx":242.7,"cy":333.8,"lon":30.048,"lat":37.351},{"n":"Bursa","d":"M163.9 117.7 L164.7 117.8 L163.8 118.9 L164.2 120.4 L163.2 121.4 L162.8 117.8 L163.9 117.7 ZM236.5 118.3 L237.2 120.1 L232.8 122.9 L230.3 127.2 L230.1 132.6 L231.5 136.3 L229.8 139.8 L226.2 143 L223.9 151.6 L225.8 155.7 L229.2 158 L228.9 161.2 L227.8 162.3 L220.1 163.1 L216.2 163 L211.6 160.9 L209.5 161.8 L205.6 170.8 L201.9 176.4 L200.9 183.9 L199.7 185.7 L192.8 186.5 L187.9 184.9 L183.3 181.1 L178 181.5 L176.1 180.3 L170.8 172.2 L163 171.5 L153.4 164.9 L151.6 164.6 L146.8 153.7 L143 150.5 L142.2 148.1 L143.1 134.3 L147 129 L162.4 129.2 L161.4 130.3 L160.9 131.4 L162.7 129.3 L169.8 131.6 L177.4 129.3 L181.3 129.9 L184.1 131.9 L187 131.9 L190.8 131.4 L192.5 127.7 L196.1 127.2 L192.8 123.9 L189.7 123.6 L188.5 122.4 L190.3 118.2 L202 118.4 L206.9 116.8 L211.6 118.5 L217.5 118.5 L229.1 114.6 L236.3 117 L236.5 118.3 Z","cx":192.4,"cy":141.5,"lon":29.085,"lat":40.212},{"n":"Çanakkale","d":"M34 166 L35.2 166.8 L35.6 169.1 L34.5 170.1 L29.3 166.7 L34 166 ZM35.8 161.1 L35.8 161.3 L35.5 161.3 L35.6 161.2 L35.8 161.1 ZM34 160.4 L34.1 160.5 L33.9 160.5 L33.9 160.4 L34 160.4 ZM34.4 159.8 L35.1 160.1 L35.3 159.9 L35.4 160 L34.8 160.4 L34.4 159.8 ZM28.3 139.6 L30 141.3 L29.5 145.7 L30.6 146.1 L32 144.8 L30.9 147 L17.6 149.7 L13.7 147.4 L14 145.5 L20 141.7 L23 141.6 L28.3 139.6 ZM68.6 129.7 L68.6 130.2 L68.1 130 L68.2 129.9 L68.6 129.7 ZM98.5 123.9 L100.9 128.2 L99.4 128.8 L99.6 130.8 L109.3 135.2 L113.8 134.8 L113.6 137.6 L108 142.7 L110 147.3 L107 156.5 L109 158.2 L109.2 159.8 L108.2 163.3 L105.6 167.2 L97.3 171.2 L91.7 168.5 L88.3 168.5 L82.5 170.4 L75.4 175.3 L69.1 174.9 L67.2 176.1 L66.2 178.7 L66.2 185.5 L65.6 185.9 L55.3 188 L50.9 189.6 L50.5 190.7 L45.1 190.5 L43.9 191.8 L43.3 191.1 L38.1 192.6 L34.5 190.9 L36.8 183.7 L38.7 181.8 L39.8 178.7 L38.6 172.1 L39.5 170.8 L39.8 168 L38.4 166.5 L39.6 163.7 L39.1 161.5 L40.5 156.5 L41.6 155.1 L45.3 155.7 L48.7 153.9 L50.4 149.1 L52.7 147.8 L52 146 L52.6 145.4 L52.3 142.6 L54.7 142.8 L58.7 141.2 L61.2 137 L62.9 136.9 L67.5 132.1 L67.3 131.2 L70.6 128.7 L79 128.5 L81 130 L85.2 129.6 L88.2 126.1 L91.6 125.4 L94.2 126.6 L98.5 123.9 ZM85.7 105.5 L85 116.1 L83.3 118.4 L78.3 119.8 L67.8 125.3 L67.8 127.6 L64.7 128.7 L64.2 131.4 L62.1 134.2 L57.9 136.4 L53.4 141 L50 142.1 L51.1 146.2 L43 152.5 L40.1 152.7 L45.8 141.3 L45.8 138.7 L43.2 136.4 L44.1 135.7 L43.9 134.7 L42.7 134.3 L47.4 131.2 L48.6 131.3 L55.1 126.1 L63.9 121.6 L68 121.5 L70.3 118.2 L70.4 119.1 L71.5 119.2 L74.9 116.7 L74 112.3 L70.9 109.3 L72.2 105.6 L76.1 105.7 L82.8 101.9 L84.8 102.6 L85.7 105.5 Z","cx":58.6,"cy":147.4,"lon":26.524,"lat":40.125},{"n":"Çankırı","d":"M438.1 91.1 L440.3 94.2 L451.1 98.6 L452.2 102 L451.6 110 L454.6 120.8 L457.6 126.8 L457.4 129 L454.8 133.9 L447.4 138.3 L434.5 137 L418.4 129.7 L416 129.9 L414.3 133.3 L411 133.5 L408.5 132.2 L406 126.6 L395 115.8 L379 108.6 L370.9 108.5 L373 102.2 L371.9 99.4 L375.4 95.9 L380.9 91.4 L398.5 87.5 L401 82.6 L406.7 83.6 L412.5 86.9 L415.3 90.3 L418.3 91.3 L440.6 82.2 L441.8 83.4 L442 85 L438.3 88.9 L438.1 91.1 Z","cx":420.4,"cy":106.9,"lon":33.447,"lat":40.728},{"n":"Çorum","d":"M492 75 L493.8 75.3 L495.9 71.5 L498.4 75 L500.4 83 L502.4 83.6 L506.4 82.5 L506.3 86.4 L504.1 91.9 L503.9 98.5 L502.8 99.1 L506.4 109.1 L509.9 110.9 L514.9 111 L519.6 112.7 L523.8 114.5 L525.6 116.9 L524.9 124.4 L519.5 131.7 L518.9 140.4 L516.6 141.4 L510.3 141.5 L510.8 149.7 L504.5 153.8 L497.3 152.4 L490.5 156.3 L469.9 156.3 L466 159.3 L457.3 160.3 L452.1 162.2 L452.7 158.8 L459.6 153.1 L457.1 150.9 L454.7 147 L453.5 140.8 L447.4 138.3 L454.8 133.9 L457.7 128.1 L451.6 110 L452.2 102 L451.1 98.6 L463.8 93.5 L463.8 90.2 L461.1 88 L460.2 85.9 L464.4 77.3 L471.8 68.1 L473.6 68 L476.5 70 L492 75 Z","cx":485.3,"cy":114.1,"lon":34.69,"lat":40.621},{"n":"Denizli","d":"M232.7 261.6 L236.5 262.8 L242.4 274.5 L241.3 278.3 L236.3 283.2 L222.8 291 L222.7 300.1 L225.6 300.1 L230.6 302.4 L232.2 306.3 L215.5 317.7 L215.7 326.3 L218.3 328.1 L218.3 329.8 L215.3 336.2 L209.5 344.6 L208.3 352.3 L205.5 355 L205.1 360.3 L201.7 365.4 L198 365 L192.3 358 L192 354.2 L190.9 352.4 L191.3 350.4 L189.7 347.7 L184.2 343.5 L176.8 341 L174.6 333.5 L167.8 331 L167.7 325.6 L164.5 319 L167.4 316.4 L174.4 317.1 L181.7 310.6 L180.1 306.1 L175.7 300.7 L177.2 296.5 L181 290.6 L177.5 287 L172.6 284.3 L177 280.7 L177.6 275.5 L183.9 272.4 L199.6 277.1 L210.2 272.6 L216.4 277.1 L218.1 277.3 L219 271.9 L221.9 267.1 L223.7 261.2 L227.5 259.7 L232.7 261.6 Z","cx":202.3,"cy":308.7,"lon":29.274,"lat":37.725},{"n":"Diyarbakır","d":"M835.5 250.3 L834.9 253.4 L837.6 257.1 L836.9 258.2 L833.3 258.5 L827.9 261.5 L826.2 267.8 L826.2 275.7 L827 278.4 L826 283.1 L820.5 295.8 L816.7 299.4 L817.7 301.9 L820.9 303.3 L820 306 L817.7 307.7 L804.7 309.2 L802 308.3 L800.1 306.2 L796.6 305.9 L794.2 304.5 L791.1 308.1 L790.7 312 L789.7 313.7 L784.6 314 L777 319.3 L767.7 317.8 L763.6 320 L756.5 320 L755.5 316.8 L755.5 307.2 L753.5 304.4 L750.3 301.4 L745.1 300.9 L732.1 290.5 L723.8 290.2 L719.8 288.1 L722.4 284.9 L723.3 278.6 L721.2 277.3 L718.9 278.5 L716.3 277.8 L717.9 271.8 L716.7 267.5 L724.4 265.5 L728.2 267.5 L731.3 267.7 L740.4 265.4 L748.8 265.2 L752.9 261.6 L755.5 256.7 L765.6 258.3 L785.6 258.2 L787.1 257.1 L788.7 250.5 L790.2 249 L810.3 250.4 L828.9 241.4 L834.4 247 L835.5 250.3 Z","cx":780.4,"cy":282.7,"lon":40.338,"lat":38.111},{"n":"Düzce","d":"M310.2 79.5 L315.4 84.8 L331 85.7 L332.1 87.5 L332.1 89.4 L330.9 92.3 L327.4 95 L324.1 96.6 L317 97.3 L315 101.7 L314.8 108.7 L311.4 111.3 L306.3 112.3 L302.5 110 L293.9 111.5 L290.1 109.9 L291.8 107.3 L286.9 103.5 L285.9 100.1 L287.6 95.5 L292.9 91.2 L294.3 88.2 L291.2 83.7 L303.8 82 L310.2 79.5 Z","cx":308,"cy":96.2,"lon":31.296,"lat":40.887},{"n":"Edirne","d":"M69.8 114.2 L69.9 114.6 L69.4 114.5 L69.5 114.3 L69.8 114.2 ZM70.8 114 L70.9 114.1 L70.7 114.2 L70.7 114 L70.8 114 ZM32.8 105.1 L32.8 105.2 L32.9 105.4 L32.8 105.3 L32.8 105.1 ZM31.8 102.7 L32.4 103.4 L32.6 103.9 L32.7 104.1 L31.8 102.7 ZM82.1 23.2 L82.9 26.9 L81.1 39.1 L78.8 42.9 L79.4 44.5 L83.4 46.7 L83.5 51.2 L79.3 57 L77.2 62.5 L78.2 65.5 L78.1 68.8 L80.3 72.6 L80.3 75.5 L77.8 79.3 L71.6 81.8 L70.1 84.5 L70.1 86.3 L72.2 88.6 L69.4 95.1 L69.3 101.1 L72.2 105.6 L70.9 109.3 L72.7 111.7 L63.1 113 L59.1 116.1 L55.3 114.3 L52.9 115.6 L50.8 114.9 L47.1 116.1 L37.8 116.1 L35.9 114.9 L34.4 112.9 L34.5 109.9 L32.9 106.5 L37.8 105.1 L39.5 101 L42.6 99.6 L41.8 98.5 L43.2 95.4 L44.3 95.9 L45.1 93.9 L46.4 95.3 L47 94.6 L46.3 93 L49.7 91.6 L48.1 89.7 L49.6 88.5 L50 86.7 L47.9 84.3 L48.3 81.1 L47.4 80.7 L48.5 78.7 L47.3 76.8 L48.6 71.5 L52.7 71.2 L58.9 65.3 L62.2 66.5 L64.5 64.7 L64.4 59.8 L62.8 55.6 L62.4 47.2 L59.3 46.5 L57.2 43.6 L50.5 40.6 L49 37.6 L51 32.6 L59.8 32 L61.6 29.6 L61.9 27.8 L61 26.3 L63.8 22.9 L70.5 24.4 L72.1 22.9 L75.1 23.4 L76.4 22.2 L82.1 21 L82.1 23.2 Z","cx":58.5,"cy":80,"lon":26.521,"lat":41.127},{"n":"Elazığ","d":"M781 215.8 L777.8 219.2 L777.7 226.4 L779.5 231.7 L781.4 232.5 L782.9 236.3 L781.4 241.5 L777.6 241.6 L775.2 247.7 L775.3 249.3 L778.2 252.9 L778 258.3 L765.6 258.3 L755.5 256.7 L752.9 261.6 L748.8 265.2 L740.4 265.4 L731.3 267.7 L728.2 267.5 L724.4 265.5 L708.9 269.4 L701.2 263 L694 262.5 L685.7 259.1 L680.7 258.3 L678.1 255.8 L676.5 251.7 L678.2 247.1 L682.9 240.7 L691.1 239.8 L691.2 231.3 L688.9 224.8 L690.3 222.3 L693.9 222.7 L697.6 220.7 L699.2 223.8 L698.4 229.8 L700.5 231.2 L713 230.2 L736.1 239.8 L743.4 236.3 L748.5 236.2 L752.6 233.9 L757.1 226.9 L757.2 223.5 L755.8 220 L758.7 217 L764.2 216.6 L769.8 213 L781.5 207.8 L783.5 212.5 L781 215.8 Z","cx":737.2,"cy":239.3,"lon":39.511,"lat":38.757},{"n":"Erzincan","d":"M776.6 162.1 L787.8 162 L789.4 162.9 L791 166.2 L790.4 169.8 L792.2 172.5 L798.9 176.6 L795.1 184 L795.2 187.5 L791.1 186.2 L770.2 185.5 L762 188.1 L756.8 186 L750.8 188.2 L746.9 192.6 L745.2 193.3 L742.8 193.2 L742.2 190.6 L741.1 190.1 L735.4 190.9 L727 189.4 L718.5 191 L715.6 192 L708.7 197.7 L701.1 201.6 L699.7 204.2 L701.8 205.7 L706.6 206.2 L706.2 207.6 L698.6 210.9 L696.2 215.4 L697.6 220.7 L693.9 222.7 L692.5 219.6 L690.5 217.7 L685.6 215.3 L680 215.1 L676.8 213.6 L678.8 208.7 L679 195.4 L676.5 186.9 L677.4 177.1 L679.9 172.8 L681.2 172.1 L681.8 170.1 L685.5 169.4 L687.2 167.4 L685.5 166 L679.3 167.5 L677.5 166.7 L678.2 162.8 L681.6 157.8 L696.1 158.7 L697.6 157.7 L698.7 152.5 L706.8 151.6 L716.5 155 L716.5 155.7 L730.6 163.3 L735.2 164.4 L749.7 161.7 L756.5 155.2 L769.1 151.1 L777.7 153.2 L775.4 159.3 L776.6 162.1 Z","cx":724.7,"cy":182.1,"lon":39.272,"lat":39.609},{"n":"Erzurum","d":"M884.5 89.7 L884.6 93.7 L887 99.7 L892.9 107.3 L896.9 114.5 L895.4 125.9 L893.8 128.4 L881.4 134.5 L875.1 136.3 L874.4 138.3 L878 144.6 L886.4 147 L893.3 153 L896.1 157.5 L896.8 159.3 L888.5 164.3 L881.8 163.7 L880.6 165.1 L882.1 168.3 L892.9 172.4 L893.8 174.3 L894.6 184.8 L891.9 190.2 L884.3 192.1 L878.4 195.4 L877.3 197.4 L878.7 199.7 L878.7 201.4 L871.1 208 L858.8 212.1 L852.6 211.3 L848.9 208.9 L842 200.6 L835.2 197.2 L826.4 199.1 L821.8 192.2 L816.5 191.7 L812.3 188.8 L809.8 185.7 L807.5 185 L798.5 188.6 L795.4 187.8 L795.1 184 L798.9 176.6 L792.2 172.5 L790.4 169.8 L791 166.2 L789.4 162.9 L787.8 162 L776.6 162.1 L775.5 160.4 L777.7 153.2 L788 154 L796.5 148.2 L802.4 145.6 L804.3 142.5 L803.6 140.3 L796.1 139.3 L793.7 137.9 L793.5 136.3 L792 135.2 L790.3 123.4 L788.8 119.8 L806 111.9 L821.4 101.5 L825.4 103.4 L835.1 103.9 L835.7 105.7 L832.7 112.1 L833.9 116.9 L837.4 118 L849.4 111.3 L852.3 111.4 L858.6 114.2 L862.5 112.4 L865.8 98.2 L867.9 93.3 L872.4 91 L881.5 90.9 L884.5 89.7 Z","cx":843.3,"cy":150.4,"lon":41.542,"lat":40.08},{"n":"Eskişehir","d":"M291.1 154.5 L301.7 152.8 L324.7 154.7 L328.9 156.6 L334.1 163.6 L337.3 164.2 L338.8 168.7 L336.8 171.4 L336.9 173.9 L339.3 180.5 L344.5 189.7 L345.3 202 L344.3 207.9 L337.5 211.7 L336.3 215.8 L332.9 217.7 L327.4 216.4 L317.1 217.2 L312.7 215 L308.4 204.6 L305.1 203.9 L299.9 208.3 L291.9 212.3 L286.5 208.7 L282 211.4 L280.3 214.4 L272.6 217.8 L268.1 213.6 L266.7 210.3 L263.9 209.1 L261.9 203.7 L257 198.7 L256.7 190.5 L247.5 181.2 L250 176.2 L242.6 176.4 L240.3 173.6 L240.4 170.2 L244.1 165.7 L247.3 164.6 L253.2 165.5 L258.9 160 L262.6 159.9 L265.4 158.4 L267.6 155.3 L270.1 145.9 L278.2 144.2 L285.2 146 L288 149.1 L288.4 153.5 L291.1 154.5 Z","cx":292,"cy":183.2,"lon":30.99,"lat":39.592},{"n":"Gaziantep","d":"M653.9 323 L657.8 324.3 L660.9 328 L657.6 327.9 L654.9 330.2 L650.3 336.4 L649.4 341 L652 353.5 L657 358.8 L658.9 362.2 L658.8 369.1 L653.4 371.8 L647.3 374.3 L640.2 375.4 L632.6 380.5 L628.8 372.1 L618.6 366.4 L616.3 359.7 L613.5 356.9 L606.7 356.7 L604.5 357.8 L601.3 363.9 L595.1 367.9 L594.7 370.4 L589 367.8 L586.5 368.1 L576.9 360.5 L581.9 349.8 L591.8 338.8 L600.6 332.8 L602.2 333.9 L604.2 341.9 L606.6 342.8 L608.5 341.6 L610.7 338.4 L615.7 335 L637.1 330.7 L638.5 328.3 L638.5 323 L641.5 323 L646.6 320.7 L653.9 323 Z","cx":626.1,"cy":348.3,"lon":37.384,"lat":37.135},{"n":"Giresun","d":"M681.1 93.3 L681.2 93.4 L681 93.4 L681 93.2 L681.1 93.3 ZM719 83.3 L719.8 83.6 L718.2 86.1 L716.7 91.9 L716.7 99 L718.3 103.7 L716.1 104.8 L711.9 104.9 L708 108 L702.5 118 L702.9 124.8 L709.6 127 L714.2 131.3 L713 133.4 L708.5 135.7 L705.7 138.6 L705.6 145.7 L707.9 149.3 L707.1 151.2 L703.3 152.5 L698.7 152.5 L688.1 148 L682.2 149.3 L671.4 142.6 L670.2 134.2 L666.4 120.3 L664.3 114.7 L658.7 105.5 L664.7 91.6 L668.7 92.8 L673 92.3 L676.9 94.7 L678.6 93.7 L680.7 94.6 L685.9 94.2 L690.8 90.4 L693.5 92 L695.6 91.9 L700.9 87.8 L703.8 87.8 L707 85.7 L713.3 86.1 L719 83.3 Z","cx":695.5,"cy":109.7,"lon":38.713,"lat":40.686},{"n":"Gümüşhane","d":"M719.7 104.7 L726.9 111 L744.5 118.2 L748.3 117 L750.5 110.5 L752.6 107.6 L754.4 109.3 L753.9 114.2 L757 114.5 L758.9 117.2 L761.1 118.1 L762.6 116 L761.4 113 L763 111.5 L768.4 117.5 L766.6 124.4 L764.9 127.9 L762.1 131 L756.7 132.5 L755.1 133.9 L753.5 139 L753.4 145.2 L752.6 147.7 L749.2 150.6 L746.6 154.9 L747.9 158.4 L751.5 160.4 L751 160.9 L742.8 163.5 L733.4 164.3 L724.3 160.2 L716.5 155.7 L716.5 155 L706.8 151.6 L707.9 149.3 L705.6 145.7 L705.7 138.6 L708.5 135.7 L713 133.4 L714.2 131.3 L709.6 127 L702.9 124.8 L702.6 117.4 L706.8 109.3 L711.9 104.9 L716.1 104.8 L718.3 103.7 L719.7 104.7 Z","cx":737,"cy":130.2,"lon":39.508,"lat":40.381},{"n":"Hakkari","d":"M984.1 308.6 L984.6 310.9 L983.2 314.3 L984.6 315.3 L989 313.3 L994.1 313.8 L998.4 310.5 L1001.8 305.8 L1003.6 306.7 L1005.1 309.3 L1002.1 313.9 L1004.9 316.5 L1005.1 318.7 L1004 320.3 L1004.4 325 L1003.2 327.5 L1006.4 328.7 L1007.8 331.5 L1010.1 332 L1014.8 336.7 L1015.3 338.9 L1012.4 342.3 L1013.8 347.4 L1012 346.1 L1005.1 344.8 L998.5 351.1 L990.1 354.1 L990.8 355.6 L988.5 359.6 L985.8 358.5 L984.5 355.6 L984.6 354 L982.3 350.8 L984.4 346.9 L985.8 347 L986.9 345.6 L986.3 341.5 L984.1 338.6 L979.2 336.2 L973.5 335.6 L970.2 338.1 L969.2 340.2 L966.3 341.6 L954.3 341.9 L945.7 339.4 L942.4 335 L942.3 322.3 L945.4 308.5 L954.8 309.3 L960.5 308.6 L966.1 310.3 L970.2 308.6 L975.1 309.2 L982.3 305.7 L984.1 308.6 Z","cx":986.6,"cy":329.8,"lon":44.285,"lat":37.411},{"n":"Hatay","d":"M563.4 375.9 L563.6 376 L563.6 376 L563.5 376 L563.4 375.9 ZM557 355.8 L567.1 356.8 L571.9 360.4 L576.9 360.5 L586.5 368.1 L588.7 368.4 L589.2 369.6 L586.5 373.7 L587 377.2 L584.5 381.9 L585.1 386.8 L582.6 391.2 L584.5 397.9 L586.3 398.3 L586.5 400.8 L585.5 402.4 L588.6 402.4 L588.8 404.3 L590.3 405 L590.6 407.8 L586.1 410 L584.2 409 L579.6 408.8 L578.4 411 L574.5 409.6 L574.7 411.7 L573.4 413.2 L574.5 419 L573.5 424.5 L571.7 425.1 L570.3 424.3 L569.3 425.1 L569.6 427.5 L564.9 427.9 L563.2 431.2 L563.3 435.6 L562.6 437 L559.8 433.6 L554.7 432.6 L554.9 429.7 L554.2 428.6 L550.4 430.1 L549.5 429.1 L552.6 423.3 L548.4 414 L542.3 404.5 L542.3 402.9 L544.1 400.4 L546.1 399.8 L546.4 398 L548.3 396.7 L549 394.7 L552.8 392.7 L555.7 388.7 L561.5 384.9 L563.9 384.5 L565 380.3 L563.8 377.2 L564.3 375.7 L563.5 375.6 L564.5 372 L561.5 367.1 L560.5 367.3 L561.1 366.7 L558.2 363.8 L554.6 362.1 L550.5 365 L550.9 365.8 L550.9 366.5 L549.2 364.4 L551.3 359.8 L555.9 355.7 L557 355.8 Z","cx":566.3,"cy":393.7,"lon":36.241,"lat":36.46},{"n":"Iğdır","d":"M955.8 143.2 L956.8 144.6 L953.7 145.8 L953.7 148.3 L957 150.4 L959.7 150.4 L966.8 154.6 L986.5 152.5 L997.1 158 L1000.9 162.3 L1003.2 167.5 L1004.4 167.3 L1004.2 168.2 L1007 170.1 L1008.2 169.7 L1008.4 171.4 L1009.2 171.4 L1014.2 177.5 L1014.6 181 L1009.5 175.5 L1006 173.8 L1004.3 170.8 L997.7 176.2 L984.8 177.9 L980.1 176.3 L971.4 176.9 L958.2 169.3 L952 167.7 L947.3 167.9 L944.5 171.5 L940.1 169.6 L940.1 160.1 L939.1 158.5 L937.8 158.3 L937.6 155.8 L934.8 151.2 L935 149.3 L936 148.2 L939.4 148.2 L940 146.9 L939.5 144.6 L941 143.6 L948.9 143.4 L954.1 141.1 L955.8 143.2 Z","cx":969.7,"cy":160.4,"lon":43.961,"lat":39.931},{"n":"Isparta","d":"M316.1 300.1 L316 305.1 L310.1 328 L309.4 328.9 L304.6 329.1 L301.9 331.2 L292.3 334.4 L288.1 332.4 L286.7 328.8 L280.2 322.1 L277 311.8 L274.3 310.3 L266.6 309.2 L261.9 305.4 L259.6 301.6 L257 301.1 L244.5 310.1 L242.7 309.8 L240.4 306.7 L240.8 305.5 L244.7 305.3 L249.3 302.3 L250.9 299.8 L249.8 296.8 L251.9 291.5 L254.1 289.1 L259.4 285.4 L267.3 277.7 L273.7 273.7 L282 270.7 L286.1 265.9 L297.9 255.5 L299.3 255.9 L303.4 260.6 L305.6 261.5 L305.2 264.3 L306.2 265.9 L324.7 282.2 L324.7 284.2 L323.8 285.8 L317.3 288.8 L314.8 292.2 L314.6 296.4 L316.1 300.1 Z","cx":283.9,"cy":296.9,"lon":30.836,"lat":37.9},{"n":"İstanbul","d":"M194 100.6 L194 100.8 L193.8 100.7 L193.8 100.6 L194 100.6 ZM195.5 98.3 L195.7 98.7 L195.8 98.9 L195.3 98.6 L195.5 98.3 ZM187.8 97.6 L187.8 97.8 L187.5 97.9 L187.5 97.6 L187.8 97.6 ZM194.8 96.9 L195.3 97.3 L193.9 99.4 L193.6 97.9 L194.8 96.9 ZM186.6 96.9 L186.7 97.1 L186.4 97.1 L186.4 96.9 L186.6 96.9 ZM193.1 96.3 L193.4 97.1 L191.9 97.5 L191.9 97.1 L193.1 96.3 ZM192 96.2 L192.2 96.4 L192 96.6 L192 96.3 L192 96.2 ZM191.1 96.2 L191.6 96.3 L191.8 96.7 L190.8 96.9 L191.1 96.2 ZM190.7 94.3 L191 94.9 L190.4 95.2 L190 94.5 L190.7 94.3 ZM201.4 72.8 L218.7 77.2 L219.8 76.3 L223.2 77.7 L233 78.9 L234.1 82.4 L232.3 83.9 L227.1 85 L221.7 88 L213.9 86.2 L213.1 88.5 L210.6 90.3 L209.9 93.9 L206.2 95.9 L204.8 98.1 L201.7 98.3 L200.9 97.2 L195.5 95.3 L193.1 91.9 L189.6 90.9 L190 90 L189.1 90.1 L188.3 87.9 L188.4 86.8 L190.7 85.4 L191.4 81.7 L193 80.7 L191.7 79 L192.5 76.6 L196.6 73.5 L201.4 72.8 ZM146.1 51.9 L150 55.3 L168.7 65.1 L171.5 65.2 L176.7 68.3 L178.1 68.1 L186.2 71.6 L192.1 71.5 L193.8 72.6 L193.7 74.5 L189.9 78.1 L191.8 80.2 L191 83.1 L189.7 85.2 L186.7 87.1 L184.9 85.4 L185.3 84.7 L185.1 84.3 L184.7 85.5 L186.1 87.1 L187.3 87.4 L187.2 88.3 L184.7 88.5 L181.5 90.7 L180.2 90.3 L178.8 91.7 L175.7 89.8 L168.1 91.3 L166.8 90.4 L166.5 87.4 L165.2 87.4 L164 89.6 L157 85.5 L149.3 84.4 L147.9 83.4 L142.2 84.6 L138.7 78.5 L140.3 74.4 L143.6 72.3 L146.1 64.2 L147.8 55.1 L145.1 53 L146.1 51.9 Z","cx":187.6,"cy":87.4,"lon":28.993,"lat":41.018},{"n":"İzmir","d":"M77.3 288.6 L77.5 288.7 L77.4 288.8 L77.2 288.8 L77.3 288.6 ZM84.2 287.1 L84.2 287.3 L84.1 287.3 L84.1 287.2 L84.2 287.1 ZM76 287.1 L75.9 287.2 L75.9 287.2 L75.9 287.1 L76 287.1 ZM73.2 279.9 L73.3 280 L73.2 280.2 L73.2 280 L73.2 279.9 ZM73.3 279.3 L73.2 279.6 L73.1 279.6 L73.1 279.3 L73.3 279.3 ZM54.1 277.5 L54.3 277.7 L54.2 277.9 L54 277.8 L54.1 277.5 ZM53.9 276.8 L53.9 277.2 L53.6 277.1 L53.6 277 L53.9 276.8 ZM71.4 276.7 L71.6 276.8 L71.6 276.9 L71.4 276.9 L71.4 276.7 ZM54.8 276.7 L54.7 277 L54.3 276.9 L54.4 276.7 L54.8 276.7 ZM42.1 270.2 L42.3 270.4 L42.3 270.7 L42.1 270.5 L42.1 270.2 ZM66.7 267.8 L66.7 268 L66.5 268.1 L66.5 267.9 L66.7 267.8 ZM55 265.4 L55.2 266 L54.9 266.1 L54.5 265.7 L55 265.4 ZM72.5 264.8 L72.6 265 L72.2 265.5 L72.2 264.9 L72.5 264.8 ZM55.6 264.5 L55.6 265 L55.4 265 L55.3 265 L55.6 264.5 ZM54.7 264 L54.8 264.2 L54.7 264.3 L54.6 264 L54.7 264 ZM54.7 263.7 L54.7 263.9 L54.6 263.9 L54.6 263.7 L54.7 263.7 ZM72.5 263.3 L72.6 263.6 L72.3 263.8 L72.2 263.6 L72.5 263.3 ZM55.8 263.5 L55.7 263.6 L55.7 263.3 L55.8 263.3 L55.8 263.5 ZM55.5 263.1 L55.7 263.9 L55.6 264.2 L55.4 263.6 L55.5 263.1 ZM56.9 262.9 L57 263 L56.9 263.1 L56.8 263 L56.9 262.9 ZM71.5 262.6 L71.7 262.8 L71.5 263 L71.4 262.6 L71.5 262.6 ZM72.8 262.3 L73 262.8 L72.7 262.9 L72.6 262.6 L72.8 262.3 ZM72.1 262.1 L72.3 262.2 L72.3 262.3 L72 262.2 L72.1 262.1 ZM47.4 261.7 L47.7 262.1 L47.6 262.4 L47.4 262.1 L47.4 261.7 ZM51.4 260.9 L51.6 261.8 L50.7 261.5 L50.8 261.2 L51.4 260.9 ZM50.6 260.8 L50.8 261 L50.5 261.5 L50.4 260.8 L50.6 260.8 ZM82.1 260.6 L82 261 L81.9 261 L82 260.5 L82.1 260.6 ZM79.5 260.1 L79.7 260.2 L79.7 260.3 L79.5 260.2 L79.5 260.1 ZM71.3 259.6 L71.8 260.6 L71.2 261 L70.9 259.8 L71.3 259.6 ZM50 259.5 L49.9 261.4 L48.6 261.8 L48.2 260.5 L50 259.5 ZM75.7 254.3 L75.9 254.3 L75.9 254.4 L75.6 254.3 L75.7 254.3 ZM76.1 254.3 L76.2 254.3 L76.3 254.2 L76.4 254.4 L76.1 254.3 L76.2 254.1 L76.1 254.3 ZM67.8 253.4 L69.3 254.6 L69.4 256.8 L70.4 257.8 L70 259.4 L67.5 258 L67.8 253.4 ZM74 253.5 L74.4 254 L74.4 254.5 L73.8 253.6 L74 253.5 ZM58.5 246.2 L58.7 246.4 L58.8 246.5 L58.5 246.4 L58.5 246.2 ZM58.3 245.6 L58.4 246 L57.9 246 L58.1 245.7 L58.3 245.6 ZM69.2 244.7 L69.4 244.9 L69.3 245.2 L69 244.9 L69.2 244.7 ZM68.8 244.6 L68.8 244.8 L68.4 244.9 L68.5 244.7 L68.8 244.6 ZM68.3 243 L69.1 243.6 L69 244 L68.3 243.7 L68.3 243 ZM68.3 242 L68.3 242.2 L68.2 242.4 L68.2 242.2 L68.3 242 ZM69.6 240.9 L69.6 241 L69.5 241 L69.5 240.9 L69.6 240.9 ZM77.4 232.6 L77.6 233.2 L77 233.2 L77 232.9 L77.4 232.6 ZM77.9 232 L77.9 232.1 L77.8 232.3 L77.8 232.1 L77.9 232 ZM85.6 230.8 L85.5 230.7 L85.6 230.6 L85.6 230.7 L85.6 230.8 ZM74.8 229.1 L75.1 229.4 L75.1 229.6 L74.7 229.4 L74.8 229.1 ZM73.6 227.9 L74.4 228.2 L74.2 229 L73.4 228.6 L73.6 227.9 ZM73.3 227.2 L73.4 227.4 L73.4 227.4 L73.2 227.3 L73.3 227.2 ZM73 222.2 L72.9 223.1 L72.6 223.2 L72.7 222.4 L73 222.2 ZM72.4 222.2 L72.4 222.6 L72.2 223 L72 222.4 L72.4 222.2 ZM108.1 211.4 L109.8 215.1 L109.9 221.7 L106.2 225.2 L103.7 226.2 L102.8 227.9 L92.3 230.3 L90.4 236 L90 237.8 L95.6 240.5 L98.1 251.7 L101.2 250.7 L107.4 252.3 L113 257.5 L122.3 260.2 L126.4 266.6 L128.1 267.8 L135.8 263.3 L141.9 263.1 L143.3 263.8 L144.2 265.9 L147.4 267.6 L158.4 270.4 L160.5 273.1 L163.3 281.1 L165 282.9 L148.8 288.9 L139.5 288.2 L133.3 289.7 L132.5 289 L131.8 290.5 L124 292.1 L121.1 291.2 L111.3 291.3 L106.6 295.8 L102 297.5 L98 297.5 L97.1 296.1 L97.9 293.9 L96.5 291.5 L94.8 290.7 L91 291.3 L88.7 289.2 L87.4 289.3 L86 286.8 L82.6 285.2 L78.2 286.1 L76.4 288.3 L74.3 279.6 L72.8 278.5 L71.7 279.4 L71.6 277 L72.5 276.8 L70.8 275.3 L69.5 276.3 L64.5 276.3 L63.9 280.9 L62.8 280.6 L63.4 282.7 L62.1 283.3 L61.1 280.6 L60.5 282.3 L58.9 281.6 L58 279.1 L58.3 277.6 L57.7 278.4 L56.7 277.9 L56.9 277 L55.2 277.3 L54.3 275.5 L53.2 275.3 L53.7 276.2 L53.8 276.8 L53.7 276.9 L51.6 275.2 L52.2 273.7 L51.7 272.7 L51 272.5 L51.5 273.6 L50.4 274.9 L48.7 275 L46.2 272.4 L43.3 272.3 L43.4 270.4 L45.4 270.7 L45.9 268.4 L47.1 268.6 L46.1 267.2 L46.1 264.9 L46.9 266.3 L47.8 264.9 L47.9 268 L49.3 267.7 L49.3 268.7 L51 269.4 L51.3 266.8 L52.2 268.5 L56.4 264.9 L56.1 263.2 L54.8 261.4 L56.9 263.2 L58.2 261.4 L54.1 258.2 L51.8 260.2 L52.8 257 L50.7 254.6 L50.8 253.8 L51.1 255 L51.1 253.6 L50 252.1 L49.7 247.3 L50.1 245.8 L53 244.4 L56 244.8 L58.6 246.5 L58.6 247.8 L60.6 249.7 L61 252.6 L63.9 254.5 L64.7 258.7 L62 258.6 L62.8 259.8 L61.8 261.5 L63.2 261.8 L64.9 264.9 L64.9 267.4 L66.4 269.2 L68 268.7 L66.5 266.8 L66.7 266 L67 266.6 L67.2 266.6 L66.5 264.1 L68.2 261 L69.7 261.4 L71.3 265.5 L73.5 266.3 L84.4 262.1 L88 263.4 L89.7 262.6 L91.2 260.1 L92.4 260.5 L91.8 258.8 L89.3 260 L87.6 258.8 L84.9 258.8 L82.2 259.6 L80.8 261.2 L81 260.4 L79.3 259.7 L79.4 258.8 L77.5 256.1 L74.9 255.1 L74.5 254.8 L77.6 255.9 L77.4 254.2 L75.6 253.7 L75.5 252.6 L75.3 253.2 L74.2 253.2 L75.5 252.5 L75.1 250.7 L74.6 251.3 L73 249.1 L70.8 248.8 L71.5 247.5 L69 246.4 L70.6 245.5 L69.4 244.9 L70 244.4 L69.2 241.7 L70.1 241 L69.9 240.3 L72 240.7 L74.3 239 L74.9 240.3 L76.1 239.6 L78 240.9 L78.6 238.7 L79.8 239.4 L80.3 238.7 L77.9 234.7 L79 235.3 L80.6 234 L80.5 235.6 L81.9 236.2 L82.7 234.9 L81.5 234.4 L82 233.3 L84.8 231.6 L84.5 232.3 L85.3 232.7 L87 231.3 L86.2 229.9 L85.4 230.2 L86.5 228.8 L85.8 227 L83.8 228.4 L84.4 228.8 L81.9 227.9 L81.3 227.2 L81.8 226.7 L80.2 227.2 L80.3 228 L79.3 227 L76.1 228.8 L75.6 227.4 L73.1 226.3 L72.9 223.2 L73.9 221.2 L73 222 L73 220.8 L77.6 217.9 L74.9 213.4 L71.2 211.4 L81.3 205.6 L92.7 194.7 L104.8 197.4 L107.5 203.1 L108.1 211.4 Z","cx":72.3,"cy":257.2,"lon":26.786,"lat":38.491},{"n":"Kahramanmaraş","d":"M608 250.2 L609.1 251.3 L621.1 250.1 L620.3 252.9 L616.2 257.1 L616.3 259.2 L624.9 258.9 L629.8 259.8 L642.5 266.1 L646.4 269.4 L646.3 275.3 L639.2 295.8 L633.5 305.5 L627.6 311.4 L628.3 316.8 L635.9 320.4 L638.5 323 L638.3 328.8 L635 331.7 L615.7 335 L610.7 338.4 L608.5 341.6 L606.6 342.8 L604.2 341.7 L602.4 334.2 L601.1 332.7 L591.8 338.8 L587.8 335.2 L584.2 330.2 L579.3 332.6 L573.5 333.9 L567.1 333 L564.9 322.6 L567.8 318.3 L572.5 307.3 L572.6 305.3 L570.4 301.4 L570.2 297.9 L571.3 290.4 L576.2 272.9 L584.3 263.7 L589.2 256.3 L591.1 250.8 L601.8 248 L608 250.2 Z","cx":605.1,"cy":298.6,"lon":36.983,"lat":37.874},{"n":"Karabük","d":"M395.6 53.6 L399.3 60.6 L397.6 63.7 L394.4 66.2 L392.8 69.4 L392.7 74.2 L393.2 75.5 L397.6 78.2 L401 82.6 L398.5 87.5 L380.9 91.4 L371.9 99.4 L370.1 97 L359.5 92.6 L359.6 88 L349.5 87.4 L350.5 80.2 L351.7 78 L355.3 75.3 L360.5 72.6 L367.1 71.5 L376.6 65.8 L379.1 63.2 L381.2 57.4 L384.2 55.7 L386.2 53.2 L387.8 54.1 L393.1 51.4 L395.6 53.6 Z","cx":380.1,"cy":72.4,"lon":32.677,"lat":41.241},{"n":"Karaman","d":"M440.3 331.7 L444.3 335.8 L445.8 339.1 L454.4 341.2 L459.6 345.4 L454.1 348.6 L448.7 348.9 L442.3 353.3 L436.2 355.5 L430 354.2 L424.7 357.2 L417.3 357.5 L403 367.3 L395 370.2 L399.1 379.1 L402 382 L408.4 385.4 L409 387 L408.1 389.5 L399.9 393.1 L386.3 395.6 L379.1 394.6 L373.7 390.4 L371.1 386.9 L368.6 379.3 L369.3 374.1 L376.5 371.9 L383.8 367.4 L387.1 363.4 L376.9 360.8 L374.3 358.2 L374.2 356.5 L378.6 351.1 L380.6 346.8 L380.9 343.2 L384.9 341.7 L388.7 343.1 L391.8 343 L389.8 338.5 L392.7 332.6 L400 331.3 L402.8 327.2 L404.7 326.7 L407.5 326.9 L412.5 332 L415.5 332.2 L417.3 330.7 L419 325.3 L422.4 321 L430.7 316.8 L434.9 316.5 L440.3 331.7 Z","cx":406.5,"cy":353.5,"lon":33.182,"lat":37.059},{"n":"Kars","d":"M950.8 89.6 L954.8 93.5 L954.8 99 L956.7 101.2 L958.6 106.3 L958 108.2 L958.7 110.1 L954.8 116.9 L953 118.2 L953.3 120.1 L952.5 119.7 L952.2 120.9 L948 123.7 L951.8 127.7 L950.5 133.1 L952.9 137.2 L955.1 138.4 L955.1 140.3 L949.5 143.3 L941 143.6 L939.5 144.6 L940 146.9 L939.4 148.2 L935.5 148.5 L934.8 151 L937.6 155.8 L937.8 158.3 L924.9 155.2 L904.4 161.3 L900 161.2 L896.8 159.3 L893.3 153 L886.4 147 L878 144.6 L874.5 138.6 L875.1 136.3 L881.4 134.5 L894.1 128.2 L895.4 125.9 L897 116.1 L895.9 112.7 L899.2 112.8 L904.1 110 L910.9 107.8 L912.7 104 L912.9 98.5 L914.7 93.9 L919.2 91.2 L925.4 89.6 L930.9 86.9 L933.1 82.9 L933.3 78.2 L934.2 76.3 L938.6 75 L942.3 76.5 L944.1 79.9 L943 82.4 L944.2 86.7 L950.8 89.6 Z","cx":929.1,"cy":119.3,"lon":43.184,"lat":40.543},{"n":"Kastamonu","d":"M414.7 20 L432.4 22.7 L451.7 22.6 L461.1 24.4 L461 29.9 L463.2 34.5 L463.3 38.9 L475 39.9 L480.6 43.6 L480.4 45.9 L478.9 48.8 L473.5 52.2 L474.1 68.2 L471.9 68 L469.9 70 L464.4 77.3 L460.2 85.9 L461.1 88 L463.8 90.2 L463.8 93.5 L451.1 98.6 L443.6 95.9 L440 94 L438.2 91.9 L438.3 88.9 L442 85 L441.8 83.4 L440.3 82.1 L420.5 91.1 L417.2 91.2 L408.2 84.4 L404.7 82.7 L401 82.6 L396.6 77.2 L393.2 75.5 L392.5 70.1 L394.4 66.2 L397.6 63.7 L399.3 60.6 L394.5 51.9 L388 48.6 L384.5 39.4 L380.3 32.5 L392.5 29.9 L398.4 26.3 L405.8 24.4 L414.7 20 Z","cx":433.7,"cy":61.8,"lon":33.703,"lat":41.399},{"n":"Kayseri","d":"M551 209.5 L554.4 213 L557.3 214.3 L569.8 214.2 L573.3 212.7 L577.7 214.2 L585.3 211.2 L594.4 211.2 L600.2 214.2 L603.1 219.2 L593.4 244.9 L592 250.5 L590.3 251.7 L589 256.6 L580.3 268.5 L579.4 268.9 L578.5 267.6 L575.1 259.6 L569.7 259 L561.4 263.2 L554.2 278 L537.1 286.2 L533.9 293.2 L524.3 295.6 L515.4 292.9 L517.8 287.5 L517.8 278.8 L516.1 275.3 L513.8 273.1 L507.9 272.8 L504.8 271.2 L501.2 261.9 L497.4 261.1 L496.7 259.2 L496.7 256.3 L497.7 254 L502.4 252.2 L505.2 249 L505.1 239.9 L499 236.5 L501.6 222.1 L503.4 220.4 L505.7 220.5 L514.1 222.6 L526.7 216.3 L525.7 212.5 L526.1 210.4 L536.9 209.3 L544 202.9 L547.8 204.4 L551 209.5 Z","cx":541.2,"cy":244.1,"lon":35.761,"lat":38.686},{"n":"Kilis","d":"M628.8 372.1 L632.6 380.5 L631.3 381.5 L613.6 380 L612.4 380.3 L610.7 382.7 L607.5 380.2 L608.9 375.9 L603.1 372.1 L595.8 370.9 L594.6 369.2 L595.8 367.3 L601.3 363.9 L604.5 357.8 L606.7 356.7 L612.5 356.7 L615.6 358.3 L618.6 366.4 L628.8 372.1 Z","cx":611.7,"cy":370.8,"lon":37.11,"lat":36.801},{"n":"Kırıkkale","d":"M445 138.2 L453.4 140.7 L454.7 147 L459.6 153.3 L452.4 159.3 L452.8 168.7 L444.6 175.6 L441.7 185.1 L438.9 188.4 L436.7 193.1 L432.5 193.2 L427.6 197.4 L424.6 205.9 L418.8 212.2 L416.1 207.8 L417.4 204.3 L416.3 201.7 L412 200.8 L409.2 197.7 L411.9 192 L414.7 174.9 L415.9 172 L419.4 168.5 L428.5 163.1 L429.4 158.6 L427.1 152.6 L429.5 145.3 L434 138.4 L437.2 136.7 L445 138.2 Z","cx":431.6,"cy":173.7,"lon":33.661,"lat":39.734},{"n":"Kırklareli","d":"M96.8 14.3 L100.7 15.7 L101.2 17.2 L103.2 18.1 L105.2 22.1 L110.1 24.7 L112.3 28.1 L113.1 27.7 L112.6 27.2 L113.2 25.6 L118.4 24.6 L119.7 23.2 L121.6 23.2 L125.4 25.7 L126.7 25.1 L126 22.8 L128 21.6 L130.7 23.5 L137.4 22.3 L138.8 29.2 L136.3 28.5 L135.5 28.9 L134.2 30.6 L135.5 35 L137.9 38 L137.9 39.5 L141.3 43.6 L140.5 44 L140.5 45.7 L143.6 49.6 L134.6 52.1 L128.8 54.9 L123.7 54.4 L121.7 55.4 L118.7 57.8 L118.7 61 L117.1 65.1 L112.4 72.7 L110.7 73.7 L108.2 73.4 L103.2 67.8 L97.2 65.2 L79 66.2 L77.3 64.1 L77.4 61.3 L83.5 50.6 L83.4 46.7 L79.4 44.5 L78.8 42.9 L80.9 39.4 L81.9 34 L82.9 26.9 L82 22.9 L82.6 19.2 L84.5 18 L85 15.9 L87.1 15.2 L94.4 17 L94.4 15.7 L96.8 14.3 Z","cx":110.5,"cy":36.9,"lon":27.517,"lat":41.769},{"n":"Kırşehir","d":"M461.1 173.1 L467.9 172.7 L471.5 173.7 L473.7 177.8 L477.7 181.2 L476.7 185.5 L483.6 190.3 L481.1 197.4 L481.1 201 L483.8 201.6 L487.2 198.7 L488.7 199.4 L485.1 204.9 L485.4 208.2 L481.9 211.3 L482.5 216.5 L478.9 217.7 L479.4 221 L476.5 223.6 L474.1 228.5 L474 230.6 L471.6 231.3 L467 230.7 L465.5 232.2 L465.1 235.4 L463 236.9 L460.8 235.4 L458.5 230.9 L453.3 229.5 L448.3 225.3 L445.4 222.4 L446.2 220.5 L428.2 211.5 L424.6 205.9 L427.6 197.4 L432.5 193.2 L436.7 193.1 L438.9 188.4 L441.7 185.1 L444.4 175.9 L447.3 172.7 L452.8 168.7 L461.1 173.1 Z","cx":463.5,"cy":204.9,"lon":34.274,"lat":39.269},{"n":"Kocaeli","d":"M254.5 74.3 L258.5 75.6 L260 77.7 L259.7 79.6 L257 81.8 L255.3 87.2 L259.2 91.9 L260 97.4 L259.4 98.6 L255.4 100.6 L255.9 105 L252.2 113.6 L248.2 114 L241.2 116.9 L235.1 116.8 L228 114.6 L218.1 118.4 L211.6 118.5 L210.5 118.1 L210.6 110.1 L214.9 106 L215.2 107.4 L214.5 107.6 L217.4 109.7 L230.4 106.7 L235.9 107.8 L236.9 107.4 L237.1 105 L228.9 106 L226.2 103.9 L220.1 103.2 L217.8 104.3 L213.6 103.4 L206.5 105 L205.3 100.9 L201.4 101.9 L201.3 101 L203.3 99.8 L202.1 99.9 L201.9 99.2 L202.6 99.6 L205.3 97.8 L206.2 95.9 L209.9 93.9 L210.6 90.3 L213.1 88.5 L213.9 86.2 L222.1 87.9 L227.1 85 L233.8 83.2 L234.1 81.6 L233.1 79 L248.2 79.3 L250.3 78.7 L250.3 77.7 L252 77.7 L251.9 76.1 L253.4 76.1 L254.5 74.3 ZM254 74 L253.8 74.2 L253.6 74.1 L253.7 74 L254 74 Z","cx":232.2,"cy":94.9,"lon":29.847,"lat":40.906},{"n":"Konya","d":"M409 208.1 L416.5 220.4 L415.9 237 L421.3 247.4 L416 254.1 L412.7 266.9 L409.5 273.6 L409.7 276.6 L415.9 289.9 L418.9 293.7 L422.9 294.7 L438.1 293.1 L453.1 289.3 L457 289.7 L466.3 299.8 L472.8 310.3 L472.9 313.9 L470 320.1 L469.1 325.6 L469.3 326.9 L471.2 327.4 L474.4 330.8 L476.1 335 L475.1 336.3 L466.6 341.1 L465.9 342.5 L459.6 345.4 L454.4 341.2 L445.6 339 L444.3 335.8 L440.3 331.7 L434.9 316.5 L430.7 316.8 L421.7 321.6 L418.2 326.9 L417.3 330.7 L415.8 332 L412.5 332 L407.5 326.9 L403.4 326.9 L400 331.3 L394.6 331.6 L391.6 333.7 L389.8 338.9 L391.8 343 L388.7 343.1 L384.9 341.7 L380.6 343.4 L380.2 347.8 L377.9 352.1 L374.4 356.2 L374.2 358 L377.3 361 L387.1 363.4 L383.8 367.4 L376.5 371.9 L369.3 374.1 L366.6 369 L359.9 367.4 L356.9 357.4 L336.7 338 L330.5 335.4 L316.5 334.4 L312.1 332.5 L309.4 328.9 L311.2 325 L311.6 320.4 L316 305.1 L316.1 300.1 L314.7 296.9 L314.7 292.5 L317.3 288.8 L323.8 285.8 L324.8 283.1 L323.1 280.4 L305.8 265.5 L305.3 262.5 L305.6 261.5 L328 247.7 L324.4 244.8 L323.3 241.4 L325.1 235.2 L329.5 226.1 L328.9 216.7 L332.1 217.9 L335.8 216.3 L337.5 211.7 L338.6 211.3 L343.3 216 L350.7 220.9 L360.1 218.4 L369.4 223.3 L373.8 219.6 L381.5 220.8 L383.5 217.5 L388.5 212.7 L391.4 212.6 L395 214.5 L398.1 212.3 L399.9 208.3 L403 208.1 L406.8 204.4 L409 208.1 Z","cx":387.7,"cy":293.6,"lon":32.822,"lat":37.949},{"n":"Kütahya","d":"M217.4 163.1 L223.4 162.1 L224.2 163.9 L223.9 167.5 L225.8 173.2 L237.7 177.2 L246.5 175.7 L250 176.2 L247.5 181.1 L256.7 190.5 L256.8 198.3 L261.9 203.7 L263.9 209.1 L263.6 210.8 L260.3 214.5 L253.9 217.6 L249.2 229.5 L245.6 235.9 L235.9 242 L234.7 242.5 L234.6 237.1 L233.1 232.7 L224 230.3 L219 231.3 L214.3 234 L203.9 237.6 L200.2 240.9 L192.7 240.5 L189.9 241.3 L189.7 233 L188.6 231.5 L187.5 225.9 L185.8 222.4 L182 217.9 L172.1 214.9 L170.3 212 L170.3 207.3 L177.2 203.9 L181.9 198.4 L184.9 188.1 L184.6 186 L186.1 183.4 L189.1 185.5 L192.8 186.5 L200 185.5 L200.9 183.9 L201.9 176.4 L205.6 170.8 L209.2 162.1 L211.6 160.9 L217.4 163.1 Z","cx":215.3,"cy":203.1,"lon":29.523,"lat":39.296},{"n":"Malatya","d":"M680.6 215.2 L685.6 215.3 L690.5 217.7 L692.5 219.6 L693.9 222.7 L690.3 222.3 L689 224.4 L691.2 231.3 L691.1 239.8 L684.1 240.2 L682.4 241.2 L676.4 250.8 L678.1 255.8 L680.7 258.3 L685.7 259.1 L694 262.5 L701.6 263.2 L708.9 269.4 L716.7 267.5 L717.9 271 L716.9 276.9 L714.4 280.4 L710.8 282.3 L703.1 284 L692.5 284 L687.7 281.8 L690.9 278.8 L691.4 276.8 L686.8 274.7 L682.9 275.5 L665.3 284.2 L667.7 295.6 L656.8 299.6 L649.1 298.2 L646.2 299.2 L644.5 301.3 L640.7 301.3 L635.2 303 L642.4 287.6 L646.4 274.9 L646.4 269.4 L642.5 266.1 L630.1 259.9 L624.9 258.9 L616.6 259.4 L616.2 257.1 L620.3 252.9 L621.3 249.9 L631.4 242.7 L636 238 L637.2 234 L634.9 228 L634.8 225.7 L636.7 222.3 L646.8 222.9 L655.1 219 L667.3 218.2 L674.3 213.7 L680.6 215.2 Z","cx":668.8,"cy":256.6,"lon":38.201,"lat":38.5},{"n":"Manisa","d":"M119 199.7 L124.8 199 L129.6 199.8 L130.3 199 L131.4 200.9 L129.6 204.9 L130.3 207.1 L134.6 207.6 L136.3 208.8 L138.7 211.4 L141.6 218.8 L143.7 220 L160.1 214.7 L168.2 210.8 L170.3 212 L172.7 215.3 L180.5 217.2 L183.6 219.3 L187.3 225.5 L189.9 234.4 L189.9 241.3 L181.7 247.4 L180 251.5 L179.7 257.3 L180.5 263.7 L178.9 266.3 L183.9 272.4 L177.6 275.5 L177 280.7 L173.3 283.5 L171.4 282.5 L165 282.9 L163.3 281.1 L160.5 273.1 L158.4 270.4 L147.4 267.6 L144.2 265.9 L143.3 263.8 L141.9 263.1 L135.8 263.3 L128.1 267.8 L126.4 266.6 L122.3 260.2 L113 257.5 L107.4 252.3 L101.2 250.7 L98.1 251.7 L95.5 240.4 L90 237.8 L92.3 230.3 L102.8 227.9 L103.7 226.2 L106.2 225.2 L109.9 221.7 L109.8 215.1 L108.1 211.4 L107.5 203.1 L104.8 197.4 L110.5 195.2 L115.5 198.8 L119 199.7 Z","cx":141.1,"cy":236.3,"lon":28.103,"lat":38.802},{"n":"Mardin","d":"M804.7 309.2 L817.7 307.7 L817.8 309.4 L822 314.6 L824.9 320 L838.3 320.1 L844.9 318.6 L850.9 312 L860.7 307.6 L865 314.5 L863.8 318 L864.6 322.1 L862.1 323.9 L854.9 325.2 L853.7 325.9 L853.6 327.6 L853.6 334.7 L854.5 337.5 L855.7 338 L859.3 336.7 L860.4 338.8 L861.4 343.3 L860.4 348 L844.2 351.7 L829.2 352.1 L826.4 353.1 L823.9 351.2 L812.4 349 L809 349 L807.2 350.2 L803.6 349.3 L791.3 355.6 L785.6 356.8 L776.1 363 L772.2 361 L769.7 355.8 L768.7 348.6 L759.6 329.5 L756.5 320 L763.6 320 L767.7 317.8 L773.5 319.3 L777.4 319.1 L784.6 314 L789.7 313.7 L790.7 312 L791.1 308.1 L794.2 304.5 L796.6 305.9 L800.1 306.2 L802 308.3 L804.7 309.2 Z","cx":816.9,"cy":329,"lon":41.036,"lat":37.423},{"n":"Mersin","d":"M424.7 415.9 L424.9 416.4 L424.6 416.6 L424.8 416.3 L424.7 415.9 ZM433.3 413.8 L433.5 413.8 L433.5 413.9 L433.1 413.8 L433.3 413.8 ZM437.7 411.1 L437.6 412.2 L436.5 412.3 L436.8 411.8 L437.7 411.1 ZM440.3 406.5 L440.3 406.6 L440.2 406.8 L440.1 406.6 L440.3 406.5 ZM497 348.7 L498.1 352.2 L501.5 354.6 L504.3 359.4 L505.1 368.6 L503.3 372.8 L498.9 373.9 L496.8 376 L493.9 372.2 L489.1 370.2 L483.4 370.3 L478.5 373 L477.7 374.7 L473.9 377 L471.7 380 L463.8 385.2 L458 393.2 L455.6 394.3 L455 396 L453.4 397 L453 403.2 L451.5 404.8 L449.1 404.2 L448 406 L449.1 405.4 L449.2 405.5 L447.3 409 L446 405.1 L442.5 403.3 L440.5 405.4 L440.9 406.1 L439.6 406.2 L439.3 408.5 L433.5 412.9 L432.9 413.9 L433.6 415 L433 415.5 L432.1 414.8 L432.7 414 L431.4 413.8 L431.5 412 L430.8 411.6 L428 412.7 L426.3 416.2 L421.8 413.9 L417.6 416.2 L415.4 414.2 L412.1 415.9 L404.6 415.3 L403.5 415.8 L401.3 419.9 L399.7 418.2 L394.4 417.6 L390.1 419.8 L386.7 423.6 L380.2 422 L374.3 417.9 L376.1 415.2 L377.8 409.4 L378.5 405.4 L378 398.8 L379.1 394.6 L388.7 395.5 L399.9 393.1 L408.1 389.5 L409 387 L408.4 385.4 L402 382 L399.1 379.1 L395 370.2 L403 367.3 L414.2 359 L417.7 357.4 L424.7 357.2 L429.4 354.3 L432.5 354.2 L435.7 355.6 L440.7 354 L448.4 349 L456.4 347.8 L465.9 342.5 L466.6 341.1 L474.9 336.6 L476.1 335 L475.9 333.9 L480.6 333.8 L486.2 330.8 L490.2 330.8 L497 348.7 Z","cx":438.5,"cy":391.6,"lon":33.794,"lat":36.491},{"n":"Muğla","d":"M191.1 388.2 L191.2 388.3 L191.1 388.4 L191.1 388.3 L191.1 388.2 ZM191.8 387.3 L192 387.4 L191.3 387.3 L191.4 387.3 L191.8 387.3 ZM137.6 387 L137.7 387.3 L137.6 387.3 L137.5 387.2 L137.6 387 ZM137.9 386.7 L137.8 386.9 L137.6 386.9 L137.7 386.8 L137.9 386.7 ZM142.4 384.2 L142.5 384.6 L142.1 384.4 L142.2 384.3 L142.4 384.2 ZM138.7 383 L138.8 383.1 L138.5 383.4 L138.6 383 L138.7 383 ZM138.5 382.4 L138.5 382.5 L138.6 382.7 L138.4 382.6 L138.5 382.4 ZM175.6 382.3 L175.7 382.5 L175.5 382.5 L175.5 382.5 L175.6 382.3 ZM138.6 380.9 L138.9 381 L138.9 381.1 L138.3 381 L138.6 380.9 ZM193.5 380.7 L193.2 381.2 L193.1 381.2 L193.1 380.7 L193.5 380.7 ZM110.2 380 L110.2 380.2 L110.1 380.6 L110 380.3 L110.2 380 ZM190.4 379.9 L190.8 380.2 L190.2 380.8 L190.1 380.1 L190.4 379.9 ZM136.5 379.6 L136.5 379.8 L136.4 379.8 L136.3 379.6 L136.5 379.6 ZM182.6 379.5 L183.2 379.9 L183.2 380.8 L182.2 379.8 L182.6 379.5 ZM137.6 379.5 L138.2 380.5 L137.9 380.9 L137.2 380.2 L137.6 379.5 ZM189.6 379.4 L189.9 379.7 L189.9 379.8 L189.6 379.7 L189.6 379.4 ZM137.9 379.4 L137.9 379.7 L137.8 379.7 L137.8 379.4 L137.9 379.4 ZM183.6 378.8 L184.8 379.3 L183.5 380.6 L183.3 379.4 L183.6 378.8 ZM138 378.8 L138 378.7 L138.1 378.7 L138.1 378.7 L138 378.8 ZM172.2 377.9 L172.2 378 L171.8 378.1 L171.9 377.9 L172.2 377.9 ZM184.5 377.7 L184.5 377.9 L184.4 378 L184.4 377.8 L184.5 377.7 ZM188.3 377.6 L188.7 377.8 L188.7 378 L188.3 378 L188.3 377.6 ZM184.2 377.5 L184.4 377.8 L184.1 378 L184 377.6 L184.2 377.5 ZM135.1 377.2 L135.2 377.4 L135.2 377.5 L135.1 377.4 L135.1 377.2 ZM184.6 377 L184.6 377.3 L184.4 377.6 L184.5 377.1 L184.6 377 ZM135.6 376.9 L135.6 376.9 L135.5 377.1 L135.5 376.9 L135.6 376.9 ZM184.5 376.7 L184.5 377 L184.4 377.1 L184.3 376.9 L184.5 376.7 ZM148.7 376.6 L148.7 376.7 L148.4 376.6 L148.5 376.6 L148.7 376.6 ZM135.8 376.2 L136 376.3 L136 376.7 L135.7 376.3 L135.8 376.2 ZM137.5 375.8 L137.4 376.3 L136.5 376.8 L136.5 376 L137.5 375.8 ZM138.5 375.2 L138.8 375.3 L139.1 375.2 L139.2 375.3 L138.9 375.8 L138.1 375.9 L138.5 375.2 ZM184.9 375.1 L185.4 375.8 L184.8 376.4 L184.5 375.9 L184.9 375.1 ZM104.7 374.7 L105.1 374.9 L105.1 375 L104.6 374.8 L104.7 374.7 ZM133.8 374 L134 374.1 L134 374.2 L133.8 374.2 L133.8 374 ZM124.8 374 L124.9 374 L124.8 374.1 L124.8 374 L124.8 374 ZM123.4 374 L123.3 374.1 L123.2 374.1 L123.2 374 L123.4 374 ZM124 373.7 L124 374 L123.9 374.1 L123.9 373.9 L124 373.7 ZM125.7 373.5 L125.7 373.6 L125.5 373.7 L125.6 373.5 L125.7 373.5 ZM138.9 373.4 L138.8 373.6 L138.7 373.5 L138.7 373.4 L138.9 373.4 ZM137.5 373.4 L137.7 373.5 L137.7 373.5 L137.5 373.5 L137.5 373.4 ZM142.2 373.3 L142.4 373.4 L142.4 373.5 L142.2 373.5 L142.2 373.3 ZM108 372.8 L108.1 372.9 L108.1 373 L107.9 372.9 L108 372.8 ZM107.6 372.5 L107.8 372.7 L107.8 372.8 L107.5 372.6 L107.6 372.5 ZM158.8 372.4 L158.9 372.7 L158.3 372.8 L158.6 372.3 L158.8 372.4 ZM167 371 L167 371.1 L166.9 371.1 L166.9 371 L167 371 ZM149.3 370.2 L149.3 371 L148.4 370.3 L149 370.3 L149.3 370.2 ZM150.8 369.4 L150.8 369.6 L150.3 369.5 L150.3 369.4 L150.8 369.4 ZM159 366.5 L159 366.6 L159 366.7 L158.9 366.6 L159 366.5 ZM137.1 366.2 L137.2 366.4 L136.7 366.3 L136.7 366.2 L137.1 366.2 ZM137.7 366 L137.7 366.1 L137.4 366.2 L137.5 366.1 L137.7 366 ZM138 365.7 L138.1 365.7 L138.1 365.8 L138 365.9 L138 365.7 ZM137.5 365.1 L137.6 365.2 L137.5 365.3 L137.5 365.1 L137.5 365.1 ZM143.9 361.6 L144 361.8 L143.8 361.9 L143.7 361.7 L143.9 361.6 ZM143.8 361 L143.9 361.1 L143.9 361.2 L143.8 361.2 L143.8 361 ZM99.5 360.6 L99.5 360.7 L99.4 360.8 L99.3 360.6 L99.5 360.6 ZM146.1 359.8 L146.2 360.2 L145.6 360.2 L145.8 360 L146.1 359.8 ZM113.8 358.9 L113.7 358.9 L113.9 358.8 L113.8 358.9 L113.8 358.9 ZM117.8 358.7 L117.8 358.8 L117.8 358.9 L117.7 358.8 L117.8 358.7 ZM114.3 358.7 L114.8 359 L115 359.6 L114.4 359.5 L114.3 358.7 ZM95.6 358.3 L95.6 358.3 L95.7 358.6 L95.5 358.5 L95.6 358.3 ZM93.8 357.8 L93.9 357.9 L93.9 358 L93.7 357.9 L93.8 357.8 ZM146.5 357.7 L146.7 358 L146.2 358 L146.3 357.8 L146.5 357.7 ZM105.9 357.6 L108.8 358.9 L109.2 359.6 L108.4 360.2 L106.8 359.4 L105.9 357.6 ZM146.6 357.4 L146.7 357.6 L146.4 357.5 L146.5 357.4 L146.6 357.4 ZM103.6 357.3 L103.7 357.6 L103.6 358.1 L103.3 357.7 L103.6 357.3 ZM148.3 357.2 L148.4 357.3 L148.2 357.3 L148.2 357.2 L148.3 357.2 ZM92.9 357 L93.1 357 L93.1 357.1 L92.9 357.1 L92.9 357 ZM102.3 356.7 L102.4 356.9 L102.3 357 L102.1 356.7 L102.3 356.7 ZM95 356.5 L95.2 356.8 L94.2 357.6 L94.1 357.5 L95 356.5 ZM94.1 354 L94.1 354.3 L93.8 354.1 L94 354 L94.1 354 ZM94.6 351.4 L94.7 351.7 L94.2 351.9 L94.3 351.4 L94.6 351.4 ZM95.9 351.3 L96.1 351.4 L96.1 351.5 L95.6 351.4 L95.9 351.3 ZM108.3 349.1 L108.2 349.4 L108 349.4 L108 349.4 L108.3 349.1 ZM108.7 348.6 L108.6 349 L108.4 349 L108.5 348.7 L108.7 348.6 ZM96.9 348.4 L97 348.5 L97 348.6 L96.8 348.5 L96.9 348.4 ZM104.1 348 L103.8 348.2 L103.6 348.1 L103.6 348 L104.1 348 ZM111.3 346.3 L111.1 347.9 L109.1 347.9 L109.3 346.9 L111.3 346.3 ZM102.5 345.6 L103.3 346.1 L103.3 346.4 L102.7 346.5 L102.5 345.6 ZM102.1 345.5 L102.3 345.5 L102.3 345.7 L102 345.8 L102.1 345.5 ZM110.7 344.1 L110.8 344.2 L110.8 344.2 L110.6 344.2 L110.7 344.1 ZM112.2 343.8 L112.3 343.9 L112.4 344.1 L112.3 344.1 L112.2 343.8 ZM112.2 340.3 L112.9 340.8 L112.9 341 L112.2 340.5 L112.2 340.3 ZM112.7 340.2 L112.8 340.3 L112.8 340.4 L112.7 340.3 L112.7 340.2 ZM102.8 338.4 L102.6 338.6 L102.5 338.5 L102.6 338.2 L102.8 338.4 ZM160.7 324.2 L167.6 325.4 L167.9 331.1 L174.6 333.5 L176.8 341 L184.2 343.5 L189.7 347.7 L191.3 350.4 L190.9 352.4 L192 354.2 L192.3 358 L198 365 L201.9 365.1 L205.2 360.2 L205.6 354.6 L208.3 352.3 L209.3 355.7 L208.7 360.7 L211.3 359.8 L214.7 355.8 L216.6 355.5 L220.6 357.6 L223.4 361.9 L223.2 365.8 L219.6 372.2 L218 383.3 L204.9 395.2 L205.2 397.6 L203.3 403.6 L201.7 404.4 L199.8 402.5 L196.6 401.7 L195.2 400.4 L195.6 399.2 L193.3 398.6 L193.4 397.4 L194.9 396.7 L194.2 396 L195 395.8 L194.5 393.6 L193.3 392.7 L194.6 391.2 L194.6 388.1 L193.8 387.3 L193.1 388 L192.5 386.6 L190.6 387.1 L190.8 388.4 L188.4 388.1 L190.4 387.1 L189.2 385.2 L190.1 382.9 L191.9 383.3 L192 381.2 L193.3 381.5 L192.7 382.9 L194.1 382.5 L194.4 381.1 L193.4 379.5 L190.8 378.8 L189.7 377 L188.7 377.3 L189.1 376.5 L187.8 377 L186.5 375.5 L186.2 376 L184.3 373.8 L184.3 375.2 L182.5 376.7 L183.3 377.2 L180.9 377.7 L181.1 379.5 L180.2 380 L181 380.6 L180.2 381.4 L181.2 382 L181.7 381 L183.1 381.6 L181.1 382.8 L181.5 384.2 L179.9 385.1 L178.8 382.5 L180.2 381.7 L179.1 381.7 L178.5 380.3 L177.2 380.9 L177.9 379.6 L177 378.5 L173.8 376.8 L170.8 378.1 L170.9 377.2 L169.6 376.1 L168.8 377.6 L168 377.3 L168.4 375.7 L167.5 375.3 L168.8 373.9 L167.8 373.6 L168.7 372.1 L166.4 369.8 L164.4 368.8 L164.4 369.9 L163.4 370.4 L163.7 371.8 L161.3 370.9 L161.8 369.6 L159.9 370.1 L159.3 367.8 L160.3 366.6 L159.6 365.5 L158.4 367 L157 367.2 L156.8 366.4 L155.6 367.6 L156 368.5 L158 368.4 L156.5 371.9 L152 369.7 L151.5 370.6 L152.2 371.2 L150.7 371.5 L149.6 369.9 L152.1 369.6 L152.2 369 L150.2 367.3 L149.3 367.7 L147.9 370.5 L149.1 371.4 L148.8 372.7 L149.7 373.1 L149.8 374.4 L151 374.3 L151.6 375.5 L150.8 376.2 L149.4 375.3 L147.5 377.4 L147.5 378.3 L144.3 378.6 L141.3 384.8 L140.4 385.5 L139.2 384.6 L137.1 386.9 L136.3 385.9 L136.7 386.7 L134.6 387.4 L133.9 385.6 L134.6 385.2 L133.5 384.2 L139 383.9 L140.7 381.2 L139.5 380.2 L139.6 380.3 L139.2 381.4 L138.7 381.9 L139.3 380.5 L138.5 380.4 L139.5 379.2 L138.4 379.4 L137.9 378 L137.9 379.3 L137 379.7 L133.8 378.6 L135.8 377.3 L138 377.3 L138.9 376 L140.9 375.8 L140.2 376.4 L140.9 377.2 L141.6 375.7 L142.5 375.8 L140.2 374.6 L141.6 372.5 L142.5 373.9 L142.7 373.7 L142 370.6 L140 371.1 L139.9 372.5 L138.4 373.5 L138.2 371.8 L136.5 373.6 L133.4 373.5 L132.1 374.7 L131.6 373.9 L130.2 373.7 L130.5 374.7 L130 374.8 L129.3 373.7 L128.3 374.8 L126.1 373.3 L121.7 373.3 L119.4 375.8 L119.9 376.8 L118.8 377.5 L119 380.4 L113.5 378.6 L112.8 379.4 L110.4 379.1 L108.4 381.1 L108 380.1 L104.6 380.1 L104.5 378.9 L102.5 378.6 L103 378.3 L102.5 376.9 L104.3 377.5 L105.5 376.6 L105.9 374.3 L106.9 374.5 L107.8 373.4 L108.6 374.2 L115.4 373.2 L117 370.1 L119.9 371.8 L123.8 371.6 L126.7 369.9 L137.5 371.7 L138.9 370.8 L139.1 369.4 L138.7 368.6 L135.9 368.5 L137.3 368.3 L137.4 368.2 L135.7 367.2 L138.8 365.5 L137.9 365.2 L138.4 364.3 L136.5 363.7 L138 363.4 L136.8 362.4 L140.9 361.4 L143 361.8 L143.4 362.9 L144.1 362.3 L144.1 363.6 L144.5 363.7 L144.7 361.5 L144 361.1 L146.5 360.6 L146.2 359.5 L147 358.9 L146 358.6 L147 358.4 L147 357.5 L148.8 358.1 L148.6 357.2 L149.8 356.3 L153 355.2 L152.6 353.9 L144.3 355.5 L141 355.1 L141.8 356.4 L141 356.6 L140.3 355.5 L134.6 355.3 L132.9 356.3 L131.9 355.3 L127.6 356.2 L125.3 357.7 L124.6 357 L124.3 357.9 L119.3 357.2 L117.3 357.5 L116.7 358.9 L113.5 357.8 L113 359.1 L110.6 357.7 L108.7 358.3 L105.7 355 L105.1 356.3 L104.2 355.4 L103.2 357.5 L103.5 355.6 L100.8 356.4 L101.3 357.5 L99.2 359.2 L99.4 360.3 L97.3 359.8 L96.6 355.3 L95.3 353.5 L96 351.8 L98.8 349.9 L96.8 349.9 L96.8 348.6 L97.3 349.3 L97.8 347.9 L99.8 349.6 L100.4 346.7 L101.4 347.3 L101.5 348.6 L102.6 346.8 L103.9 347.7 L103.2 348.4 L103.7 349.3 L106 348.8 L108.1 352 L111.6 348.7 L113.9 348.2 L113.5 348 L112.6 348.4 L112.2 348.3 L112.8 347 L111.8 347 L112 345 L111 344.4 L112.5 344.4 L113.3 343.2 L114.5 344.4 L113.5 345.4 L114.8 344.2 L115.4 344.8 L115.6 344.7 L113.6 343 L115.5 338.6 L112.6 338.7 L111.8 340.3 L112.4 340.9 L111.4 340.5 L111 342 L110.2 342.1 L109.6 341.4 L110.8 340.6 L110.6 338.8 L107.2 340.2 L109.5 336.2 L108.5 334.3 L108.1 335.9 L106.6 337.1 L105 336.9 L103.6 335.3 L103.5 333.4 L105.1 331.6 L106.1 331.8 L105.2 329 L106.7 323.4 L109 319.3 L110.5 318.8 L120 324 L129.7 326.7 L143.6 325.5 L147.3 319.6 L151.1 318 L160.7 324.2 Z","cx":140.3,"cy":367,"lon":28.088,"lat":36.857},{"n":"Muş","d":"M905.2 212 L907.4 227 L903 227.9 L896.6 226.8 L892.8 227.9 L884.4 227.1 L874.6 231.7 L874.5 234.8 L868.5 234.9 L867.2 235.7 L867.3 237.4 L870.1 241.2 L870.2 243.5 L864.1 248.7 L860.1 250.5 L848.1 249.8 L844.8 250.9 L842.3 253.8 L836.2 254.9 L834.9 253.4 L835.6 249.5 L834.7 247.4 L829.6 242.8 L823.2 229.8 L823.5 228.3 L829.3 221 L829.3 215.6 L827.4 212.6 L825.7 212 L824 203.5 L825.2 200 L828.3 198.2 L835.2 197.2 L838.2 198.4 L842.9 201.4 L849.6 209.5 L852.3 211.2 L858.3 212.2 L871.1 208 L878.7 201.4 L878.7 199.7 L877.3 197.4 L879.1 194.8 L884.3 192.1 L891.5 190.3 L894 197.5 L900 204.7 L902.2 205.9 L905.2 212 Z","cx":861,"cy":221.7,"lon":41.88,"lat":39.019},{"n":"Nevşehir","d":"M494 198.5 L497.4 200.5 L496.1 207.7 L501.3 213.5 L501.6 216.5 L503.4 220.4 L501.5 222.3 L499 236.5 L505.1 239.9 L505.2 249 L502.4 252.2 L497.6 254.2 L496.6 257.2 L497.3 263.4 L495 265.7 L490.6 266.5 L484.3 262.7 L477.4 264.9 L473.2 263.3 L467.4 258.4 L463.7 248.8 L460.7 246.2 L460 243.8 L463 236.9 L465.1 235.4 L465.7 231.9 L467 230.7 L471.6 231.3 L474 230.6 L474.1 228.5 L476.5 223.6 L479.4 221 L478.9 217.7 L482.5 216.5 L481.9 211.3 L485.4 208.2 L485.1 204.9 L488.7 199.4 L487.2 198.7 L483.8 201.6 L481.1 201 L481.1 197.4 L483.6 190.3 L490.6 194.1 L490.8 196.8 L494 198.5 Z","cx":484.8,"cy":227.4,"lon":34.681,"lat":38.935},{"n":"Niğde","d":"M476.8 264.9 L484.3 262.7 L490.3 266.4 L492.1 266.6 L496.5 264.9 L497.4 261.1 L500.5 261.3 L504.7 271.1 L507.9 272.8 L514.2 273.3 L516.1 275.3 L517.8 279.3 L517.7 288.1 L515.4 292.9 L513.5 293.7 L512.4 295.6 L512.9 300.8 L511.8 302.7 L503.7 310.2 L495.1 309.6 L492.8 310.9 L491.9 313.1 L494.1 318.5 L494.2 322.1 L490.4 326.1 L490.2 330.8 L485.6 330.9 L480.2 333.9 L475.9 333.9 L473.8 329.9 L470.9 327.2 L469.3 326.9 L469.2 323.4 L472.9 313.9 L472.9 310.6 L463.2 295.9 L455.8 289.3 L456.9 286.7 L459 285.5 L463.3 286.4 L466.5 281.1 L469.8 279 L469.9 273.9 L468.2 270.6 L468.5 265.5 L469.9 260.7 L476.8 264.9 Z","cx":487.1,"cy":293.7,"lon":34.724,"lat":37.947},{"n":"Ordu","d":"M615 78.6 L621.3 78.8 L621.3 80.3 L626.3 81.4 L634 87.2 L637.8 85.4 L641.7 79.4 L642.8 80.9 L647.1 80.7 L646.6 84.4 L648.2 86.9 L651.2 87.5 L651.9 89.4 L664.6 91.5 L658.7 105.5 L664.3 114.7 L666.4 121.6 L659.6 128 L653.1 129.2 L649.3 132.6 L645.2 133.6 L643 132.1 L637.6 118.5 L630.4 117.9 L624.1 113.7 L622.3 113.6 L621.3 110.9 L615.8 108.5 L610.1 109.5 L604.7 108.6 L602.4 106.1 L598.2 105.4 L589.7 100.9 L590.1 98.9 L596.7 96.7 L601 93.7 L605.8 85.5 L614 80.9 L613.9 78.7 L615 78.6 Z","cx":629.6,"cy":99.9,"lon":37.451,"lat":40.832},{"n":"Osmaniye","d":"M570.9 334 L579.3 332.6 L584.2 330.2 L587.8 335.2 L591.8 338.8 L581.6 350.2 L576.9 360.5 L571.9 360.4 L567.1 356.8 L555.9 355.7 L556.8 349.1 L553.8 345.7 L547.2 349.2 L546.1 348.7 L548.7 343.4 L547.6 341.2 L547.7 333.2 L555 319.6 L561.6 314.7 L569.5 313.6 L564.8 323.8 L566.6 332.5 L570.9 334 Z","cx":565.4,"cy":339.3,"lon":36.223,"lat":37.27},{"n":"Rize","d":"M826.5 68.8 L827.9 71.4 L828.3 74.6 L831 78.2 L834.3 80.5 L836.4 80.7 L837.1 82.3 L836.5 84 L833 86.1 L821.4 101.5 L817.4 104.5 L806 111.9 L788 119.8 L787.8 113.6 L789.5 109.4 L789.5 106 L787.1 97.2 L784.8 92.5 L780.2 88.9 L783 86.8 L788.8 85.8 L791.4 86.7 L800.4 82.7 L804.7 77.7 L814.9 75.5 L818.5 73.8 L823 69.6 L826.5 68.8 Z","cx":810.5,"cy":87.8,"lon":40.914,"lat":41.011},{"n":"Sakarya","d":"M259.5 76.6 L274.3 79.9 L279.7 82.8 L291.2 83.7 L294.4 87.5 L292.9 91.2 L287.6 95.5 L285.9 99.7 L286.9 103.5 L291.8 107.5 L289.9 110.8 L289.6 117.7 L287.8 119.6 L284.2 120.7 L275.6 121 L271.2 126.2 L274 129.9 L272.8 133.3 L260 128.7 L246.7 130.9 L238.9 124.1 L236.5 118.3 L236.3 117 L241.6 116.8 L252.9 113 L255.9 105 L255.4 100.6 L259.9 97.8 L259.2 91.9 L255.3 87.2 L257 81.8 L259.9 79.3 L259.5 76.6 ZM259.5 76.6 L259.5 76.5 L259.5 76.5 L259.5 76.6 Z","cx":267.6,"cy":101.7,"lon":30.524,"lat":40.805},{"n":"Samsun","d":"M607.7 75.3 L607.6 75.2 L607.6 75.2 L607.7 75.2 L607.7 75.3 ZM607.4 75.1 L607.6 75.1 L607.6 75.2 L607.5 75.2 L607.4 75.1 ZM588 63.1 L588.2 63 L588.3 63.4 L588.1 63.4 L588 63.1 ZM588 63.1 L588.1 64.1 L588.3 64.1 L588.4 63.3 L588.3 63 L598.7 65.7 L605.8 69.5 L607.2 71.3 L606.9 74.2 L607.7 76 L613.9 78.7 L614 80.9 L606 85.2 L601 93.7 L596.7 96.7 L590.1 98.9 L590.3 96.6 L588.1 95.4 L577.5 97.5 L573.4 94.8 L573.2 91.8 L566.1 89.9 L564.4 89.9 L563.5 94.5 L562.3 96 L556.2 99.1 L551.4 97 L545.4 97.7 L537.8 96.7 L535.1 93.5 L526.5 87.6 L506.4 82.5 L500.8 83.3 L499.4 81 L498.4 75 L495.9 71.5 L498.2 67.9 L507.4 63.3 L513.6 70.9 L518.8 71.9 L521.4 70.9 L523.5 68.8 L525.1 64.6 L523.3 57 L526.8 49.2 L527.6 45.5 L531 46.2 L535.6 45.5 L551.3 39.2 L556.7 42.4 L559.8 46.5 L560.6 57.6 L566.4 64.8 L572.3 67.7 L571.6 67.6 L571.4 68.8 L573.7 70.3 L573.9 71.4 L576.7 72.2 L580.6 71.2 L583.4 69.2 L586.2 63.9 L588 63.1 Z","cx":568.5,"cy":73.7,"lon":36.282,"lat":41.222},{"n":"Şanlıurfa","d":"M724.4 290.3 L733.5 291.2 L745.1 300.9 L750.3 301.4 L755.1 306.5 L755.5 316.8 L756.7 321.8 L768.7 348.6 L769.8 356.2 L772.2 361 L776.1 363 L754.5 373.8 L722.4 379.9 L711.6 377.3 L696.5 377 L687.7 368.2 L679.1 364.3 L668.4 363.6 L658.8 369.1 L658.8 361.7 L652 353.5 L649.6 344.5 L649.4 341 L650.3 336.4 L654.9 330.2 L658.4 327.8 L667.1 330 L675.5 324.8 L683.2 324.5 L690.4 318.6 L701.3 314.4 L702.1 313.1 L701.6 310.8 L708.3 306.6 L709.4 303.9 L709.3 297.6 L713.6 291.4 L719.8 288.1 L724.4 290.3 Z","cx":706.8,"cy":331.8,"lon":38.93,"lat":37.381},{"n":"Siirt","d":"M887.9 281.3 L893.3 282.8 L905.3 289.4 L910.9 285.8 L917.1 286.7 L918.6 288.2 L921.5 294.4 L918.9 299.9 L918.7 303 L907.2 301.3 L902.8 298.4 L898.8 298.4 L893 301.2 L888.7 307.1 L884.3 310.5 L875.6 311.6 L865.6 310.7 L861.4 308.4 L859.8 306.1 L854.4 307.5 L851.6 305.1 L853.5 301.9 L853.2 299.9 L842.1 299.7 L838.6 298 L836.5 295.7 L837.6 293.1 L840.1 291.1 L840.1 288.8 L846.7 287.6 L848.8 283.3 L850.3 277.1 L862.9 280.2 L866.1 279.7 L868.6 281.5 L872.2 276.7 L878.1 275.6 L881.3 276.7 L887.9 281.3 Z","cx":875.4,"cy":293.5,"lon":42.156,"lat":37.951},{"n":"Sinop","d":"M498.6 14.8 L502.3 15.1 L504.2 17.4 L503.8 18.6 L505.5 19.6 L511.6 18.7 L512.3 20.5 L508.9 19.8 L506.5 23.7 L506.2 26.6 L508.3 30.9 L512.3 34.7 L511.6 35.4 L512.4 37 L515.3 39 L515.9 40.5 L523.1 42.6 L527.6 45.5 L526.8 49.2 L523.3 57 L525.2 64.2 L522.4 70.3 L518.8 71.9 L513.6 70.9 L507.4 63.3 L498.2 67.9 L493.4 75.4 L476.5 70 L474.1 68.2 L473.5 52.2 L478.9 48.8 L480.4 45.9 L480.6 43.6 L475 39.9 L463.3 38.9 L463.2 34.5 L461 29.9 L461.1 24.4 L465.4 25.4 L474.9 23 L475.8 24.2 L481.5 25.3 L490.9 24.4 L496.7 19.8 L498.8 16.4 L498.6 14.8 Z","cx":497.5,"cy":38.3,"lon":34.924,"lat":41.749},{"n":"Şırnak","d":"M907.6 301.4 L918.7 303 L922.3 306.1 L927.7 306.2 L936.1 308.5 L945.4 308.5 L942.3 322.3 L942.2 333.9 L945.7 339.4 L938.8 335.3 L936.5 337 L928.2 332.3 L921.5 333.5 L918.1 336.1 L911.6 334.1 L910.7 332.4 L909 332 L905.4 334.2 L906.1 336 L903.8 336.9 L903.9 338.2 L902 339.8 L898.2 347.5 L895.3 347.4 L886.2 350 L884.8 344.9 L885.9 342.1 L882.7 338.5 L878.8 338.7 L879.4 336.1 L870.2 344.7 L860.4 348 L861.4 343.3 L859.8 337.1 L855.7 338 L854.3 337.1 L853.6 334.7 L853.7 325.9 L862.1 323.9 L864.6 322.1 L863.8 318 L865 314.5 L861.4 308.4 L868.3 311.5 L883.5 310.8 L888.7 307.1 L893 301.2 L898.4 298.5 L902.8 298.4 L907.6 301.4 Z","cx":896.1,"cy":327.1,"lon":42.552,"lat":37.45},{"n":"Sivas","d":"M669.8 133.1 L671.2 142.1 L674.7 145.2 L681.9 149.2 L688.1 148 L698.7 152.5 L697.6 157.7 L696.1 158.7 L681.6 157.8 L679.9 159.5 L677.4 165.3 L678.3 167.4 L685.5 166 L687.2 167.4 L685.5 169.4 L681.5 170.4 L681.2 172.1 L679.9 172.8 L677.3 177.4 L676.5 186.9 L679 195.4 L678.6 210.4 L676.8 213.6 L672.5 214.5 L667.7 218.1 L655.1 219 L646.8 222.9 L636.7 222.3 L634.8 225.7 L634.9 228 L637.2 234 L636 238 L623.1 249.3 L609.1 251.3 L605.7 248.9 L601.8 248 L592 250.5 L593.4 244.9 L603.1 219.2 L601.7 215.8 L599.6 213.7 L594.4 211.2 L585.9 211.1 L577.7 214.2 L573.3 212.7 L569.8 214.2 L556.8 214.2 L551.7 210.4 L547.8 204.4 L544 202.9 L545.3 200.3 L552.6 194.6 L557.2 189.2 L557.4 186.9 L561.9 177.5 L560.1 176.4 L560.2 172.9 L557.4 170.4 L556.2 165.7 L551.9 162.5 L553 159.4 L559.9 159.4 L565.6 157.3 L569.7 158.7 L576.9 159.2 L585.4 156.2 L589.2 153.4 L590.9 149.7 L590.4 146.3 L594.2 140.8 L604.3 143.5 L610 140.8 L614.8 143 L628.7 145.5 L630.6 139.8 L635.3 137.2 L635 134.4 L636.4 132.4 L636.7 128.3 L639.8 125.5 L643.1 132.4 L646.3 133.7 L649.3 132.6 L653.1 129.2 L659.6 128 L666.4 121.6 L667.8 124.5 L669.8 133.1 Z","cx":623.9,"cy":177.7,"lon":37.342,"lat":39.674},{"n":"Tekirdağ","d":"M143.6 49.6 L145.3 50.2 L146.2 51.8 L145.1 53 L147.8 55.1 L143.8 72 L140.3 74.4 L138.7 78.5 L142.2 84.6 L136.5 86.3 L135 87.7 L135.1 89.2 L133.5 90.2 L133.9 90.9 L129.4 90.9 L127.4 89.1 L123.4 87.6 L110.2 90.3 L107.7 95.6 L107.3 99 L101.5 104.3 L99.7 108.6 L92.8 113.6 L85.1 116.1 L85 108.8 L85.7 105.5 L84.6 102.4 L81.9 102.1 L76.5 105.6 L74.3 105.9 L72.2 105.6 L69.5 101.9 L69.4 95.1 L72.2 88.6 L70.1 86.3 L70.3 83.8 L71.6 81.8 L77.8 79.3 L80.2 75.9 L80.3 72.6 L78.1 68.8 L78.2 65.5 L81.1 66.7 L89.8 65.2 L97.2 65.2 L103.2 67.8 L108.2 73.4 L110.7 73.7 L112.4 72.7 L117.1 65.1 L118.7 61 L118.7 57.8 L121.7 55.4 L123.7 54.4 L128.8 54.9 L134.6 52.1 L143.6 49.6 Z","cx":107.7,"cy":80.3,"lon":27.463,"lat":41.123},{"n":"Tokat","d":"M590.3 96.6 L589.5 100.3 L590.2 101.4 L598.2 105.4 L602.4 106.1 L604.5 108.5 L610.1 109.5 L615.8 108.5 L621.3 110.9 L622.3 113.6 L624.1 113.7 L630.4 117.9 L638 118.8 L639.8 125.5 L636.7 128.3 L636.4 132.4 L635 134.4 L635.3 137.2 L630.6 139.8 L628.7 145.5 L614.8 143 L610 140.8 L604.3 143.5 L594.2 140.8 L590.4 146.3 L590.9 149.9 L588.4 154.6 L576.9 159.2 L569.7 158.7 L565.6 157.3 L559.9 159.4 L553 159.4 L551.8 156.7 L551.7 152.9 L550.4 150.4 L534.6 149.9 L528.2 143 L529.2 140 L531.6 137.4 L538.9 133.9 L545.6 122.1 L551.6 122 L555.8 124.9 L561.8 125.9 L570.7 120.6 L577.6 111.7 L578.4 107.3 L575.5 100.5 L577.2 97.3 L579.9 97.6 L586.1 95.4 L590.3 96.6 Z","cx":587.8,"cy":127.9,"lon":36.652,"lat":40.414},{"n":"Trabzon","d":"M732.4 81.4 L735.9 82.4 L740.1 86.8 L744 88.6 L748.1 87.8 L751.3 88.4 L756.1 91.7 L764.6 91.3 L769 94.5 L774.8 93.4 L780.2 88.9 L781.9 89.6 L784.6 92.2 L786.9 96.9 L789.5 106 L789.5 109.4 L787.8 113.6 L788 119.8 L774.6 122.1 L767.6 121.4 L768.4 117.5 L764.8 112.9 L763 111.5 L761.8 112.4 L761.4 113.9 L762.5 116.3 L761.7 117.8 L760.2 118 L757 114.5 L753.8 114.1 L754.4 109.3 L752.6 107.6 L750.5 110.5 L748.5 116.7 L745.8 118.2 L726.6 110.8 L717.8 102.8 L716.7 98.4 L716.7 91.3 L719.8 83.6 L725.3 85.2 L732.4 81.4 Z","cx":756.4,"cy":102.6,"lon":39.879,"lat":40.791},{"n":"Tunceli","d":"M776.9 186.3 L791.1 186.2 L789.7 189.1 L780.3 194.3 L783.2 197.3 L780.1 199.4 L773.3 203.6 L767.9 201.9 L764.4 209.2 L765 212.9 L764.3 215.2 L763.3 217 L758.7 217 L755.9 219.8 L757.2 223.5 L757.1 226.9 L754.4 232 L751.2 235.2 L743.4 236.3 L736.1 239.8 L713 230.2 L707.5 230.1 L702.4 231.6 L698.4 229.8 L699.1 223.4 L696.2 215.2 L698.7 210.8 L704.9 208.6 L706.6 206.2 L701.8 205.7 L699.7 204.2 L701.8 200.9 L708.7 197.7 L715.6 192 L727.4 189.4 L735.4 190.9 L741.6 190.2 L742.6 193 L745.2 193.3 L746.9 192.6 L750.8 188.2 L755.2 186.4 L756.8 186 L762 188.1 L769.5 185.6 L776.9 186.3 Z","cx":743,"cy":206.5,"lon":39.622,"lat":39.245},{"n":"Uşak","d":"M234.6 237.9 L234.7 242.5 L233.6 246.9 L228.3 256.2 L227.5 259.7 L223.2 262 L221.9 267.1 L219 271.9 L218.1 277.3 L216.4 277.1 L210.2 272.6 L199.6 277.1 L193 275.5 L183.9 272.4 L178.9 266.3 L180.4 264.1 L179.7 254.8 L180.1 251.2 L181.7 247.4 L189.2 241.5 L192.7 240.5 L200.2 240.9 L203.9 237.6 L222.9 230.4 L233.1 232.7 L234.6 237.9 Z","cx":208.5,"cy":255.4,"lon":29.393,"lat":38.517},{"n":"Van","d":"M937.4 196.3 L941.8 196.9 L945 200.8 L950.1 203.6 L953.2 202.7 L956.9 198.1 L969.8 199 L973.5 198 L976.4 200.9 L976.3 203 L977.6 203.7 L976.9 205.9 L977.8 207 L977.7 209.4 L983.2 213.7 L983.9 216.3 L981.5 215.2 L979.7 216.8 L982.2 218.4 L983.2 221.1 L981.2 223.4 L983.5 230.3 L985.1 232.7 L986.9 232.7 L988.3 234.2 L988.4 236.4 L986.2 242.1 L987.5 245.1 L986.7 246.7 L989.3 248.3 L988.8 253.2 L989.5 256.4 L988.3 260.5 L988.3 264.3 L991.9 265.8 L995.6 264.3 L997.9 266.4 L998.4 268.2 L994 271.5 L993.1 273.3 L993.5 276.1 L992.9 280.5 L990.8 281.6 L991.6 283.6 L990.2 283.5 L988.6 285.5 L988.1 288.2 L985.2 292.9 L985.6 294.3 L984.2 297.8 L986.2 299.2 L989.5 298.7 L993.5 300 L993.4 302.2 L994.9 303.7 L996.3 303.8 L995.9 305.8 L1001.8 305.8 L996.8 312 L993.8 313.9 L989 313.3 L984.2 315.2 L983.2 314.2 L984.6 309.7 L983.5 306.7 L982.3 305.7 L975.1 309.2 L970.2 308.6 L966.1 310.3 L960.5 308.6 L954.8 309.3 L936.1 308.5 L927.7 306.2 L921.9 306 L918.7 303 L918.9 299.9 L921.5 294.4 L918.6 288.2 L917.1 286.7 L910.9 285.8 L907.9 281.6 L909 278.9 L906.7 278.4 L904.9 276.5 L905.9 271.6 L903.2 263.6 L903.3 261.4 L905.4 259.4 L913.7 254.9 L916.7 248.9 L917.6 248.7 L922.4 241.6 L928.6 236.9 L929.8 234.5 L929.8 231 L926.2 227.5 L919.7 223.6 L920.7 216.6 L927.1 213.8 L928.3 211.8 L928.1 206.9 L923.9 203.9 L923.6 202.3 L924.8 201.3 L929.5 200.9 L934.7 196 L937.4 196.3 Z","cx":961.3,"cy":257.1,"lon":43.8,"lat":38.492},{"n":"Yalova","d":"M208.6 108.6 L211.1 109.3 L210.5 118.1 L206.9 116.8 L202 118.4 L190.3 118.2 L188.5 122.4 L189.7 123.6 L186.7 125.2 L181.9 123.6 L180.4 121.8 L176.5 121 L177.2 118.7 L184.4 115.4 L187.5 112.5 L202.7 111.4 L208.6 108.6 Z","cx":193.7,"cy":117.3,"lon":29.11,"lat":40.573},{"n":"Yozgat","d":"M519.4 141.2 L521.4 142.9 L528.2 143 L534.6 149.9 L550.4 150.4 L551.7 152.9 L551.8 156.7 L553 159.4 L551.9 162.5 L556.2 165.7 L557.4 170.4 L560.2 172.9 L560.1 176.4 L561.9 177.5 L557.4 186.9 L557.2 189.2 L552.6 194.6 L545.3 200.3 L543.4 203.7 L539.3 207.8 L536.5 209.5 L530.3 209.4 L526.1 210.4 L525.7 212.5 L526.7 216.3 L514.1 222.6 L503.4 220.4 L501.6 216.5 L501.3 213.5 L496.1 207.7 L497.3 200.3 L490.9 196.9 L490.6 194.1 L481.9 189.8 L477.3 186.2 L476.5 184.7 L477.7 181.2 L473.7 177.8 L471.5 173.7 L467.9 172.7 L461.5 173.5 L452.8 168.7 L452.1 162.2 L453.8 161.1 L463.8 160 L469.9 156.3 L491.1 156.2 L496.5 152.5 L504.5 153.8 L510.8 149.7 L510.3 141.5 L516.6 141.4 L518.9 140.4 L519.4 141.2 Z","cx":513.8,"cy":177,"lon":35.235,"lat":39.684},{"n":"Zonguldak","d":"M345.8 50.8 L346.9 53.4 L360.7 68 L363.2 72.6 L360.4 72.7 L351.7 78 L349.6 83.5 L349.5 87.4 L315.4 84.8 L310.2 79.4 L313.9 74.3 L313.5 70.3 L314.3 70.9 L314.5 70.2 L312.9 68.8 L313.4 67.4 L324.9 62.9 L331.6 59 L331.9 58 L333.5 58.1 L339.2 53.4 L345.8 50.8 Z","cx":333.8,"cy":67.9,"lon":31.79,"lat":41.307}]};
-(function(){
-  var PHONE="905462592055";
-  var LONMIN=25.67,LATMAX=42.11,MIDLAT=(35.82+42.11)/2*Math.PI/180,SCALE=67.2,PAD=14;
-  var KX=SCALE*Math.cos(MIDLAT),KY=SCALE;
-  function px(lon){return (lon-LONMIN)*KX+PAD;}
-  function py(lat){return (LATMAX-lat)*KY+PAD;}
-  function hav(a,b){var R=6371,dLat=(b.lat-a.lat)*Math.PI/180,dLon=(b.lon-a.lon)*Math.PI/180;var s=Math.sin(dLat/2)**2+Math.cos(a.lat*Math.PI/180)*Math.cos(b.lat*Math.PI/180)*Math.sin(dLon/2)**2;return 2*R*Math.asin(Math.sqrt(s));}
-  function tl(n){return (Math.round(n/500)*500).toLocaleString("tr-TR")+" TL";}
-  var SVGNS="http://www.w3.org/2000/svg";
+window.TR_IL=[{"p":1,"n":"Adana"},{"p":2,"n":"Adıyaman"},{"p":3,"n":"Afyonkarahisar"},{"p":4,"n":"Ağrı"},{"p":68,"n":"Aksaray"},{"p":5,"n":"Amasya"},{"p":6,"n":"Ankara"},{"p":7,"n":"Antalya"},{"p":75,"n":"Ardahan"},{"p":8,"n":"Artvin"},{"p":9,"n":"Aydın"},{"p":10,"n":"Balıkesir"},{"p":74,"n":"Bartın"},{"p":72,"n":"Batman"},{"p":69,"n":"Bayburt"},{"p":11,"n":"Bilecik"},{"p":12,"n":"Bingöl"},{"p":13,"n":"Bitlis"},{"p":14,"n":"Bolu"},{"p":15,"n":"Burdur"},{"p":16,"n":"Bursa"},{"p":17,"n":"Çanakkale"},{"p":18,"n":"Çankırı"},{"p":19,"n":"Çorum"},{"p":20,"n":"Denizli"},{"p":21,"n":"Diyarbakır"},{"p":81,"n":"Düzce"},{"p":22,"n":"Edirne"},{"p":23,"n":"Elazığ"},{"p":24,"n":"Erzincan"},{"p":25,"n":"Erzurum"},{"p":26,"n":"Eskişehir"},{"p":27,"n":"Gaziantep"},{"p":28,"n":"Giresun"},{"p":502,"n":"Girne (kıbrıs)"},{"p":29,"n":"Gümüşhane"},{"p":30,"n":"Hakkari"},{"p":31,"n":"Hatay"},{"p":76,"n":"Iğdır"},{"p":32,"n":"Isparta"},{"p":34,"n":"İstanbul"},{"p":35,"n":"İzmir"},{"p":46,"n":"Kahramanmaraş"},{"p":78,"n":"Karabük"},{"p":70,"n":"Karaman"},{"p":36,"n":"Kars"},{"p":37,"n":"Kastamonu"},{"p":38,"n":"Kayseri"},{"p":71,"n":"Kırıkkale"},{"p":39,"n":"Kırklareli"},{"p":40,"n":"Kırşehir"},{"p":79,"n":"Kilis"},{"p":41,"n":"Kocaeli"},{"p":42,"n":"Konya"},{"p":43,"n":"Kütahya"},{"p":501,"n":"Lefkoşe (kıbrıs)"},{"p":503,"n":"Mağusa (kıbrıs)"},{"p":44,"n":"Malatya"},{"p":45,"n":"Manisa"},{"p":47,"n":"Mardin"},{"p":33,"n":"Mersin"},{"p":48,"n":"Muğla"},{"p":49,"n":"Muş"},{"p":50,"n":"Nevşehir"},{"p":51,"n":"Niğde"},{"p":52,"n":"Ordu"},{"p":80,"n":"Osmaniye"},{"p":53,"n":"Rize"},{"p":54,"n":"Sakarya"},{"p":55,"n":"Samsun"},{"p":56,"n":"Siirt"},{"p":57,"n":"Sinop"},{"p":58,"n":"Sivas"},{"p":63,"n":"Şanlıurfa"},{"p":73,"n":"Şırnak"},{"p":59,"n":"Tekirdağ"},{"p":60,"n":"Tokat"},{"p":61,"n":"Trabzon"},{"p":62,"n":"Tunceli"},{"p":64,"n":"Uşak"},{"p":65,"n":"Van"},{"p":77,"n":"Yalova"},{"p":66,"n":"Yozgat"},{"p":67,"n":"Zonguldak"}];
+window.TR_ILCE={"1":["Aladağ","Ceyhan","Çukurova","Feke","İmamoğlu","Karaisalı","Karataş","Kozan","Pozantı","Saimbeyli","Sarıçam","Seyhan","Tufanbeyli","Yumurtalık","Yüreğir"],"2":["Besni","Çelikhan","Gerger","Gölbaşı","Kahta","Merkez","Samsat","Sincik","Tut"],"3":["Başmakçı","Bayat","Bolvadin","Çay","Çobanlar","Dazkırı","Dinar","Emirdağ","Evciler","Hocalar","İhsaniye","İscehisar","Kızılören","Merkez","Sandıklı","Sinanpaşa","Sultandağı","Şuhut"],"4":["Diyadin","Doğubayazıt","Eleşkirt","Hamur","Merkez","Patnos","Taşlıçay","Tutak"],"5":["Göynücek","Gümüşhacıköy","Hamamözü","Merkez","Merzifon","Suluova","Taşova"],"6":["Akyurt","Altındağ","Ayaş","Bala","Beypazarı","Çamlıdere","Çankaya","Çubuk","Elmadağ","Etimesgut","Evren","Gölbaşı","Güdül","Haymana","Kahramankazan","Kalecik","Keçiören","Kızılcahamam","Mamak","Nallıhan","Polatlı","Pursaklar","Sincan","Şereflikoçhisar","Yenimahalle"],"7":["Akseki","Aksu","Alanya","Demre","Döşemealtı","Elmalı","Finike","Gazipaşa","Gündoğmuş","İbradı","Kaş","Kemer","Kepez","Konyaaltı","Korkuteli","Kumluca","Manavgat","Muratpaşa","Serik"],"8":["Ardanuç","Arhavi","Borçka","Hopa","Kemalpaşa","Merkez","Murgul","Şavşat","Yusufeli"],"9":["Bozdoğan","Buharkent","Çine","Didim","Efeler","Germencik","İncirliova","Karacasu","Karpuzlu","Koçarlı","Köşk","Kuşadası","Kuyucak","Nazilli","Söke","Sultanhisar","Yenipazar"],"10":["Altıeylül","Ayvalık","Balya","Bandırma","Bigadiç","Burhaniye","Dursunbey","Edremit","Erdek","Gömeç","Gönen","Havran","İvrindi","Karesi","Kepsut","Manyas","Marmara","Savaştepe","Sındırgı","Susurluk"],"11":["Bozüyük","Gölpazarı","İnhisar","Merkez","Osmaneli","Pazaryeri","Söğüt","Yenipazar"],"12":["Adaklı","Genç","Karlıova","Kiğı","Merkez","Solhan","Yayladere","Yedisu"],"13":["Adilcevaz","Ahlat","Güroymak","Hizan","Merkez","Mutki","Tatvan"],"14":["Dörtdivan","Gerede","Göynük","Kıbrıscık","Mengen","Merkez","Mudurnu","Seben","Yeniçağa"],"15":["Ağlasun","Altınyayla","Bucak","Çavdır","Çeltikçi","Gölhisar","Karamanlı","Kemer","Merkez","Tefenni","Yeşilova"],"16":["Büyükorhan","Gemlik","Gürsu","Harmancık","İnegöl","İznik","Karacabey","Keles","Kestel","Mudanya","Mustafakemalpaşa","Nilüfer","Orhaneli","Orhangazi","Osmangazi","Yenişehir","Yıldırım"],"17":["Ayvacık","Bayramiç","Biga","Bozcaada","Çan","Eceabat","Ezine","Gelibolu","Gökçeada","Lapseki","Merkez","Yenice"],"18":["Atkaracalar","Bayramören","Çerkeş","Eldivan","Ilgaz","Kızılırmak","Korgun","Kurşunlu","Merkez","Orta","Şabanözü","Yapraklı"],"19":["Alaca","Bayat","Boğazkale","Dodurga","İskilip","Kargı","Laçin","Mecitözü","Merkez","Oğuzlar","Ortaköy","Osmancık","Sungurlu","Uğurludağ"],"20":["Acıpayam","Babadağ","Baklan","Bekilli","Beyağaç","Bozkurt","Buldan","Çal","Çameli","Çardak","Çivril","Güney","Honaz","Kale","Merkezefendi","Pamukkale","Sarayköy","Serinhisar","Tavas"],"21":["Bağlar","Bismil","Çermik","Çınar","Çüngüş","Dicle","Eğil","Ergani","Hani","Hazro","Kayapınar","Kocaköy","Kulp","Lice","Silvan","Sur","Yenişehir"],"22":["Enez","Havsa","İpsala","Keşan","Lalapaşa","Meriç","Merkez","Süloğlu","Uzunköprü"],"23":["Ağın","Alacakaya","Arıcak","Baskil","Karakoçan","Keban","Kovancılar","Maden","Merkez","Palu","Sivrice"],"24":["Çayırlı","İliç","Kemah","Kemaliye","Merkez","Otlukbeli","Refahiye","Tercan","Üzümlü"],"25":["Aşkale","Aziziye","Çat","Hınıs","Horasan","İspir","Karaçoban","Karayazı","Köprüköy","Narman","Oltu","Olur","Palandöken","Pasinler","Pazaryolu","Şenkaya","Tekman","Tortum","Uzundere","Yakutiye"],"26":["Alpu","Beylikova","Çifteler","Günyüzü","Han","İnönü","Mahmudiye","Mihalgazi","Mihalıççık","Odunpazarı","Sarıcakaya","Seyitgazi","Sivrihisar","Tepebaşı"],"27":["Araban","İslahiye","Karkamış","Nizip","Nurdağı","Oğuzeli","Şahinbey","Şehitkamil","Yavuzeli"],"28":["Alucra","Bulancak","Çamoluk","Çanakçı","Dereli","Doğankent","Espiye","Eynesil","Görele","Güce","Keşap","Merkez","Piraziz","Şebinkarahisar","Tirebolu","Yağlıdere"],"29":["Kelkit","Köse","Kürtün","Merkez","Şiran","Torul"],"30":["Çukurca","Derecik","Merkez","Şemdinli","Yüksekova"],"31":["Altınözü","Antakya","Arsuz","Belen","Defne","Dörtyol","Erzin","Hassa","İskenderun","Kırıkhan","Kumlu","Payas","Reyhanlı","Samandağ","Yayladağı"],"32":["Aksu","Atabey","Eğirdir","Gelendost","Gönen","Keçiborlu","Merkez","Senirkent","Sütçüler","Şarkikaraağaç","Uluborlu","Yalvaç","Yenişarbademli"],"33":["Akdeniz","Anamur","Aydıncık","Bozyazı","Çamlıyayla","Erdemli","Gülnar","Mezitli","Mut","Silifke","Tarsus","Toroslar","Yenişehir"],"34":["Adalar","Arnavutköy","Ataşehir","Avcılar","Bağcılar","Bahçelievler","Bakırköy","Başakşehir","Bayrampaşa","Beşiktaş","Beykoz","Beylikdüzü","Beyoğlu","Büyükçekmece","Çatalca","Çekmeköy","Esenler","Esenyurt","Eyüpsultan","Fatih","Gaziosmanpaşa","Güngören","Kadıköy","Kağıthane","Kartal","Küçükçekmece","Maltepe","Pendik","Sancaktepe","Sarıyer","Silivri","Sultanbeyli","Sultangazi","Şile","Şişli","Tuzla","Ümraniye","Üsküdar","Zeytinburnu"],"35":["Aliağa","Balçova","Bayındır","Bayraklı","Bergama","Beydağ","Bornova","Buca","Çeşme","Çiğli","Dikili","Foça","Gaziemir","Güzelbahçe","Karabağlar","Karaburun","Karşıyaka","Kemalpaşa","Kınık","Kiraz","Konak","Menderes","Menemen","Narlıdere","Ödemiş","Seferihisar","Selçuk","Tire","Torbalı","Urla"],"36":["Akyaka","Arpaçay","Digor","Kağızman","Merkez","Sarıkamış","Selim","Susuz"],"37":["Abana","Ağlı","Araç","Azdavay","Bozkurt","Cide","Çatalzeytin","Daday","Devrekani","Doğanyurt","Hanönü","İhsangazi","İnebolu","Küre","Merkez","Pınarbaşı","Seydiler","Şenpazar","Taşköprü","Tosya"],"38":["Akkışla","Bünyan","Develi","Felahiye","Hacılar","İncesu","Kocasinan","Melikgazi","Özvatan","Pınarbaşı","Sarıoğlan","Sarız","Talas","Tomarza","Yahyalı","Yeşilhisar"],"39":["Babaeski","Demirköy","Kofçaz","Lüleburgaz","Merkez","Pehlivanköy","Pınarhisar","Vize"],"40":["Akçakent","Akpınar","Boztepe","Çiçekdağı","Kaman","Merkez","Mucur"],"41":["Başiskele","Çayırova","Darıca","Derince","Dilovası","Gebze","Gölcük","İzmit","Kandıra","Karamürsel","Kartepe","Körfez"],"42":["Ahırlı","Akören","Akşehir","Altınekin","Beyşehir","Bozkır","Cihanbeyli","Çeltik","Çumra","Derbent","Derebucak","Doğanhisar","Emirgazi","Ereğli","Güneysınır","Hadim","Halkapınar","Hüyük","Ilgın","Kadınhanı","Karapınar","Karatay","Kulu","Meram","Sarayönü","Selçuklu","Seydişehir","Taşkent","Tuzlukçu","Yalıhüyük","Yunak"],"43":["Altıntaş","Aslanapa","Çavdarhisar","Domaniç","Dumlupınar","Emet","Gediz","Hisarcık","Merkez","Pazarlar","Simav","Şaphane","Tavşanlı"],"44":["Akçadağ","Arapgir","Arguvan","Battalgazi","Darende","Doğanşehir","Doğanyol","Hekimhan","Kale","Kuluncak","Pütürge","Yazıhan","Yeşilyurt"],"45":["Ahmetli","Akhisar","Alaşehir","Demirci","Gölmarmara","Gördes","Kırkağaç","Köprübaşı","Kula","Salihli","Sarıgöl","Saruhanlı","Selendi","Soma","Şehzadeler","Turgutlu","Yunusemre"],"46":["Afşin","Andırın","Çağlayancerit","Dulkadiroğlu","Ekinözü","Elbistan","Göksun","Nurhak","Onikişubat","Pazarcık","Türkoğlu"],"47":["Artuklu","Dargeçit","Derik","Kızıltepe","Mazıdağı","Midyat","Nusaybin","Ömerli","Savur","Yeşilli"],"48":["Bodrum","Dalaman","Datça","Fethiye","Kavaklıdere","Köyceğiz","Marmaris","Menteşe","Milas","Ortaca","Seydikemer","Ula","Yatağan"],"49":["Bulanık","Hasköy","Korkut","Malazgirt","Merkez","Varto"],"50":["Acıgöl","Avanos","Derinkuyu","Gülşehir","Hacıbektaş","Kozaklı","Merkez","Ürgüp"],"51":["Altunhisar","Bor","Çamardı","Çiftlik","Merkez","Ulukışla"],"52":["Akkuş","Altınordu","Aybastı","Çamaş","Çatalpınar","Çaybaşı","Fatsa","Gölköy","Gülyalı","Gürgentepe","İkizce","Kabadüz","Kabataş","Korgan","Kumru","Mesudiye","Perşembe","Ulubey","Ünye"],"53":["Ardeşen","Çamlıhemşin","Çayeli","Derepazarı","Fındıklı","Güneysu","Hemşin","İkizdere","İyidere","Kalkandere","Merkez","Pazar"],"54":["Adapazarı","Akyazı","Arifiye","Erenler","Ferizli","Geyve","Hendek","Karapürçek","Karasu","Kaynarca","Kocaali","Pamukova","Sapanca","Serdivan","Söğütlü","Taraklı"],"55":["19 Mayıs","Alaçam","Asarcık","Atakum","Ayvacık","Bafra","Canik","Çarşamba","Havza","İlkadım","Kavak","Ladik","Salıpazarı","Tekkeköy","Terme","Vezirköprü","Yakakent"],"56":["Baykan","Eruh","Kurtalan","Merkez","Pervari","Şirvan","Tillo"],"57":["Ayancık","Boyabat","Dikmen","Durağan","Erfelek","Gerze","Merkez","Saraydüzü","Türkeli"],"58":["Akıncılar","Altınyayla","Divriği","Doğanşar","Gemerek","Gölova","Gürün","Hafik","İmranlı","Kangal","Koyulhisar","Merkez","Suşehri","Şarkışla","Ulaş","Yıldızeli","Zara"],"59":["Çerkezköy","Çorlu","Ergene","Hayrabolu","Kapaklı","Malkara","Marmaraereğlisi","Muratlı","Saray","Süleymanpaşa","Şarköy"],"60":["Almus","Artova","Başçiftlik","Erbaa","Merkez","Niksar","Pazar","Reşadiye","Sulusaray","Turhal","Yeşilyurt","Zile"],"61":["Akçaabat","Araklı","Arsin","Beşikdüzü","Çarşıbaşı","Çaykara","Dernekpazarı","Düzköy","Hayrat","Köprübaşı","Maçka","Of","Ortahisar","Sürmene","Şalpazarı","Tonya","Vakfıkebir","Yomra"],"62":["Çemişgezek","Hozat","Mazgirt","Merkez","Nazımiye","Ovacık","Pertek","Pülümür"],"63":["Akçakale","Birecik","Bozova","Ceylanpınar","Eyyübiye","Halfeti","Haliliye","Harran","Hilvan","Karaköprü","Siverek","Suruç","Viranşehir"],"64":["Banaz","Eşme","Karahallı","Merkez","Sivaslı","Ulubey"],"65":["Bahçesaray","Başkale","Çaldıran","Çatak","Edremit","Erciş","Gevaş","Gürpınar","İpekyolu","Muradiye","Özalp","Saray","Tuşba"],"66":["Akdağmadeni","Aydıncık","Boğazlıyan","Çandır","Çayıralan","Çekerek","Kadışehri","Merkez","Saraykent","Sarıkaya","Sorgun","Şefaatli","Yenifakılı","Yerköy"],"67":["Alaplı","Çaycuma","Devrek","Ereğli","Gökçebey","Kilimli","Kozlu","Merkez"],"68":["Ağaçören","Eskil","Gülağaç","Güzelyurt","Merkez","Ortaköy","Sarıyahşi","Sultanhanı"],"69":["Aydıntepe","Demirözü","Merkez"],"70":["Ayrancı","Başyayla","Ermenek","Kazımkarabekir","Merkez","Sarıveliler"],"71":["Bahşili","Balışeyh","Çelebi","Delice","Karakeçili","Keskin","Merkez","Sulakyurt","Yahşihan"],"72":["Beşiri","Gercüş","Hasankeyf","Kozluk","Merkez","Sason"],"73":["Beytüşşebap","Cizre","Güçlükonak","İdil","Merkez","Silopi","Uludere"],"74":["Amasra","Kurucaşile","Merkez","Ulus"],"75":["Çıldır","Damal","Göle","Hanak","Merkez","Posof"],"76":["Aralık","Karakoyunlu","Merkez","Tuzluca"],"77":["Altınova","Armutlu","Çınarcık","Çiftlikköy","Merkez","Termal"],"78":["Eflani","Eskipazar","Merkez","Ovacık","Safranbolu","Yenice"],"79":["Elbeyli","Merkez","Musabeyli","Polateli"],"80":["Bahçe","Düziçi","Hasanbeyli","Kadirli","Merkez","Sumbas","Toprakkale"],"81":["Akçakoca","Cumayeri","Çilimli","Gölyaka","Gümüşova","Kaynaşlı","Merkez","Yığılca"]};
+window.TR_COORD={"1":[37,35.32],"2":[37.76,38.28],"3":[38.76,30.54],"4":[39.72,43.05],"5":[40.65,35.83],"6":[39.93,32.85],"7":[36.9,30.7],"8":[41.18,41.82],"9":[37.85,27.84],"10":[39.65,27.88],"11":[40.15,29.98],"12":[38.88,40.5],"13":[38.4,42.11],"14":[40.74,31.61],"15":[37.72,30.29],"16":[40.19,29.06],"17":[40.16,26.41],"18":[40.6,33.62],"19":[40.55,34.95],"20":[37.78,29.09],"21":[37.91,40.24],"22":[41.68,26.56],"23":[38.68,39.22],"24":[39.75,39.5],"25":[39.9,41.27],"26":[39.78,30.52],"27":[37.07,37.38],"28":[40.91,38.39],"29":[40.46,39.48],"30":[37.58,43.74],"31":[36.2,36.16],"32":[37.76,30.55],"33":[36.81,34.64],"34":[41.01,28.98],"35":[38.42,27.14],"36":[40.6,43.1],"37":[41.39,33.78],"38":[38.73,35.49],"39":[41.74,27.22],"40":[39.15,34.16],"41":[40.77,29.92],"42":[37.87,32.48],"43":[39.42,29.98],"44":[38.36,38.31],"45":[38.61,27.43],"46":[37.58,36.93],"47":[37.31,40.74],"48":[37.22,28.36],"49":[38.73,41.49],"50":[38.62,34.71],"51":[37.97,34.68],"52":[40.98,37.88],"53":[41.02,40.52],"54":[40.77,30.4],"55":[41.29,36.33],"56":[37.93,41.94],"57":[42.03,35.15],"58":[39.75,37.02],"59":[40.98,27.51],"60":[40.31,36.55],"61":[41,39.72],"62":[39.11,39.55],"63":[37.17,38.79],"64":[38.68,29.41],"65":[38.49,43.38],"66":[39.82,34.81],"67":[41.45,31.79],"68":[38.37,34.03],"69":[40.26,40.22],"70":[37.18,33.22],"71":[39.85,33.52],"72":[37.88,41.13],"73":[37.52,42.46],"74":[41.63,32.34],"75":[41.11,42.7],"76":[39.92,44.04],"77":[40.65,29.28],"78":[41.2,32.62],"79":[36.72,37.12],"80":[37.07,36.25],"81":[40.84,31.16]};
+</script>
+<script>
+  // ---- nav scroll ----
+  var nav=document.getElementById('nav');
+  addEventListener('scroll',function(){ nav.classList.toggle('scrolled', scrollY>20); });
 
-  var P=MAPDATA.provs.slice().sort(function(a,b){return a.n.localeCompare(b.n,'tr');});
-  var idx={};P.forEach(function(p,i){idx[p.n]=i;});
-  var from=idx["Samsun"],to=idx["Ankara"];
-  var home={price:8500,label:"3+1"},floor={add:700},lift="var",pack="evet";
+  // ---- reveal ----
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); },{ threshold:.16 });
+  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+  var proc=document.getElementById('proc');
+  if(proc){ var io2=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ proc.classList.add('in'); io2.disconnect(); } }); },{threshold:.3}); io2.observe(proc); }
 
-  // render real province paths
-  var gp=document.getElementById("provinces"),provEls=[];
-  P.forEach(function(p,i){var pa=document.createElementNS(SVGNS,"path");pa.setAttribute("class","prov");pa.setAttribute("d",p.d);pa.dataset.i=i;pa.addEventListener("click",function(){to=i;closeAll();render(true);});gp.appendChild(pa);provEls[i]=pa;});
+  // ---- number formatting (TR) ----
+  function fmt(n,dec){ dec=dec||0; var s=(Math.round(n*Math.pow(10,dec))/Math.pow(10,dec)).toFixed(dec);
+    var parts=s.split('.'); parts[0]=parts[0].replace(/\B(?=(\d{3})+(?!\d))/g,'.'); return parts.join(','); }
+  // ---- count-up ----
+  function countUp(el){ var to=parseFloat(el.dataset.to), dec=+(el.dataset.dec||0), pre=el.dataset.prefix||'', suf=el.dataset.suffix||'';
+    var t0=performance.now(), dur=1300;
+    (function step(t){ var k=Math.min(1,(t-t0)/dur), e=1-Math.pow(1-k,3);
+      el.textContent=pre+fmt(to*e,dec)+suf; if(k<1) requestAnimationFrame(step); })(t0); }
+  var ioC=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ countUp(e.target); ioC.unobserve(e.target); } }); },{threshold:.6});
+  document.querySelectorAll('.cnt').forEach(function(el){ ioC.observe(el); });
 
-  function buildOpts(el,kind){P.forEach(function(p,i){var b=document.createElement("div");b.className="opt";b.textContent=p.n;b.dataset.i=i;b.addEventListener("click",function(){if(kind==="from")from=i;else to=i;closeAll();render(true);});el.appendChild(b);});}
-  buildOpts(document.getElementById("fromOpts"),"from");
-  buildOpts(document.getElementById("toOpts"),"to");
+  // ======================= PRICE CALCULATOR =======================
+  var WA_NUMBER='905462592055'; // firma sahibinin WhatsApp numarası (değiştir)
+  var IL=window.TR_IL||[], ILCE=window.TR_ILCE||{}, COORD=window.TR_COORD||{};
 
-  function priceRange(){var km=hav(P[from],P[to]);var perKm=12+(home.price/8500)*14;var dist=km<40?km*perKm*0.5:km*perKm;var packAdd=pack==="evet"?900:0;var liftAdd=lift==="yok"?800:0;var low=home.price+dist+floor.add+packAdd+liftAdd;return {low:low,high:low*1.28,km:km};}
+  var HOME=[
+    {k:'studyo',n:'Stüdyo / 1+0',base:6000},
+    {k:'1+1',n:'1+1',base:9000},
+    {k:'2+1',n:'2+1',base:13000},
+    {k:'3+1',n:'3+1',base:17500},
+    {k:'4+1',n:'4+1',base:23000},
+    {k:'5+1',n:'5+1 / Villa',base:31000},
+    {k:'ofis',n:'Ofis / İşyeri',base:16000}
+  ];
+  var DENS=[ {k:'az',n:'Az',m:0.85}, {k:'orta',n:'Orta',m:1}, {k:'cok',n:'Çok',m:1.2} ];
+  var AS=[ {k:'var',n:'Asansör var',fee:0}, {k:'yok',n:'Asansör yok',perFloor:750}, {k:'dis',n:'Dış cephe asansörü',flat:3000} ];
+  var EXTRAS=[
+    {k:'paket',n:'Profesyonel paketleme',type:'pct',v:0.16},
+    {k:'montaj',n:'Montaj & demontaj',type:'flat',v:1800},
+    {k:'depo',n:'1 ay depolama',type:'flat',v:2800},
+    {k:'beyaz',n:'Beyaz eşya taşıma',type:'flat',v:1400},
+    {k:'ozel',n:'Piyano / kasa (özel)',type:'flat',v:3800}
+  ];
 
-  var truck=document.getElementById("truck"),routePath=document.getElementById("routePath"),glowPath=document.getElementById("glowPath"),pins=document.getElementById("pins"),animRAF=null;
-  function bez(p0,p1,p2,t){var u=1-t;return[u*u*p0[0]+2*u*t*p1[0]+t*t*p2[0],u*u*p0[1]+2*u*t*p1[1]+t*t*p2[1]];}
-  function drawRoute(animate){
-    var a=P[from],b=P[to],x1=a.cx,y1=a.cy,x2=b.cx,y2=b.cy;
-    var mx=(x1+x2)/2,my=(y1+y2)/2,len=Math.hypot(x2-x1,y2-y1)||1,off=Math.min(80,len*0.24);
-    var cx=mx,cy=my-off,p0=[x1,y1],p1=[cx,cy],p2=[x2,y2];
-    var d="M"+x1+" "+y1+" Q "+cx+" "+cy+" "+x2+" "+y2;
-    routePath.setAttribute("d",d);glowPath.setAttribute("d",d);
-    var show=from!==to?"block":"none";routePath.style.display=show;glowPath.style.display=show;
-    pins.innerHTML="";
-    function pin(x,y,color,pulse){if(pulse){var pc=document.createElementNS(SVGNS,"circle");pc.setAttribute("cx",x);pc.setAttribute("cy",y);pc.setAttribute("r",6);pc.setAttribute("fill",color);pc.setAttribute("class","pulse");pins.appendChild(pc);}var c=document.createElementNS(SVGNS,"circle");c.setAttribute("cx",x);c.setAttribute("cy",y);c.setAttribute("r",6);c.setAttribute("fill",color);c.setAttribute("stroke","#fff");c.setAttribute("stroke-width","2");pins.appendChild(c);}
-    pin(x1,y1,"#2f80ed",false);if(from!==to)pin(x2,y2,"#F5811E",true);
-    [[a,x1,y1],[b,x2,y2]].forEach(function(it,i){if(i===1&&from===to)return;var t=document.createElementNS(SVGNS,"text");t.setAttribute("class","plabel");t.setAttribute("x",it[1]+8);t.setAttribute("y",it[2]-9);t.textContent=it[0].n;pins.appendChild(t);});
-    provEls.forEach(function(pa){pa.classList.remove("on-from","on-to");});
-    provEls[from].classList.add("on-from");if(from!==to)provEls[to].classList.add("on-to");
-    if(from===to){truck.style.display="none";return;}
-    truck.style.display="block";if(animRAF)cancelAnimationFrame(animRAF);
-    var start=null,dur=animate?1600:1;
-    function frame(ts){if(!start)start=ts;var t=Math.min(1,(ts-start)/dur);var e=t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;var pt=bez(p0,p1,p2,e),nx=bez(p0,p1,p2,Math.min(1,e+0.01));var dir=(nx[0]-pt[0])<0?-1:1;truck.setAttribute("transform","translate("+pt[0]+","+pt[1]+") scale("+dir+",1)");if(t<1)animRAF=requestAnimationFrame(frame);}
-    animRAF=requestAnimationFrame(frame);
+  var st={ ilFrom:'', ilceFrom:'', ilTo:'', ilceTo:'', home:'2+1', dens:'orta',
+           katFrom:'0', asFrom:'var', katTo:'0', asTo:'var', extras:{} };
+
+  function opt(v,t,sel){ return '<option value="'+v+'"'+(sel?' selected':'')+'>'+t+'</option>'; }
+  function fillIl(id){ var el=document.getElementById(id); el.innerHTML=IL.map(function(i){return opt(i.p,i.n);}).join(''); }
+  function fillIlce(ilId,ilceId){ var p=+document.getElementById(ilId).value; var list=ILCE[p]||[];
+    document.getElementById(ilceId).innerHTML=list.map(function(n){return opt(n,n);}).join(''); }
+  function fillKat(id){ var o='<option value="0">Giriş / Zemin</option>'; for(var i=1;i<=15;i++) o+=opt(i,i+'. kat'); document.getElementById(id).innerHTML=o; }
+  function fillAs(id){ document.getElementById(id).innerHTML=AS.map(function(a){return opt(a.k,a.n,a.k==='var');}).join(''); }
+
+  function chips(hostId,arr,cur,cb){ var host=document.getElementById(hostId);
+    host.innerHTML=arr.map(function(x){return '<span class="chip'+(x.k===cur?' on':'')+'" data-k="'+x.k+'">'+x.n+'</span>';}).join('');
+    host.querySelectorAll('.chip').forEach(function(c){ c.onclick=function(){ host.querySelectorAll('.chip').forEach(function(z){z.classList.remove('on');}); c.classList.add('on'); cb(c.dataset.k); recalc(); }; }); }
+  function buildChecks(){ var host=document.getElementById('extras');
+    host.innerHTML=EXTRAS.map(function(x){return '<div class="check" data-k="'+x.k+'"><span class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="#241a06" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>'+x.n+'</div>';}).join('');
+    host.querySelectorAll('.check').forEach(function(c){ c.onclick=function(){ var k=c.dataset.k; st.extras[k]=!st.extras[k]; c.classList.toggle('on',st.extras[k]); recalc(); }; }); }
+
+  function haversine(a,b){ if(!a||!b) return 0; var R=6371, dLat=(b[0]-a[0])*Math.PI/180, dLon=(b[1]-a[1])*Math.PI/180;
+    var s=Math.sin(dLat/2)*Math.sin(dLat/2)+Math.cos(a[0]*Math.PI/180)*Math.cos(b[0]*Math.PI/180)*Math.sin(dLon/2)*Math.sin(dLon/2);
+    return Math.round(R*2*Math.atan2(Math.sqrt(s),Math.sqrt(1-s))); }
+  function round500(n){ return Math.round(n/500)*500; }
+
+  var lastLow=0,lastHigh=0;
+  function animPrice(el,from,to){ var t0=performance.now(),d=600;
+    (function s(t){ var k=Math.min(1,(t-t0)/d),e=1-Math.pow(1-k,3); el.textContent=fmt(round500(from+(to-from)*e)); if(k<1)requestAnimationFrame(s); })(t0); }
+
+  function asFee(asKey,kat){ var a=AS.find(function(x){return x.k===asKey;}); if(!a)return 0;
+    if(a.flat) return a.flat; if(a.perFloor) return a.perFloor*(+kat); return 0; }
+
+  function recalc(){
+    st.ilFrom=document.getElementById('ilFrom').value; st.ilceFrom=document.getElementById('ilceFrom').value;
+    st.ilTo=document.getElementById('ilTo').value; st.ilceTo=document.getElementById('ilceTo').value;
+    st.katFrom=document.getElementById('katFrom').value; st.asFrom=document.getElementById('asFrom').value;
+    st.katTo=document.getElementById('katTo').value; st.asTo=document.getElementById('asTo').value;
+
+    var home=HOME.find(function(h){return h.k===st.home;})||HOME[2];
+    var dens=DENS.find(function(d){return d.k===st.dens;})||DENS[1];
+    var baseCost=home.base*dens.m;
+
+    var km=haversine(COORD[+st.ilFrom],COORD[+st.ilTo]);
+    var sameCity=st.ilFrom===st.ilTo;
+    var distCost=sameCity?2500:(3000+km*46);
+
+    var floorCost=asFee(st.asFrom,st.katFrom)+asFee(st.asTo,st.katTo);
+
+    var extraCost=0; EXTRAS.forEach(function(x){ if(st.extras[x.k]){ extraCost+=x.type==='pct'?baseCost*x.v:x.v; } });
+
+    var est=baseCost+distCost+floorCost+extraCost;
+    var low=round500(est*0.9), high=round500(est*1.14);
+
+    animPrice(document.getElementById('pLow'),lastLow,low);
+    animPrice(document.getElementById('pHigh'),lastHigh,high);
+    lastLow=low; lastHigh=high;
+
+    document.getElementById('breakdown').innerHTML=
+      row('Mesafe', sameCity?'Şehir içi':(km+' km'))+
+      row('Ev tipi', home.n+' · '+dens.n)+
+      row('Kat / asansör', floorCost>0?('+'+fmt(floorCost)+' ₺'):'sorun yok')+
+      row('Ek hizmet', extraCost>0?('+'+fmt(round500(extraCost))+' ₺'):'—');
+
+    // WhatsApp mesajı
+    var ilFromN=(IL.find(function(i){return i.p==st.ilFrom;})||{}).n||'';
+    var ilToN=(IL.find(function(i){return i.p==st.ilTo;})||{}).n||'';
+    var exN=EXTRAS.filter(function(x){return st.extras[x.k];}).map(function(x){return x.n;}).join(', ')||'yok';
+    var msg='Merhaba, tasinma icin net teklif almak istiyorum.\n\n'+
+      'Nereden: '+ilFromN+' / '+st.ilceFrom+' ('+katTxt(st.katFrom)+', '+asTxt(st.asFrom)+')\n'+
+      'Nereye: '+ilToN+' / '+st.ilceTo+' ('+katTxt(st.katTo)+', '+asTxt(st.asTo)+')\n'+
+      'Ev tipi: '+home.n+'\nEsya yogunlugu: '+dens.n+'\nEk hizmetler: '+exN+'\n'+
+      'Mesafe: '+(sameCity?'sehir ici':km+' km')+'\n'+
+      'Tahmini fiyat: '+fmt(low)+' - '+fmt(high)+' TL\n\nNet fiyat verebilir misiniz?';
+    document.getElementById('teklifBtn').href='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg);
   }
-  function waMsg(){var r=priceRange();return "Merhaba Özin Nakliyat, siteden hesapladım:\n"+"\u2022 Guzergah: "+P[from].n+" \u2192 "+P[to].n+" (~"+Math.round(r.km)+" km)\n"+"\u2022 Ev tipi: "+home.label+"\n"+"\u2022 Asansor: "+(lift==="var"?"Var":"Yok")+"\n"+"\u2022 Paketleme: "+(pack==="evet"?"Evet":"Hayir")+"\n"+"\u2022 Tahmini: "+tl(r.low)+" \u2013 "+tl(r.high)+"\n\nKesin teklif ve ekspertiz rica ediyorum.";}
-  function waSimple(){return "Merhaba Ozin Nakliyat, evden eve tasinma icin fiyat ve ucretsiz ekspertiz rica ediyorum.";}
-  function render(animate){
-    drawRoute(animate);var r=priceRange();
-    document.getElementById("sumFrom").textContent=P[from].n;
-    document.getElementById("sumTo").textContent=P[to].n;
-    document.getElementById("sumKm").textContent=Math.round(r.km)+" km";
-    document.getElementById("valFrom").textContent=P[from].n;
-    document.getElementById("valTo").textContent=P[to].n;
-    document.getElementById("priceOut").textContent=tl(r.low)+" \u2013 "+tl(r.high);
-    document.getElementById("waPreview").innerHTML="Yeni talep: "+P[from].n+" \u2192 "+P[to].n+", "+home.label+"<span class='tick'>\u2713\u2713</span>";
-    document.getElementById("wa-calc").href="https://wa.me/"+PHONE+"?text="+encodeURIComponent(waMsg());
-    ["wa-top","wa-bot","wa-hero"].forEach(function(id){var el=document.getElementById(id);if(el)el.href="https://wa.me/"+PHONE+"?text="+encodeURIComponent(waSimple());});
+  function row(a,b){ return '<div class="r"><span>'+a+'</span><span>'+b+'</span></div>'; }
+  function katTxt(k){ return k==='0'?'zemin':k+'. kat'; }
+  function asTxt(k){ var a=AS.find(function(x){return x.k===k;}); return a?a.n.toLowerCase():''; }
+
+  // init calculator
+  if(IL.length){
+    fillIl('ilFrom'); fillIl('ilTo');
+    // sensible defaults: Samsun (55) -> Ankara (6)
+    document.getElementById('ilFrom').value='55'; document.getElementById('ilTo').value='6';
+    fillIlce('ilFrom','ilceFrom'); fillIlce('ilTo','ilceTo');
+    fillKat('katFrom'); fillKat('katTo'); fillAs('asFrom'); fillAs('asTo');
+    chips('homeType',HOME,st.home,function(k){st.home=k;});
+    chips('density',DENS,st.dens,function(k){st.dens=k;});
+    buildChecks();
+    document.getElementById('ilFrom').onchange=function(){ fillIlce('ilFrom','ilceFrom'); recalc(); };
+    document.getElementById('ilTo').onchange=function(){ fillIlce('ilTo','ilceTo'); recalc(); };
+    ['ilceFrom','ilceTo','katFrom','asFrom','katTo','asTo'].forEach(function(id){ document.getElementById(id).onchange=recalc; });
+    recalc();
   }
-  function closeAll(){document.querySelectorAll(".arow").forEach(function(r){r.classList.remove("open");});}
-  document.querySelectorAll('.arow:not(.tgrow) .hd').forEach(function(hd){hd.addEventListener("click",function(){var row=hd.parentNode;var isOpen=row.classList.contains("open");closeAll();if(!isOpen)row.classList.add("open");});});
-  document.querySelectorAll('.arow[data-kind="home"] .opt').forEach(function(o){o.addEventListener("click",function(e){e.stopPropagation();o.parentNode.querySelectorAll(".opt").forEach(function(x){x.classList.remove("on");});o.classList.add("on");home.price=+o.dataset.price;home.label=o.textContent;document.getElementById("valHome").textContent=o.textContent;closeAll();render(false);});});
-  document.querySelectorAll('.arow[data-kind="floor"] .opt').forEach(function(o){o.addEventListener("click",function(e){e.stopPropagation();o.parentNode.querySelectorAll(".opt").forEach(function(x){x.classList.remove("on");});o.classList.add("on");floor.add=+o.dataset.add;document.getElementById("valFloor").textContent=o.textContent;closeAll();render(false);});});
-  document.querySelectorAll('.arow[data-kind="lift"] .tg').forEach(function(t){t.addEventListener("click",function(){t.parentNode.querySelectorAll(".tg").forEach(function(x){x.classList.remove("on");});t.classList.add("on");lift=t.dataset.lift;render(false);});});
-  document.querySelectorAll('.arow[data-kind="pack"] .tg').forEach(function(t){t.addEventListener("click",function(){t.parentNode.querySelectorAll(".tg").forEach(function(x){x.classList.remove("on");});t.classList.add("on");pack=t.dataset.pack;render(false);});});
-
-  render(true);
-
-  var bar=document.querySelector(".bar");
-  function onScroll(){if(window.scrollY>60)bar.classList.add("solid");else bar.classList.remove("solid");}
-  window.addEventListener("scroll",onScroll,{passive:true});onScroll();
-  document.querySelectorAll(".section-title,.how,.gal,.revs,.stats,.manifesto").forEach(function(el){el.classList.add("reveal");});
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");e.target.querySelectorAll("[data-count]").forEach(function(n){var end=+n.getAttribute("data-count"),suf=n.getAttribute("data-suf")||"",t0=null;function step(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/1100);var e2=1-Math.pow(1-p,3);n.textContent=Math.round(end*e2).toLocaleString("tr-TR")+suf;if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);});io.unobserve(e.target);}});},{threshold:.14});
-  document.querySelectorAll(".reveal").forEach(function(el){io.observe(el);});
-})();
-
 </script>
 </body>
 </html>
