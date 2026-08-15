@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   description:
     "Samsun'un yerel hizmet firmaları tek yerde: nakliyat, oto çekici, klima-kombi servisi ve daha fazlası. İlçene göre bul, karşılaştır, doğrudan ara.",
   alternates: { canonical: "/hizmetler" },
+  // Hizmet rehberi Google'da istenmiyor: noindex.
+  robots: { index: false, follow: true },
 };
 
 export default async function HizmetlerHub() {
