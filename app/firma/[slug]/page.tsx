@@ -20,6 +20,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     title: `${b.name}${svc ? ` — ${svc}` : ""} | samsunkent`,
     description: b.description || `${b.name}, Samsun. ${svc}`.slice(0, 160),
     alternates: { canonical: `/firma/${b.slug}` },
+    // Firma rehberi sayfaları Google'da istenmiyor: noindex (sayfa yaşar, aramaya girmez).
+    robots: { index: false, follow: true },
   };
 }
 

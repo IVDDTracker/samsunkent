@@ -7,7 +7,6 @@ import {
   getDistricts,
   getServiceSlugs,
   splitSponsored,
-  serviceIsIndexable,
 } from "../../../lib/hizmet";
 import ServiceResults from "../../../components/ServiceResults";
 
@@ -22,14 +21,12 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const service = await getService(params.slug);
   if (!service) return { title: "Hizmet bulunamadı — samsunkent" };
-  const businesses = await getBusinessesForService(service);
-  const indexable = serviceIsIndexable(service, businesses.length);
   return {
     title: service.meta_title || `${service.h1 || service.name} | samsunkent`,
     description: service.meta_desc || service.intro || undefined,
     alternates: { canonical: `/hizmetler/${service.slug}` },
-    // İndekslenebilirlik kapısını geçmeyen sayfa noindex (yaşar ama aramaya girmez).
-    robots: indexable ? undefined : { index: false, follow: true },
+    // Hizmet rehberi Google'da istenmiyor: tüm hizmet sayfaları noindex (yaşar, aramaya girmez).
+    robots: { index: false, follow: true },
   };
 }
 
