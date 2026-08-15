@@ -14,6 +14,7 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: `${BASE}/sitemap.xml`,
-    host: BASE,
+    // Not: `host` direktifini Google desteklemiyor (Search Console "yok sayıldı"
+    // uyarısı verir). Kaldırıldı; hiçbir sayfayı engellemez, sadece uyarıyı temizler.
   };
 }
