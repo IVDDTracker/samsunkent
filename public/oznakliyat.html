@@ -241,6 +241,19 @@
   .calc-side .btn{ margin-top:22px; width:100%; justify-content:center; }
   .calc-side .tiny{ text-align:center; font-family:'Space Mono',monospace; font-size:10.5px; color:var(--muted2); margin-top:10px; letter-spacing:.05em; }
 
+  /* gallery */
+  .gallery{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .gcard{ position:relative; border-radius:18px; overflow:hidden; border:1px solid var(--line); aspect-ratio:3/4; background:var(--surface); }
+  .gcard img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .6s cubic-bezier(.22,1,.36,1); }
+  .gcard:hover img{ transform:scale(1.06); }
+  .gcard::after{ content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(8,11,20,.82), rgba(8,11,20,.05) 46%, transparent); }
+  .gcard .cap{ position:absolute; left:18px; right:18px; bottom:16px; z-index:2; }
+  .gcard .cap b{ font-family:'Bricolage Grotesque',serif; font-weight:600; font-size:17px; display:block; }
+  .gcard .cap span{ font-family:'Space Mono',monospace; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--gold2); }
+  .gcard .tagpin{ position:absolute; top:14px; left:14px; z-index:2; font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.1em; color:var(--text); background:rgba(11,16,32,.6); backdrop-filter:blur(6px); border:1px solid var(--line2); padding:5px 10px; border-radius:100px; }
+  @media (max-width:820px){ .gallery{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:520px){ .gallery{ grid-template-columns:1fr; } }
+
   .menu-btn{ display:none; }
 
   @media (max-width:960px){
@@ -280,6 +293,7 @@
       <a href="#hizmetler">Hizmetler</a>
       <a href="#surec">Süreç</a>
       <a href="#neden">Neden Biz</a>
+      <a href="#isler">İşlerimiz</a>
       <a href="#sss">S.S.S.</a>
     </nav>
     <div class="nav-cta">
@@ -480,6 +494,22 @@
       <div class="cap">taşınan eşya, tek çizik almadan yeni evine ulaşıyor.</div>
       <div class="quote">"Kırılır diye aylarca sakladığım her şey, olduğu gibi yeni evimde yerini aldı."</div>
       <div class="who">— E. Yıldız · Atakum → Ankara taşınması</div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="sec" id="isler" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Sahadan</span>
+      <h2>Gerçek taşımalardan kareler</h2>
+      <p>Her parça sarma battaniye, balonlu naylon ve streç filmle tek tek korunur. İşte gerçek işlerimizden birkaç kare.</p>
+    </div>
+    <div class="gallery">
+      <div class="gcard rv"><span class="tagpin">Samsun</span><img src="/oznakliyat/ozin-1.jpg" alt="Ambalajlanmış eşyalar taşımaya hazır" loading="lazy"><div class="cap"><span>Evden eve</span><b>Paketleme tamamlandı</b></div></div>
+      <div class="gcard rv"><span class="tagpin">Özin ekibi</span><img src="/oznakliyat/ozin-2.jpg" alt="Streç filmle ambalajlanmış mobilyalar ve ekip" loading="lazy"><div class="cap"><span>Profesyonel ambalaj</span><b>Streç film & koruma</b></div></div>
+      <div class="gcard rv"><span class="tagpin">Güvenli taşıma</span><img src="/oznakliyat/ozin-3.jpg" alt="Sarma battaniyeyle korunmuş mobilyalar" loading="lazy"><div class="cap"><span>Hasarsız taşıma</span><b>Sarma battaniyeyle koruma</b></div></div>
     </div>
   </div>
 </section>
