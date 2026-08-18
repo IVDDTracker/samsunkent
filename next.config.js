@@ -18,6 +18,11 @@ const nextConfig = {
         { source: "/samsun-projeksiyon-kiralama", destination: "/samsun-projeksiyon-kiralama.html" },
         { source: "/samsun-mac-izleme-kiralama", destination: "/samsun-mac-izleme-kiralama.html" },
         { source: "/evde-sinema-kiralama-samsun", destination: "/evde-sinema-kiralama-samsun.html" },
+        // Web & Yazılım hizmet sayfaları — SEO landing, temiz URL.
+        { source: "/samsun-web-sitesi-yaptirma", destination: "/samsun-web-sitesi-yaptirma.html" },
+        { source: "/samsun-web-sitesi-fiyatlari", destination: "/samsun-web-sitesi-fiyatlari.html" },
+        { source: "/samsun-mobil-uygulama-yaptirma", destination: "/samsun-mobil-uygulama-yaptirma.html" },
+        { source: "/samsun-e-ticaret-sitesi-kurma", destination: "/samsun-e-ticaret-sitesi-kurma.html" },
       ],
     };
   },

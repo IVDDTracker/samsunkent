@@ -4,7 +4,7 @@ const BASE = "https://samsunkent.com";
 export const revalidate = 3600; // saatte bir tazele
 
 // Sitemap YALNIZCA aramada istenen sayfaları içerir:
-//   anasayfa + Büyük Ekran/PS kiralama sayfaları (kirala + niyet bazlı landing'ler).
+//   anasayfa + Büyük Ekran/PS kiralama sayfaları + Web & Yazılım hizmet sayfaları.
 // Firma/hizmet rehberi sayfaları (/firma, /hizmetler) istenmiyor → noindex, sitemap'e girmez.
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -17,5 +17,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/samsun-projeksiyon-kiralama`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/samsun-mac-izleme-kiralama`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/evde-sinema-kiralama-samsun`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    // Web & Yazılım hizmet sayfaları (SEO landing).
+    { url: `${BASE}/samsun-web-sitesi-yaptirma`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE}/samsun-web-sitesi-fiyatlari`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/samsun-mobil-uygulama-yaptirma`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/samsun-e-ticaret-sitesi-kurma`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
   ];
 }
