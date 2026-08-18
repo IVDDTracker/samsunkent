@@ -23,6 +23,10 @@ const nextConfig = {
         { source: "/samsun-web-sitesi-fiyatlari", destination: "/samsun-web-sitesi-fiyatlari.html" },
         { source: "/samsun-mobil-uygulama-yaptirma", destination: "/samsun-mobil-uygulama-yaptirma.html" },
         { source: "/samsun-e-ticaret-sitesi-kurma", destination: "/samsun-e-ticaret-sitesi-kurma.html" },
+        // Dikey (sektör bazlı) SEO landing sayfaları.
+        { source: "/samsun-berber-kuafor-randevu-sistemi", destination: "/samsun-berber-kuafor-randevu-sistemi.html" },
+        { source: "/samsun-restoran-qr-menu", destination: "/samsun-restoran-qr-menu.html" },
+        { source: "/samsun-hali-saha-rezervasyon-sistemi", destination: "/samsun-hali-saha-rezervasyon-sistemi.html" },
       ],
     };
   },

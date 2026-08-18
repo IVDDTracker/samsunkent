@@ -22,5 +22,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/samsun-web-sitesi-fiyatlari`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/samsun-mobil-uygulama-yaptirma`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/samsun-e-ticaret-sitesi-kurma`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    // Dikey (sektör bazlı) hizmet sayfaları.
+    { url: `${BASE}/samsun-berber-kuafor-randevu-sistemi`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/samsun-restoran-qr-menu`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/samsun-hali-saha-rezervasyon-sistemi`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
   ];
 }
