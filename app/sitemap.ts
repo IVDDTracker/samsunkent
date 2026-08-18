@@ -26,5 +26,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/samsun-berber-kuafor-randevu-sistemi`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/samsun-restoran-qr-menu`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/samsun-hali-saha-rezervasyon-sistemi`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/samsun-emlak-web-sitesi`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/samsun-dis-klinigi-doktor-web-sitesi`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/samsun-oto-galeri-web-sitesi`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/samsun-guzellik-salonu-randevu-web-sitesi`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/samsun-spor-salonu-uyelik-sistemi`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/samsun-kafe-restoran-web-sitesi`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/samsun-veteriner-web-sitesi`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/samsun-instagram-satis-sayfasi`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
   ];
 }
