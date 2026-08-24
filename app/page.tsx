@@ -124,7 +124,6 @@ export default async function HomePage() {
               <a className="brandlink" href="https://dailydermo.com" target="_blank" rel="noopener noreferrer">dailydermo.com →</a>
               <a className="brandlink" href="https://www.anivo.app" target="_blank" rel="noopener noreferrer">anivo.app →</a>
               <a className="brandlink" href="https://samsunpettransfer.com" target="_blank" rel="noopener noreferrer">pet transfer →</a>
-              <a className="brandlink" href="/oznakliyat">Özin Nakliyat →</a>
             </div>
             <a className="channel" href="/samsun-web-sitesi-yaptirma">Hizmetler &amp; fiyatlar →</a>
             <span className="meta">Samsun&apos;da web tasarım · e-ticaret · mobil 💻</span>
