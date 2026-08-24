@@ -110,6 +110,25 @@ export default async function HomePage() {
         </article>
 
         <div className="board">
+          {/* Web & Yazılım — portföy / hizmet vitrini */}
+          <article className="note" style={{ "--rot": "-1.1deg" } as React.CSSProperties}>
+            <span className="pin navy" />
+            <span className="eyebrow">💻 Web &amp; Yazılım</span>
+            <h3>Web sitesi mi lazım?</h3>
+            <p>
+              Kurumsal site, e-ticaret, mobil uygulama — markaya özel, hızlı,
+              Google&apos;da çıkan işler. Hazır tema değil. İşte yaptıklarımızdan
+              bazıları:
+            </p>
+            <div className="btnrow">
+              <a className="brandlink" href="https://dailydermo.com" target="_blank" rel="noopener noreferrer">dailydermo.com →</a>
+              <a className="brandlink" href="https://www.anivo.app" target="_blank" rel="noopener noreferrer">anivo.app →</a>
+              <a className="brandlink" href="https://samsunpettransfer.com" target="_blank" rel="noopener noreferrer">pet transfer →</a>
+              <a className="brandlink" href="/oznakliyat">Özin Nakliyat →</a>
+            </div>
+            <a className="channel" href="/samsun-web-sitesi-yaptirma">Hizmetler &amp; fiyatlar →</a>
+            <span className="meta">Samsun&apos;da web tasarım · e-ticaret · mobil 💻</span>
+          </article>
           {/* Büyük Ekran Kiralama — PS5 · projeksiyon · perde (panoda ilk sıra) */}
           <article className="note" style={{ "--rot": "-1.4deg" } as React.CSSProperties}>
             <span className="pin green" />
