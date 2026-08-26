@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { unstable_noStore as noStore } from "next/cache";
 import { supabase } from "../lib/supabase";
 import type { Announcement } from "../lib/db";
-import CorkBackground from "../components/CorkBackground";
-import SamsunkentBoard from "../components/SamsunkentBoard";
+import VideoBackground from "../components/VideoBackground";
 import SiteNav from "../components/SiteNav";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
@@ -72,22 +71,59 @@ export default async function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
       />
       <SiteNav />
-      <SamsunkentBoard />
-      <CorkBackground />
-      <div className="wrap" id="pano">
-        <header className="top">
-          <div className="brand">
-            samsunkent<span className="dot">.</span>
-            <span className="tag">Mekân · Sokak · Gündem</span>
-          </div>
-          <span className="reach">
-            <b>1M</b> aylık görüntüleme · Samsun
-          </span>
-        </header>
-
+      <VideoBackground />
+      <div className="wrap home" id="pano">
         <div className="board">
-          {/* Vitrin notları (Web · Kiralık · Hizmet) üstteki sinematik panoda.
-              Burada etkileşimli içerik: iş birliği + duyuru formları. */}
+          {/* Manifesto */}
+          <article className="note" style={{ "--rot": "-1.4deg" } as React.CSSProperties}>
+            <span className="pin" />
+            <span className="eyebrow">Manifesto</span>
+            <h3 className="big">Herkes <span className="red">buraya</span> bakıyor.</h3>
+            <p>
+              Samsun konuşuyorsa, buradan konuşuyor. Mekânı, sokağı, gündemi — nabız burada
+              atar. Süssüz, filtresiz, torpilsiz. Sen de içeride ol.
+            </p>
+            <a
+              className="channel"
+              href="https://www.instagram.com/channel/Abbvtcz5xxeoD7Cd/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              İçeri gir, aramıza katıl →
+            </a>
+            <span className="meta">— samsunkent</span>
+          </article>
+
+          {/* Web & Yazılım */}
+          <article className="note" style={{ "--rot": "1.2deg" } as React.CSSProperties}>
+            <span className="pin navy" />
+            <span className="eyebrow">💻 Web &amp; Yazılım</span>
+            <h3>Web sitesi mi lazım?</h3>
+            <p>
+              Kurumsal site, e-ticaret, mobil uygulama — markaya özel, Google&apos;da çıkan
+              işler. Hazır tema değil. İşte yaptıklarımızdan bazıları:
+            </p>
+            <div className="btnrow">
+              <a className="brandlink" href="https://dailydermo.com" target="_blank" rel="noopener noreferrer">dailydermo.com →</a>
+              <a className="brandlink" href="https://www.anivo.app" target="_blank" rel="noopener noreferrer">anivo.app →</a>
+              <a className="brandlink" href="https://samsunpettransfer.com" target="_blank" rel="noopener noreferrer">pet transfer →</a>
+            </div>
+            <a className="channel" href="/samsun-web-sitesi-yaptirma">Hizmetler &amp; fiyatlar →</a>
+            <span className="meta">Samsun&apos;da web tasarım · e-ticaret · mobil 💻</span>
+          </article>
+
+          {/* Kiralık */}
+          <article className="note" style={{ "--rot": "-1.1deg" } as React.CSSProperties}>
+            <span className="pin green" />
+            <span className="eyebrow">🎮 Kiralık</span>
+            <h3>Evine büyük ekran keyfi.</h3>
+            <p>
+              PS5 (oyunlar hazır dahil), projeksiyon ve perde — maç günü, film gecesi, oyun
+              gecesi. Canik, Atakum, İlkadım&apos;a ücretsiz teslim + kurulum.
+            </p>
+            <a className="channel" href="/kirala">Fiyat al &amp; rezervasyon →</a>
+            <span className="meta">Teslimde nakit/kart · Samsun 🕹️📽️</span>
+          </article>
 
           {/* Sabit iş birliği notu */}
           <article className="note" style={{ "--rot": "1.6deg" } as React.CSSProperties}>
