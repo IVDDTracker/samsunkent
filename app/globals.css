@@ -386,7 +386,7 @@ form.mini button:focus-visible{ outline:3px solid #ffd27a; outline-offset:2px; }
 @media (prefers-reduced-motion:reduce){ .vhero-cue .a{ animation:none; } }
 
 /* ══ Sinematik pano (SamsunkentBoard) — üst vitrin deneyimi, skb- namespace ══ */
-.skb-track{ position:relative; height:600vh; z-index:2; }
+.skb-track{ position:relative; height:300vh; z-index:2; }
 .skb-stage{ position:sticky; top:0; height:100vh; overflow:hidden; background:#080603; }
 .skb-bg{ position:absolute; inset:0; z-index:0; overflow:hidden; background:#080603; }
 .skb-vid{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
