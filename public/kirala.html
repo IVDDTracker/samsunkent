@@ -277,6 +277,10 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted2);font-
 .botbar .tot b{font-size:19px;font-weight:900;line-height:1}
 .botbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--violet);color:#fff;font-weight:800;font-size:15px;border-radius:12px;padding:13px}
 .botbar a svg{width:18px;height:18px}
+.hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-vid-m{display:none}
+@media(max-aspect-ratio:1/1){.hero-vid-d{display:none}.hero-vid-m{display:block}}
+.hero-scrim{position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,rgba(11,11,18,.62),rgba(11,11,18,.84)),radial-gradient(72% 60% at 22% 2%,rgba(124,92,255,.28),transparent 60%)}
 </style></head>
 <body>
 
@@ -288,7 +292,11 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted2);font-
   <a class="cta" href="#rezervasyon">Rezervasyon</a>
 </div></div>
 
-<header class="hero"><div class="wrap">
+<header class="hero">
+  <video class="hero-vid hero-vid-d" autoplay muted loop playsinline preload="auto" poster="/hero/kirala-poster.jpg"><source src="/hero/kirala-desktop.mp4" type="video/mp4"></video>
+  <video class="hero-vid hero-vid-m" autoplay muted loop playsinline preload="auto"><source src="/hero/kirala-mobile.mp4" type="video/mp4"></video>
+  <div class="hero-scrim"></div>
+  <div class="wrap">
   <span class="eyebrow">Samsun · Evine teslim + kurulum</span>
   <h1>Evine <span class="g">büyük ekran</span> keyfi getiriyoruz.</h1>
   <p>PS5 (onlarca oyun hazır), Full HD projeksiyon (<b>Netflix, Prime dahili</b>) ve perde — <b>maç günü</b>, <b>film gecesi</b>, <b>oyun gecesi</b>. Canlı takvimden müsait günü seç, anında rezervasyon yap. Kurulumu biz yaparız, sen keyfine bak.</p>
