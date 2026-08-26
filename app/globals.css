@@ -481,3 +481,9 @@ form.mini button:focus-visible{ outline:3px solid #ffd27a; outline-offset:2px; }
 .note h3.big{ font-family:var(--font-anton),Impact,sans-serif; font-weight:400; text-transform:uppercase;
   font-size:clamp(30px,6.5vw,46px); line-height:.94; letter-spacing:.01em; margin:0 0 12px; }
 .note h3.big .red{ color:var(--red); }
+
+/* ══ Hero altı koyu arka plan (dikiş olmasın, bütün koyu) ══ */
+.darkbg{ position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:radial-gradient(120% 90% at 50% 0%,#17110b,#0c0805 55%,#080502 100%); }
+.darkbg::after{ content:""; position:absolute; inset:0; opacity:.4; mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.6' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E"); }
