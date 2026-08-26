@@ -449,3 +449,19 @@ form.mini button:focus-visible{ outline:3px solid #ffd27a; outline-offset:2px; }
 .skb-rm .skb-pager,.skb-rm .skb-hint,.skb-rm .skb-grain{ display:none; }
 .skb-rm .skb-bg{ position:absolute; }
 @media (prefers-reduced-motion:reduce){ .skb-hint .a{ animation:none; } }
+
+/* ══ Sabit üst menü (SiteNav) — her zaman görünür, hızlı erişim ══ */
+.sitenav{ position:fixed; top:0; left:0; right:0; z-index:100; height:58px; padding:0 18px;
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  background:rgba(18,10,5,.5); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.1); }
+.sitenav-brand{ font-family:var(--font-anton),Impact,sans-serif; font-size:22px; color:var(--paper);
+  text-transform:lowercase; letter-spacing:.01em; text-shadow:0 2px 8px rgba(0,0,0,.4); }
+.sitenav-brand b{ color:var(--red); }
+.sitenav-links{ display:flex; align-items:center; gap:6px; }
+.sitenav-links a{ color:rgba(245,239,225,.9); font-weight:700; font-size:13.5px; padding:8px 11px; border-radius:8px;
+  transition:color .2s ease, background .2s ease; white-space:nowrap; }
+.sitenav-links a:hover{ color:#fff; background:rgba(255,255,255,.08); }
+.sitenav-cta{ background:var(--red); color:#fff !important; box-shadow:0 6px 16px -6px rgba(226,70,49,.6); }
+.sitenav-cta:hover{ background:#c9381f !important; }
+@media (max-width:420px){ .sitenav-links .hide-sm{ display:none; } .sitenav-links a{ padding:8px 9px; font-size:13px; } .sitenav-brand{ font-size:20px; } }
