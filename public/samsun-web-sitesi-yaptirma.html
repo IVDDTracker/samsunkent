@@ -34,7 +34,12 @@ a{color:inherit;text-decoration:none}.wrap{max-width:940px;margin:0 auto;padding
 .bar .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
 .brand{font-weight:800;font-size:15px}.brand small{display:block;font-size:10px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
 .bar .cta{background:var(--green);color:#fff;font-weight:800;font-size:13px;padding:9px 15px;border-radius:10px}
-.hero{padding:56px 0 42px;background:radial-gradient(70% 60% at 20% 0%,rgba(124,92,255,.22),transparent 60%),radial-gradient(60% 50% at 90% 10%,rgba(255,178,62,.12),transparent 60%)}
+.hero{position:relative;overflow:hidden;padding:56px 0 42px;background:radial-gradient(70% 60% at 20% 0%,rgba(124,92,255,.22),transparent 60%),radial-gradient(60% 50% at 90% 10%,rgba(255,178,62,.12),transparent 60%)}
+.hero>.wrap{position:relative;z-index:1}
+.hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-vid-m{display:none}
+@media(max-aspect-ratio:1/1){.hero-vid-d{display:none}.hero-vid-m{display:block}}
+.hero-scrim{position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,rgba(11,11,18,.6),rgba(11,11,18,.84)),radial-gradient(72% 60% at 22% 2%,rgba(124,92,255,.28),transparent 60%)}
 .hero h1{font-size:clamp(30px,6vw,52px);font-weight:900;line-height:1.05;letter-spacing:-.02em;margin:14px 0 0}
 .hero h1 .g{background:linear-gradient(90deg,var(--violet2),var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p{font-size:clamp(15px,2.2vw,18px);color:var(--muted);max-width:640px;margin:16px 0 0}
@@ -74,7 +79,11 @@ footer a{color:var(--muted)}
 <body>
 <div class="bar"><div class="wrap"><a class="brand" href="/">samsunkent<small>Web &amp; Yazılım · Samsun</small></a><a class="cta" href="https://wa.me/905456408555?text=Merhaba,%20web%20sitesi%20için%20teklif%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp'tan Teklif Al</a></div></div>
 
-<header class="hero"><div class="wrap">
+<header class="hero">
+  <video class="hero-vid hero-vid-d" autoplay muted loop playsinline preload="auto" poster="/hero/web-poster.jpg"><source src="/hero/web-desktop.mp4" type="video/mp4"></video>
+  <video class="hero-vid hero-vid-m" autoplay muted loop playsinline preload="auto"><source src="/hero/web-mobile.mp4" type="video/mp4"></video>
+  <div class="hero-scrim"></div>
+  <div class="wrap">
   <span class="eyebrow">Samsun · Web Tasarım &amp; Yazılım</span>
   <h1>Samsun'da işletmenizi büyüten <span class="g">web siteleri</span> ve uygulamalar</h1>
   <p>Modern, hızlı ve mobil uyumlu web siteleri, e-ticaret çözümleri ve mobil uygulamalar. Şablon değil, işinize özel. Gerçek örnek işler, net fiyat, hızlı teslim.</p>
