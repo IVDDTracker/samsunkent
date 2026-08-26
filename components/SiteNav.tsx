@@ -14,8 +14,7 @@ export default function SiteNav() {
       </Link>
       <div className="sitenav-links">
         <Link href="/kirala">Kiralık</Link>
-        <Link href="/hizmetler">Hizmetler</Link>
-        <Link href="/samsun-web-sitesi-yaptirma" className="hide-sm">Web</Link>
+        <Link href="/samsun-web-sitesi-yaptirma">Web</Link>
         <a href="#pano" className="sitenav-cta">İletişim</a>
       </div>
     </nav>
