@@ -48,16 +48,6 @@ export default function VideoHero() {
 
       <div className="vhero-scrim" aria-hidden="true" />
 
-      <header className="vhero-top">
-        <div className="vhero-brand">
-          samsunkent<span className="dot">.</span>
-          <span className="vhero-tag">Mekân · Sokak · Gündem</span>
-        </div>
-        <span className="vhero-reach">
-          <b>1M</b> aylık görüntüleme · Samsun
-        </span>
-      </header>
-
       <div className="vhero-inner">
         <span className="vhero-chip">Manifesto</span>
         <h1 className="vhero-h1">

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { unstable_noStore as noStore } from "next/cache";
 import { supabase } from "../lib/supabase";
 import type { Announcement } from "../lib/db";
-import VideoBackground from "../components/VideoBackground";
+import VideoHero from "../components/VideoHero";
 import SiteNav from "../components/SiteNav";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
@@ -71,29 +71,10 @@ export default async function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
       />
       <SiteNav />
-      <VideoBackground />
+      <VideoHero />
+      <div className="darkbg" aria-hidden="true" />
       <div className="wrap home" id="pano">
         <div className="board">
-          {/* Manifesto */}
-          <article className="note" style={{ "--rot": "-1.4deg" } as React.CSSProperties}>
-            <span className="pin" />
-            <span className="eyebrow">Manifesto</span>
-            <h3 className="big">Herkes <span className="red">buraya</span> bakıyor.</h3>
-            <p>
-              Samsun konuşuyorsa, buradan konuşuyor. Mekânı, sokağı, gündemi — nabız burada
-              atar. Süssüz, filtresiz, torpilsiz. Sen de içeride ol.
-            </p>
-            <a
-              className="channel"
-              href="https://www.instagram.com/channel/Abbvtcz5xxeoD7Cd/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              İçeri gir, aramıza katıl →
-            </a>
-            <span className="meta">— samsunkent</span>
-          </article>
-
           {/* Web & Yazılım */}
           <article className="note" style={{ "--rot": "1.2deg" } as React.CSSProperties}>
             <span className="pin navy" />
