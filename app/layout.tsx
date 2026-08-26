@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
+import { Anton } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
+
+// Sinematik hero başlığı için sıkışık, ağır grotesk.
+const anton = Anton({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-anton",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "samsunkent — Mekân · Sokak · Gündem",
@@ -20,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="tr">
+    <html lang="tr" className={anton.variable}>
       <body>
         {children}
         <Analytics />
