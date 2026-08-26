@@ -166,14 +166,6 @@ export default function SamsunkentBoard() {
               <a className="skb-cta" href="/kirala">Fiyat al &amp; rezervasyon →</a>
             </article>
 
-            <article className="skb-note" style={{ left: 1800, top: 1250, ["--r" as string]: "2.5deg" }}>
-              <span className="skb-pin" />
-              <span className="skb-chip">Hizmet Rehberi</span>
-              <h1 className="skb-hl sm">Samsun&apos;da usta mı lazım?</h1>
-              <p>Nakliyat, klima-kombi, temizlik, tesisatçı… Samsun&apos;un yerel firmaları bir arada. İlçene göre bul, ara.</p>
-              <a className="skb-cta ghost" href="/hizmetler">Hizmet rehberine gir →</a>
-            </article>
-
             <article className="skb-note" style={{ left: 640, top: 1370, ["--r" as string]: "-2deg" }}>
               <span className="skb-pin green" />
               <span className="skb-chip">Sen de var mısın?</span>
