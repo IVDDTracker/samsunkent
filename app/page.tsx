@@ -4,6 +4,7 @@ import { supabase } from "../lib/supabase";
 import type { Announcement } from "../lib/db";
 import CorkBackground from "../components/CorkBackground";
 import SamsunkentBoard from "../components/SamsunkentBoard";
+import SiteNav from "../components/SiteNav";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 
@@ -70,6 +71,7 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
       />
+      <SiteNav />
       <SamsunkentBoard />
       <CorkBackground />
       <div className="wrap" id="pano">

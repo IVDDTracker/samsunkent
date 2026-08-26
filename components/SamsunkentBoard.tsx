@@ -131,14 +131,6 @@ export default function SamsunkentBoard() {
           <div className="skb-grain" aria-hidden="true" />
           <div className="skb-vig" aria-hidden="true" />
 
-          <div className="skb-topbar">
-            <div>
-              <div className="skb-logo">samsunkent<b>.</b></div>
-              <div className="skb-kick">Mekân · Sokak · Gündem</div>
-            </div>
-            <span className="skb-views"><b>1M</b> aylık görüntüleme · Samsun</span>
-          </div>
-
           <div className="skb-board">
             <svg className="skb-thread" viewBox="0 0 2800 2000" preserveAspectRatio="none" aria-hidden="true">
               <path d="" />
