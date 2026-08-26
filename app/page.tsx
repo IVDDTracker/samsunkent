@@ -3,7 +3,7 @@ import { unstable_noStore as noStore } from "next/cache";
 import { supabase } from "../lib/supabase";
 import type { Announcement } from "../lib/db";
 import CorkBackground from "../components/CorkBackground";
-import VideoHero from "../components/VideoHero";
+import SamsunkentBoard from "../components/SamsunkentBoard";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 
@@ -70,7 +70,7 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
       />
-      <VideoHero />
+      <SamsunkentBoard />
       <CorkBackground />
       <div className="wrap" id="pano">
         <header className="top">
@@ -84,53 +84,8 @@ export default async function HomePage() {
         </header>
 
         <div className="board">
-          {/* Web & Yazılım — portföy / hizmet vitrini */}
-          <article className="note" style={{ "--rot": "-1.1deg" } as React.CSSProperties}>
-            <span className="pin navy" />
-            <span className="eyebrow">💻 Web &amp; Yazılım</span>
-            <h3>Web sitesi mi lazım?</h3>
-            <p>
-              Kurumsal site, e-ticaret, mobil uygulama — markaya özel, hızlı,
-              Google&apos;da çıkan işler. Hazır tema değil. İşte yaptıklarımızdan
-              bazıları:
-            </p>
-            <div className="btnrow">
-              <a className="brandlink" href="https://dailydermo.com" target="_blank" rel="noopener noreferrer">dailydermo.com →</a>
-              <a className="brandlink" href="https://www.anivo.app" target="_blank" rel="noopener noreferrer">anivo.app →</a>
-              <a className="brandlink" href="https://samsunpettransfer.com" target="_blank" rel="noopener noreferrer">pet transfer →</a>
-            </div>
-            <a className="channel" href="/samsun-web-sitesi-yaptirma">Hizmetler &amp; fiyatlar →</a>
-            <span className="meta">Samsun&apos;da web tasarım · e-ticaret · mobil 💻</span>
-          </article>
-          {/* Büyük Ekran Kiralama — PS5 · projeksiyon · perde (panoda ilk sıra) */}
-          <article className="note" style={{ "--rot": "-1.4deg" } as React.CSSProperties}>
-            <span className="pin green" />
-            <span className="eyebrow">🎮 Kiralık</span>
-            <h3>Evine büyük ekran keyfi.</h3>
-            <p>
-              PS5 (oyunlar hazır dahil), projeksiyon ve perde — maç günü, film gecesi, oyun
-              gecesi. Tek tek ya da hepsi birlikte. Canik, Atakum, İlkadım&apos;a ücretsiz teslim + kurulum.
-            </p>
-            <a className="channel" href="/kirala">
-              Fiyat al &amp; rezervasyon →
-            </a>
-            <span className="meta">Teslimde nakit/kart · Samsun 🕹️📽️</span>
-          </article>
-
-          {/* Hizmet Rehberi — yerel hizmet keşfi */}
-          <article className="note" style={{ "--rot": "2.2deg" } as React.CSSProperties}>
-            <span className="pin" />
-            <span className="eyebrow">Hizmet Rehberi</span>
-            <h3>Samsun&apos;da bir usta mı lazım?</h3>
-            <p>
-              Nakliyat, klima-kombi servisi, temizlik, su tesisatçısı… Samsun&apos;un yerel
-              firmalarını bir araya getirdik. İlçene göre bul, karşılaştır, doğrudan ara.
-            </p>
-            <a className="channel" href="/hizmetler">
-              Hizmet rehberine gir →
-            </a>
-            <span className="meta">Samsunkent&apos;in yerel firma rehberi 🧭</span>
-          </article>
+          {/* Vitrin notları (Web · Kiralık · Hizmet) üstteki sinematik panoda.
+              Burada etkileşimli içerik: iş birliği + duyuru formları. */}
 
           {/* Sabit iş birliği notu */}
           <article className="note" style={{ "--rot": "1.6deg" } as React.CSSProperties}>
