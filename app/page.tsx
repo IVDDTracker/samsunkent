@@ -3,6 +3,7 @@ import { unstable_noStore as noStore } from "next/cache";
 import { supabase } from "../lib/supabase";
 import type { Announcement } from "../lib/db";
 import CorkBackground from "../components/CorkBackground";
+import VideoHero from "../components/VideoHero";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 
@@ -69,8 +70,9 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
       />
+      <VideoHero />
       <CorkBackground />
-      <div className="wrap">
+      <div className="wrap" id="pano">
         <header className="top">
           <div className="brand">
             samsunkent<span className="dot">.</span>
@@ -80,34 +82,6 @@ export default async function HomePage() {
             <b>1M</b> aylık görüntüleme · Samsun
           </span>
         </header>
-
-        {/* Manifesto — hero not (formsuz) */}
-        <article className="note manifesto" style={{ "--rot": "-1.2deg" } as React.CSSProperties}>
-          <span className="pin" />
-          <span className="eyebrow">Manifesto</span>
-          <h1>
-            Herkes
-            <br />
-            <span className="red">buraya</span> bakıyor.
-          </h1>
-          <p className="lede">
-            Samsun konuşuyorsa, buradan konuşuyor. Mekânı, sokağı, gündemi — nabız burada atar.
-            Süssüz, filtresiz, torpilsiz. Sen de içeride ol.
-          </p>
-          <p className="lede" style={{ marginTop: 14 }}>
-            Haberi, fırsatı, olan biteni herkesten önce duyanlar bir yerde toplandı — sen hâlâ
-            dışarıdasın. Geç kalanlar hep sonra öğrenir.
-          </p>
-          <a
-            className="channel"
-            href="https://www.instagram.com/channel/Abbvtcz5xxeoD7Cd/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            İçeri gir, aramıza katıl →
-          </a>
-          <div className="sign">— samsunkent</div>
-        </article>
 
         <div className="board">
           {/* Web & Yazılım — portföy / hizmet vitrini */}
