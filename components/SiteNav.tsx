@@ -2,7 +2,7 @@ import Link from "next/link";
 
 /**
  * Her zaman görünen sabit üst menü. Sinematik pano izlensin diye kaydırmayı
- * beklemeden, ziyaretçi doğrudan para kazandıran sayfalara (kiralık, hizmet,
+ * beklemeden, ziyaretçi doğrudan para kazandıran sayfalara (hizmet,
  * iletişim) ulaşabilsin. Koyu yarı-saydam + blur → hem koyu hero hem cork
  * zemin üstünde okunur.
  */
@@ -13,7 +13,6 @@ export default function SiteNav() {
         samsunkent<b>.</b>
       </Link>
       <div className="sitenav-links">
-        <Link href="/kirala">Kiralık</Link>
         <Link href="/samsun-web-sitesi-yaptirma">Web</Link>
         <a href="#pano" className="sitenav-cta">İletişim</a>
       </div>

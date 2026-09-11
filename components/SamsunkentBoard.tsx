@@ -158,14 +158,6 @@ export default function SamsunkentBoard() {
               <a className="skb-cta ghost" href="/samsun-web-sitesi-yaptirma">Hizmetler &amp; fiyatlar →</a>
             </article>
 
-            <article className="skb-note" style={{ left: 2060, top: 300, ["--r" as string]: "-1.5deg" }}>
-              <span className="skb-pin green" />
-              <span className="skb-chip">🎮 Kiralık</span>
-              <h1 className="skb-hl sm">Evine büyük ekran keyfi.</h1>
-              <p>PS5 (oyunlar dahil), projeksiyon ve perde — maç günü, film gecesi. Atakum, Canik, İlkadım&apos;a ücretsiz teslim + kurulum.</p>
-              <a className="skb-cta" href="/kirala">Fiyat al &amp; rezervasyon →</a>
-            </article>
-
             <article className="skb-note" style={{ left: 640, top: 1370, ["--r" as string]: "-2deg" }}>
               <span className="skb-pin green" />
               <span className="skb-chip">Sen de var mısın?</span>

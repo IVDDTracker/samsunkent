@@ -93,19 +93,6 @@ export default async function HomePage() {
             <span className="meta">Samsun&apos;da web tasarım · e-ticaret · mobil 💻</span>
           </article>
 
-          {/* Kiralık */}
-          <article className="note" style={{ "--rot": "-1.1deg" } as React.CSSProperties}>
-            <span className="pin green" />
-            <span className="eyebrow">🎮 Kiralık</span>
-            <h3>Evine büyük ekran keyfi.</h3>
-            <p>
-              PS5 (oyunlar hazır dahil), projeksiyon ve perde — maç günü, film gecesi, oyun
-              gecesi. Canik, Atakum, İlkadım&apos;a ücretsiz teslim + kurulum.
-            </p>
-            <a className="channel" href="/kirala">Fiyat al &amp; rezervasyon →</a>
-            <span className="meta">Teslimde nakit/kart · Samsun 🕹️📽️</span>
-          </article>
-
           {/* Sabit iş birliği notu */}
           <article className="note" style={{ "--rot": "1.6deg" } as React.CSSProperties}>
             <span className="pin navy" />
