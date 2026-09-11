@@ -6,18 +6,22 @@ const nextConfig = {
       { protocol: "https", hostname: "*.supabase.co" },
     ],
   },
+  async redirects() {
+    // PS5 / büyük ekran kiralama hizmeti kapatıldı — eski URL'ler ana sayfaya
+    // kalıcı (301) yönlendirilir ki arama motoru/yer imleri 404 almasın.
+    return [
+      { source: "/kirala", destination: "/", permanent: true },
+      { source: "/samsun-ps5-kiralama", destination: "/", permanent: true },
+      { source: "/samsun-projeksiyon-kiralama", destination: "/", permanent: true },
+      { source: "/samsun-mac-izleme-kiralama", destination: "/", permanent: true },
+      { source: "/evde-sinema-kiralama-samsun", destination: "/", permanent: true },
+    ];
+  },
   async rewrites() {
     return {
       beforeFiles: [
         // Firma tanıtım demoları: temiz URL (/oznakliyat) statik HTML'e yönlenir.
         { source: "/oznakliyat", destination: "/oznakliyat.html" },
-        // Büyük Ekran Kiralama (PS5 · projeksiyon · perde) — temiz URL.
-        { source: "/kirala", destination: "/kirala.html" },
-        // SEO landing sayfaları — niyet bazlı, temiz URL, /kirala'ya yönlendirir.
-        { source: "/samsun-ps5-kiralama", destination: "/samsun-ps5-kiralama.html" },
-        { source: "/samsun-projeksiyon-kiralama", destination: "/samsun-projeksiyon-kiralama.html" },
-        { source: "/samsun-mac-izleme-kiralama", destination: "/samsun-mac-izleme-kiralama.html" },
-        { source: "/evde-sinema-kiralama-samsun", destination: "/evde-sinema-kiralama-samsun.html" },
         // Web & Yazılım hizmet sayfaları — SEO landing, temiz URL.
         { source: "/samsun-web-sitesi-yaptirma", destination: "/samsun-web-sitesi-yaptirma.html" },
         { source: "/samsun-web-sitesi-fiyatlari", destination: "/samsun-web-sitesi-fiyatlari.html" },
